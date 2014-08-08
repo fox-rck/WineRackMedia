@@ -1,0 +1,160 @@
+﻿/************************************************************/
+/*****              SQLDataProvider		                *****/
+/*****              iFinity.Url Master 02.04.01			*****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}	*****/
+/************************************************************/
+ /****** Object:  StoredProcedure {databaseOwner}[ifty_GetTabRedirectsForTab]    Script Date: 03/11/2011 17:05:01 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[ifty_GetTabRedirectsForTab]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC sp_executesql @statement = N'ALTER Procedure {databaseOwner}[ifty_GetTabRedirectsForTab]
+(
+	 @TabId		int 
+)
+AS
+BEGIN
+
+/* =============================================
+	Author:      WOMBAT\Bruce
+	Create date: 13/02/2008
+	Description: Gets a ifty_TabRedirect record
+   ============================================= 
+	
+	    Return Values
+	    0  - Successful Execution.
+	    1  - SQL Error. Rollback Occurred.
+	    2  - No records modified. Rollback Occurred.
+	    3  - No records modified. Commit Occured
+	    4  - Error in sub procedure - entire top procedure rolled back.
+	    5  - No record(s) returned. Procedure Executed Ok.
+	    6+ - Specific to procedure
+	
+	    Modified by:		Date:		Reason for Modification:
+		brc					15/09/09	Add new cultureCode column
+		brc					10/10/10	Add in portal alias id and usage
+		brc					11/03/11	Add join on culture code to remove duplicates
+		brc					01/04/11	Change join to use tr instead of t.  t.CultureCode not in DNN 4.x
+	   =============================================*/
+
+SET NOCOUNT ON 
+DECLARE @ErrStr 	varchar(100)	/* Return error string				*/
+DECLARE @Error		int		/* Return error value				*/
+DECLARE @Rowcount	int		/* Return related row count			*/
+
+	SELECT 
+	    tr.TabId	
+	   ,tr.SeqNum	
+	   ,tr.Url	
+	   ,tr.HttpStatus	
+	   ,tr.RedirectTabId	
+	   ,tr.CultureCode
+   	   ,case when parentTr.PortalAliasUsage = 1 /* parent is set to ''child pages inherit'' so get parent portal alias id */
+			 then 
+				case when Coalesce(tr.PortalAliasId, 0) < 1 /* if this page has no specific alias id, then use parent*/
+				then parentTr.PortalAliasId 
+				else tr.PortalAliasId END /* otherwise, use this page alias id */
+			 else tr.PortalALiasId END as PortalAliasId 
+  	   ,case when Coalesce(tr.PortalAliasUsage,0) = 0 and coalesce(tr.PortalALiasId,0) < 1 /* default value and no specific alias */
+			 then /* check for inheritance from parent */
+				case when Coalesce(parentTr.PortalALiasUsage,0) = 1 and Coalesce(parentTr.PortalAliasId, 0) > 0 /* parent specifies an alias */
+				then 3 /* inherited from parent */
+				else 0 END /* default value */
+			 when Coalesce(tr.PortalAliasId,0) > 0 /*specific alias for this tab */
+			 then case when coalesce(tr.PortalALiasUsage,0) < 1 
+				  then 1 /* if not set, default to ''child pages inherit''*/
+				  else tr.PortalAliasUsage END
+			 else 
+				0 /* default - fall through value */
+				 END as PortalAliasUsage 
+	FROM {databaseOwner}ifty_TabRedirect tr
+	INNER JOIN {databaseOwner}{objectQualifier}Tabs t
+		on t.TabId = tr.TabId
+	LEFT JOIN {databaseOwner}ifty_TabRedirect parentTr
+	    on t.ParentId = parentTr.TabId
+	   AND tr.CultureCode = parentTr.CultureCode
+	WHERE tr.TabId = @TabId
+	
+	SELECT @Error = @@ERROR, @RowCount = @@RowCount
+	IF @Error <> 0
+	BEGIN
+		SELECT @ErrStr=''Error in ''+ OBJECT_NAME(@@PROCID) + ''. Stmt No.=1, Db=''+db_name()+'',Err=''+CONVERT(varchar(10),@Error)
+		RAISERROR(@ErrStr,16,1)
+		RETURN 1 /* statement failed */
+	END
+	/* finished procedure, return value and exit */
+	RETURN 0	  /*** Procedure executed ok. */
+END
+
+' 
+END
+
+
+/****** Object:  StoredProcedure {databaseOwner}[ifty_SearchTabs]    Script Date: 03/16/2011 09:21:40 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[ifty_SearchTabs]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC sp_executesql @statement = N'CREATE Procedure {databaseOwner}[ifty_SearchTabs]
+(
+	 @portalId		int 
+	,@searchString nvarchar(50)
+)
+AS
+BEGIN
+
+/* =============================================
+	Author:      Bruce
+	Create date: 12/03/2011
+	Description: Finds all tabs matching a search string
+   ============================================= 
+	
+	    Return Values
+	    0  - Successful Execution.
+	    1  - SQL Error. Rollback Occurred.
+	    2  - No records modified. Rollback Occurred.
+	    3  - No records modified. Commit Occured
+	    4  - Error in sub procedure - entire top procedure rolled back.
+	    5  - No record(s) returned. Procedure Executed Ok.
+	    6+ - Specific to procedure
+	
+	    Modified by:		Date:		Reason for Modification:
+		brc					12/3/2011	Created for task 782
+	   =============================================*/
+
+SET NOCOUNT ON 
+DECLARE @ErrStr 	varchar(100)	/* Return error string				*/
+DECLARE @Error		int		/* Return error value				*/
+DECLARE @Rowcount	int		/* Return related row count			*/
+DECLARE @searchTerm nvarchar(52)
+
+	SET @SearchTerm = ''%'' + @searchString + ''%''
+	Select *
+	From {databaseOwner}{objectQualifier}vw_Tabs
+	Where (@portalId = PortalId or @portalId = -1)
+      and (TabName like @searchTerm
+	   or  TabPath like @searchTerm)
+	ORDER BY PortalId, TabOrder
+
+	SELECT @Error = @@ERROR, @RowCount = @@RowCount
+	IF @Error <> 0
+	BEGIN
+		SELECT @ErrStr=''Error in ''+ OBJECT_NAME(@@PROCID) + ''. Stmt No.=1, Db=''+db_name()+'',Err=''+CONVERT(varchar(10),@Error)
+		RAISERROR(@ErrStr,16,1)
+		RETURN 1 /* statement failed */
+	END
+
+	/* finished procedure, return value and exit */
+	RETURN 0	  /*** Procedure executed ok. */
+END
+
+
+' 
+END

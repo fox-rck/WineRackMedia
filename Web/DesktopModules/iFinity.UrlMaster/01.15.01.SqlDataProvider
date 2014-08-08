@@ -1,0 +1,34 @@
+﻿/************************************************************/
+/*****              SQLDataProvider		                *****/
+/*****              iFinity.Url Master 1.15.01			*****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}	*****/
+/************************************************************/
+/* 736 : remove addTabAndTabModule for 5.5 compatibiltiy changes */
+/* new cultureCode column for tabModuleCreation table */
+begin transaction
+IF NOT EXISTS (SELECT * FROM sysobjects so INNER JOIN syscolumns sc on sc.Id = so.id
+		   WHERE so.id = object_id(N'{databaseOwner}[ifty_TabModuleCreation]') AND so.type in (N'U')
+			 and sc.name = 'CultureCode')
+BEGIN
+	ALTER TABLE {databaseOwner}ifty_TabModuleCreation
+	ADD CultureCode nvarchar(10) NULL 
+END
+commit transaction
+GO
+
+/* update culture code for unfinished admin pages */
+/* 736 don't set culture code for page Urls page
+begin transaction
+Update {databaseOwner}ifty_TabModuleCreation
+set CultureCode = 'en-US'
+where TabName = 'Page Urls'
+  and Completed = 0
+commit transaction
+GO*/
+
+
+
+/* 736 ifty_OnNewModule removed */

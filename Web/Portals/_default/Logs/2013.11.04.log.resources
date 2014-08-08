@@ -1,0 +1,67 @@
+2013-11-04 00:41:08,239 [ARQW52FV18J][Thread:25][ERROR] DotNetNuke.UI.Skins.Skin - Unhandled error loading page.
+DotNetNuke.Services.Exceptions.PageLoadException: Unhandled error loading page. ---> System.Web.HttpParseException: Unknown server tag 'dnn:MENU'. ---> System.Web.HttpParseException: Unknown server tag 'dnn:MENU'. ---> System.Web.HttpException: Unknown server tag 'dnn:MENU'.
+   at System.Web.UI.TemplateParser.ProcessError(String message)
+   at System.Web.UI.TemplateParser.ProcessBeginTag(Match match, String inputText)
+   at System.Web.UI.TemplateParser.ParseStringInternal(String text, Encoding fileEncoding)
+   --- End of inner exception stack trace ---
+   at System.Web.UI.TemplateParser.ProcessException(Exception ex)
+   at System.Web.UI.TemplateParser.ParseStringInternal(String text, Encoding fileEncoding)
+   at System.Web.UI.TemplateParser.ParseString(String text, VirtualPath virtualPath, Encoding fileEncoding)
+   --- End of inner exception stack trace ---
+   at System.Web.UI.TemplateParser.ProcessException(Exception ex)
+   at System.Web.UI.TemplateParser.ParseStringInternal(String text, Encoding fileEncoding)
+   at System.Web.UI.TemplateParser.ParseString(String text, VirtualPath virtualPath, Encoding fileEncoding)
+   at System.Web.UI.TemplateParser.ParseFile(String physicalPath, VirtualPath virtualPath)
+   at System.Web.UI.TemplateParser.Parse()
+   at System.Web.Compilation.BaseTemplateBuildProvider.get_CodeCompilerType()
+   at System.Web.Compilation.BuildProvider.GetCompilerTypeFromBuildProvider(BuildProvider buildProvider)
+   at System.Web.Compilation.BuildProvidersCompiler.ProcessBuildProviders()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResult(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean ensureIsUpToDate)
+   at System.Web.UI.TemplateControl.LoadControl(VirtualPath virtualPath)
+   at DotNetNuke.UI.ControlUtilities.LoadControl[T](TemplateControl containerControl, String ControlSrc)
+   at DotNetNuke.UI.Skins.Skin.LoadSkin(PageBase page, String skinPath)
+   --- End of inner exception stack trace ---
+2013-11-04 19:19:06,666 [ARQW52FV18J][Thread:9][ERROR] DotNetNuke.Services.Search.SearchDataStore - Cannot insert duplicate key row in object 'dbo.SearchItem' with unique index 'IX_SearchItem'.
+The statement has been terminated.
+DotNetNuke.Services.Exceptions.SearchException: Cannot insert duplicate key row in object 'dbo.SearchItem' with unique index 'IX_SearchItem'.
+The statement has been terminated. ---> System.Data.SqlClient.SqlException: Cannot insert duplicate key row in object 'dbo.SearchItem' with unique index 'IX_SearchItem'.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlDataReader.ConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteScalar(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteScalar(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddSearchItem(String Title, String Description, Int32 Author, DateTime PubDate, Int32 ModuleId, String Key, String Guid, Int32 ImageFileId)
+   at DotNetNuke.Services.Search.SearchDataStoreController.AddSearchItem(SearchItemInfo item)
+   at DotNetNuke.Services.Search.SearchDataStore.StoreSearchItems(SearchItemInfoCollection SearchItems)
+   --- End of inner exception stack trace ---
+2013-11-04 19:19:07,878 [ARQW52FV18J][Thread:13][ERROR] DotNetNuke.Services.Search.SearchDataStore - Item has already been added. Key in dictionary: 'ready'  Key being added: 'ready'
+DotNetNuke.Services.Exceptions.SearchException: Item has already been added. Key in dictionary: 'ready'  Key being added: 'ready' ---> System.ArgumentException: Item has already been added. Key in dictionary: 'ready'  Key being added: 'ready'
+   at System.Collections.Hashtable.Insert(Object key, Object nvalue, Boolean add)
+   at DotNetNuke.Services.Search.SearchDataStore.AddIndexWords(Int32 indexId, SearchItemInfo searchItem, String language)
+   at DotNetNuke.Services.Search.SearchDataStore.StoreSearchItems(SearchItemInfoCollection SearchItems)
+   --- End of inner exception stack trace ---
+2013-11-04 19:19:08,001 [ARQW52FV18J][Thread:13][ERROR] DotNetNuke.Services.Search.SearchDataStore - Item has already been added. Key in dictionary: 'custom'  Key being added: 'custom'
+System.ArgumentException: Item has already been added. Key in dictionary: 'custom'  Key being added: 'custom'
+   at System.Collections.Hashtable.Insert(Object key, Object nvalue, Boolean add)
+   at DotNetNuke.Services.Search.SearchDataStore.AddIndexWords(Int32 indexId, SearchItemInfo searchItem, String language)
+   at DotNetNuke.Services.Search.SearchDataStore.StoreSearchItems(SearchItemInfoCollection SearchItems)
+2013-11-04 19:19:09,495 [ARQW52FV18J][Thread:13][ERROR] DotNetNuke.Services.Search.SearchDataStore - Item has already been added. Key in dictionary: 'displays'  Key being added: 'displays'
+System.ArgumentException: Item has already been added. Key in dictionary: 'displays'  Key being added: 'displays'
+   at System.Collections.Hashtable.Insert(Object key, Object nvalue, Boolean add)
+   at DotNetNuke.Services.Search.SearchDataStore.AddIndexWords(Int32 indexId, SearchItemInfo searchItem, String language)
+   at DotNetNuke.Services.Search.SearchDataStore.StoreSearchItems(SearchItemInfoCollection SearchItems)
+2013-11-04 19:41:29,064 [ARQW52FV18J][Thread:VsCBMThreadPool][ERROR] DotNetNuke.Web.UI.Utilities - Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Web.UI.Utilities.ApplySkin(Control telerikControl, String fallBackEmbeddedSkinName, String controlName, String webControlSkinSubFolderName)

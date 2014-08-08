@@ -1,0 +1,16 @@
+﻿.contact-form{width:473px;padding:20px 20px 20px 0;margin-left:-30px;}
+.contact-form input,.contact-form textarea,.thebox{width:446px;padding:5px;border:1px solid #ccc;display:block;color:#000;margin-bottom:15px;height:20px;font-family:AvenirNextLTW01-Regular;font-size:15px;}
+.contact-form textarea{height:150px; scroll:none; re-size:none;}
+
+.contact-form .lightText{color:#ccc;}
+
+.contact-form >div.right{width:290px; padding-left:23px;}
+.contact-form .clear{float:none;}
+.contact-form p{line-height:16px;margin:0;}
+
+
+.label span{float:right;}
+.contact-form .thebox{background:#fff;overflow:hidden;}
+.contact-form .thebox input{display:inline;width:20px;}
+
+.validator{padding-top:6px;}

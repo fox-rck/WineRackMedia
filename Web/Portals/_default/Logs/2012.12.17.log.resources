@@ -1,0 +1,92 @@
+2012-12-17 14:29:49,856 [SMKKStudios-PC][Thread:12][FATAL] DotNetNuke.Framework.PageBase - An error has occurred while loading page.
+System.Web.HttpException (0x80004005): The Controls collection cannot be modified because the control contains code blocks (i.e. <% ... %>).
+   at System.Web.UI.ControlCollection.Add(Control child)
+   at DotNetNuke.UI.Skins.Skin.ProcessModule(ModuleInfo module)
+   at DotNetNuke.UI.Skins.Skin.ProcessMasterModules()
+   at DotNetNuke.UI.Skins.Skin.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.AddedControl(Control control, Int32 index)
+   at DotNetNuke.Framework.DefaultPage.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+2012-12-17 14:29:49,926 [SMKKStudios-PC][Thread:12][ERROR] DotNetNuke.Services.Exceptions.ErrorPage - The Controls collection cannot be modified because the control contains code blocks (i.e. <% ... %>).
+DotNetNuke.Services.Exceptions.PageLoadException: The Controls collection cannot be modified because the control contains code blocks (i.e. <% ... %>). ---> System.Web.HttpException: The Controls collection cannot be modified because the control contains code blocks (i.e. <% ... %>).
+   at System.Web.UI.ControlCollection.Add(Control child)
+   at DotNetNuke.UI.Skins.Skin.ProcessModule(ModuleInfo module)
+   at DotNetNuke.UI.Skins.Skin.ProcessMasterModules()
+   at DotNetNuke.UI.Skins.Skin.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.AddedControl(Control control, Int32 index)
+   at DotNetNuke.Framework.DefaultPage.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   --- End of inner exception stack trace ---
+2012-12-17 14:29:53,571 [SMKKStudios-PC][Thread:9][FATAL] DotNetNuke.Framework.PageBase - An error has occurred while loading page.
+System.Web.HttpException (0x80004005): The Controls collection cannot be modified because the control contains code blocks (i.e. <% ... %>).
+   at System.Web.UI.ControlCollection.Add(Control child)
+   at DotNetNuke.UI.Skins.Skin.ProcessModule(ModuleInfo module)
+   at DotNetNuke.UI.Skins.Skin.ProcessMasterModules()
+   at DotNetNuke.UI.Skins.Skin.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.AddedControl(Control control, Int32 index)
+   at DotNetNuke.Framework.DefaultPage.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+2012-12-17 14:29:53,572 [SMKKStudios-PC][Thread:9][ERROR] DotNetNuke.Services.Exceptions.ErrorPage - The Controls collection cannot be modified because the control contains code blocks (i.e. <% ... %>).
+DotNetNuke.Services.Exceptions.PageLoadException: The Controls collection cannot be modified because the control contains code blocks (i.e. <% ... %>). ---> System.Web.HttpException: The Controls collection cannot be modified because the control contains code blocks (i.e. <% ... %>).
+   at System.Web.UI.ControlCollection.Add(Control child)
+   at DotNetNuke.UI.Skins.Skin.ProcessModule(ModuleInfo module)
+   at DotNetNuke.UI.Skins.Skin.ProcessMasterModules()
+   at DotNetNuke.UI.Skins.Skin.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.AddedControl(Control control, Int32 index)
+   at DotNetNuke.Framework.DefaultPage.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   --- End of inner exception stack trace ---
+2012-12-17 14:30:00,779 [SMKKStudios-PC][Thread:9][FATAL] DotNetNuke.Framework.PageBase - An error has occurred while loading page.
+System.Web.HttpException (0x80004005): The Controls collection cannot be modified because the control contains code blocks (i.e. <% ... %>).
+   at System.Web.UI.ControlCollection.Add(Control child)
+   at DotNetNuke.UI.Skins.Skin.ProcessModule(ModuleInfo module)
+   at DotNetNuke.UI.Skins.Skin.ProcessMasterModules()
+   at DotNetNuke.UI.Skins.Skin.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.AddedControl(Control control, Int32 index)
+   at DotNetNuke.Framework.DefaultPage.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+2012-12-17 14:30:00,780 [SMKKStudios-PC][Thread:9][ERROR] DotNetNuke.Services.Exceptions.ErrorPage - The Controls collection cannot be modified because the control contains code blocks (i.e. <% ... %>).
+DotNetNuke.Services.Exceptions.PageLoadException: The Controls collection cannot be modified because the control contains code blocks (i.e. <% ... %>). ---> System.Web.HttpException: The Controls collection cannot be modified because the control contains code blocks (i.e. <% ... %>).
+   at System.Web.UI.ControlCollection.Add(Control child)
+   at DotNetNuke.UI.Skins.Skin.ProcessModule(ModuleInfo module)
+   at DotNetNuke.UI.Skins.Skin.ProcessMasterModules()
+   at DotNetNuke.UI.Skins.Skin.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.AddedControl(Control control, Int32 index)
+   at DotNetNuke.Framework.DefaultPage.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   --- End of inner exception stack trace ---
+2012-12-17 15:15:24,353 [SMKKStudios-PC][Thread:10][FATAL] DotNetNuke.Framework.PageBase - An error has occurred while loading page.
+System.Web.HttpException (0x80004005): The Controls collection cannot be modified because the control contains code blocks (i.e. <% ... %>).
+   at System.Web.UI.ControlCollection.Add(Control child)
+   at DotNetNuke.UI.Skins.Skin.ProcessModule(ModuleInfo module)
+   at DotNetNuke.UI.Skins.Skin.ProcessMasterModules()
+   at DotNetNuke.UI.Skins.Skin.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.AddedControl(Control control, Int32 index)
+   at DotNetNuke.Framework.DefaultPage.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+2012-12-17 15:15:24,409 [SMKKStudios-PC][Thread:10][ERROR] DotNetNuke.Services.Exceptions.ErrorPage - The Controls collection cannot be modified because the control contains code blocks (i.e. <% ... %>).
+DotNetNuke.Services.Exceptions.PageLoadException: The Controls collection cannot be modified because the control contains code blocks (i.e. <% ... %>). ---> System.Web.HttpException: The Controls collection cannot be modified because the control contains code blocks (i.e. <% ... %>).
+   at System.Web.UI.ControlCollection.Add(Control child)
+   at DotNetNuke.UI.Skins.Skin.ProcessModule(ModuleInfo module)
+   at DotNetNuke.UI.Skins.Skin.ProcessMasterModules()
+   at DotNetNuke.UI.Skins.Skin.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.AddedControl(Control control, Int32 index)
+   at DotNetNuke.Framework.DefaultPage.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   --- End of inner exception stack trace ---

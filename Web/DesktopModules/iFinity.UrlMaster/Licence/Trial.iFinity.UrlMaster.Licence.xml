@@ -1,0 +1,20 @@
+﻿<LicenceKey version="1.4">
+    <licenceType>Full</licenceType>
+    <product versionMajor="02" versionMinor="00">iFinity.UrlMaster</product>
+    <customerInfo>
+        <customerName>Demonstration Version</customerName>
+        <customerEmail>example@example.com</customerEmail>
+    </customerInfo>
+    <expiryDate>9998-12-31</expiryDate>
+    <hostGuid>
+    </hostGuid>
+    <registeredDomains>
+        <siteDomains>
+            <mainDomain domainName="localhost" domainType="test">
+                <subDomain subDomainName="" />
+            </mainDomain>
+        </siteDomains>
+    </registeredDomains>
+    <key>reYJNEo54AQcGECLXdRqKclSUpxwYmtIzuRN149mNL9YIohyeQ85IP6nJdp4JveqjNvtm+T498BFyzIDDLGXTQ==</key>
+    <key2>puKHZPAXhjAl6h0E1incIYOBlaUtAoXQDIyWAt9BxXpwtsD9oyfXi9z8hoPYSHwx1zC5qypjNwwPY8/pYEGWpw==</key2>
+</LicenceKey>

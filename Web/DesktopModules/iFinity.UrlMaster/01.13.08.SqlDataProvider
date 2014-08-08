@@ -1,0 +1,12 @@
+﻿/************************************************************/
+/*****              SQLDataProvider		                *****/
+/*****              iFinity.Url Master 1.13.08			*****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}	*****/
+/************************************************************/
+/* 736 : remove addTabAndTabModule for 5.5 compatibiltiy changes */
+/* new version of the AddTabAndTabModule sp, including the new permanentRedirect attribute */
+
+

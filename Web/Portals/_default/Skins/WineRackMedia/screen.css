@@ -1,0 +1,943 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/*
+ *  Imports 
+ * ------------------------------------------------------------------------- */
+/* line 17, ../../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/*
+ *  Site Config 
+ * ------------------------------------------------------------------------- */
+/* vertical_rhythm import */
+/* box-shadow import */
+/* border-radius */
+/* design */
+/*
+ *  Mixins
+ * ------------------------------------------------------------------------- */
+/* currently only supports 'up' and 'down' orientation */
+/*
+ *  Styles
+ * ------------------------------------------------------------------------- */
+/* Base Styles and Utilities  */
+/* line 162, ../sass/screen.scss */
+html {
+  background: white;
+}
+
+/* line 163, ../sass/screen.scss */
+body {
+  background: white;
+  color: #5a5d5d;
+  margin: 0 auto;
+  font-family: "Charter ITC W01";
+  font-size: 15px;
+  line-height: 1.5em;
+}
+
+/* line 172, ../sass/screen.scss */
+a {
+  text-decoration: none;
+  color: #0083c4;
+}
+
+/* line 177, ../sass/screen.scss */
+hr {
+  width: 992px;
+  margin: 0 auto;
+  clear: both;
+  margin-bottom: 2em;
+  border: none;
+  border-top: 1px solid #e9ebeb;
+}
+
+/* line 185, ../sass/screen.scss */
+h2, h3, h4, p, img, blockquote {
+  margin: 0 0 1em 0;
+  font-weight: normal;
+}
+
+/* line 190, ../sass/screen.scss */
+h2 {
+  font-family: "AvenirNextLTW01-Medium";
+  color: #0e265e;
+}
+
+/* line 196, ../sass/screen.scss */
+h4,
+.attribution {
+  font-family: "AvenirNextLTW01-Medium";
+  color: #0083c4;
+}
+
+/* line 201, ../sass/screen.scss */
+blockquote {
+  color: #0083c4;
+}
+
+/* line 205, ../sass/screen.scss */
+blockquote:before, blockquote:after {
+  content: '"';
+}
+
+/* line 209, ../sass/screen.scss */
+.attribution {
+  text-align: right;
+  color: #0e265e;
+}
+
+/* line 214, ../sass/screen.scss */
+.attribution:before {
+  content: "- ";
+}
+
+/* line 218, ../sass/screen.scss */
+a.active {
+  color: #0e265e;
+}
+
+/* line 223, ../sass/screen.scss */
+a.button,
+input[type="submit"], input[type="button"] {
+  display: inline-block;
+  font-family: "AvenirNextLTW01-Medium";
+  font-size: 0.8em;
+  color: white !important;
+  background: #0083c4;
+  height: 38px;
+  line-height: 38px;
+  border-radius: 19px;
+  padding: 0 38px;
+  margin: 15px 0;
+  border: none;
+  transition: opacity 1s ease-out 0ms;
+  -moz-transition: opacity 1s ease-out 0ms;
+  -webkit-transition: opacity 1s ease-out 0ms;
+  -o-transition: opacity 1s ease-out 0ms;
+  opacity: 1;
+}
+/* line 239, ../sass/screen.scss */
+a.button + a.button,
+input[type="submit"] + a.button, input[type="button"] + a.button {
+  margin-left: 30px;
+}
+/* line 243, ../sass/screen.scss */
+a.button:hover,
+input[type="submit"]:hover, input[type="button"]:hover {
+  -webkit-box-shadow: 0 3px 3px rgba(50, 50, 50, 0.2);
+  -moz-box-shadow: 0 3px 3px rgba(50, 50, 50, 0.2);
+  box-shadow: 0 3px 3px rgba(50, 50, 50, 0.2);
+  opacity: 0.7;
+}
+/* line 248, ../sass/screen.scss */
+a.button:active,
+input[type="submit"]:active, input[type="button"]:active {
+  -webkit-box-shadow: 0 1px 1px rgba(50, 50, 50, 0.2);
+  -moz-box-shadow: 0 1px 1px rgba(50, 50, 50, 0.2);
+  box-shadow: 0 1px 1px rgba(50, 50, 50, 0.2);
+}
+
+/* line 253, ../sass/screen.scss */
+a.learn {
+  margin: 0 0 1em 0;
+  color: #0e265e;
+  font-family: "Avenir Next LT W01 Bold";
+  display: block;
+  text-transform: uppercase;
+}
+/* line 260, ../sass/screen.scss */
+a.learn:after {
+  content: " \003E";
+}
+
+/* line 265, ../sass/screen.scss */
+a.arrow {
+  display: inline-block;
+  background: url("../img/arrow-icon.png") no-repeat;
+  padding-left: 21px;
+  line-height: 21px;
+  font-family: "AvenirNextLTW01-Medium";
+  font-size: 1.35em;
+  text-align: left;
+}
+
+/* line 275, ../sass/screen.scss */
+.phone {
+  color: #0083c4;
+}
+
+/* line 279, ../sass/screen.scss */
+.inner {
+  width: 992px;
+  margin: 0 auto;
+}
+/* line 282, ../sass/screen.scss */
+.inner .inner {
+  width: 100%;
+}
+/* line 286, ../sass/screen.scss */
+.inner .block {
+  float: left;
+  /* variants */
+}
+/* line 289, ../sass/screen.scss */
+.inner .block > * {
+  padding: 0 30px;
+}
+/* line 294, ../sass/screen.scss */
+.inner .block > img, .inner .block > svg {
+  padding: 0;
+}
+/* line 298, ../sass/screen.scss */
+.inner .block > .section {
+  padding: 0;
+}
+/* line 302, ../sass/screen.scss */
+.inner .block p {
+  overflow: hidden;
+}
+/* line 304, ../sass/screen.scss */
+.inner .block p > img {
+  float: left;
+  margin-right: 10px;
+}
+/* line 310, ../sass/screen.scss */
+.inner .block h2, .inner .block h2 a {
+  font-size: 1.4em;
+  font-family: "Avenir Next LT W01 Bold";
+  line-height: 1.5em;
+}
+/* line 320, ../sass/screen.scss */
+.inner .block.with-icon img {
+  float: left;
+}
+/* line 324, ../sass/screen.scss */
+.inner .block.with-icon p {
+  padding: 0;
+}
+/* line 330, ../sass/screen.scss */
+.inner h2 {
+  font-size: 1.35em;
+}
+/* line 334, ../sass/screen.scss */
+.inner h3 {
+  color: #0083c4;
+  font-family: "AvenirNextLTW01-Medium";
+  font-size: 1.35em;
+}
+
+/* Unordered List Types */
+/* line 345, ../sass/screen.scss */
+.nav li {
+  display: block;
+  float: left;
+  list-style: none;
+  padding: 0 15px;
+}
+
+/* line 352, ../sass/screen.scss */
+.grey_bullets {
+  list-style-position: inside;
+}
+/* line 355, ../sass/screen.scss */
+.grey_bullets li {
+  list-style-type: disc;
+}
+
+/* container variants */
+/* line 366, ../sass/screen.scss */
+.box {
+  background: white;
+  border: 3px solid #e9ebeb;
+  margin-bottom: 2em;
+  padding-top: 15px;
+}
+
+/* Forms */
+/* line 375, ../sass/screen.scss */
+input[type="text"], input[type="email"] {
+  border: 1px solid #CCCDCC;
+  height: 18px;
+  padding: 5px;
+  color: #CCCDCC;
+  margin-bottom: 10px;
+}
+
+/* jQuery UI Overrides */
+/* line 386, ../sass/screen.scss */
+.ui-widget-content {
+  background-color: white;
+}
+
+/* line 389, ../sass/screen.scss */
+.ui-widget {
+  font-family: "AvenirNextLTW01-Medium";
+}
+
+/* line 393, ../sass/screen.scss */
+.ui-widget-content {
+  border: none;
+  color: #5a5d5d;
+}
+/* line 396, ../sass/screen.scss */
+.ui-widget-content a {
+  color: #0083c4;
+}
+
+/* line 401, ../sass/screen.scss */
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br, .ui-corner-top, .ui-corner-right, .ui-corner-tr {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+}
+
+/* line 405, ../sass/screen.scss */
+.ui-tabs {
+  padding: 0;
+}
+/* line 408, ../sass/screen.scss */
+.ui-tabs .ui-tabs-nav {
+  margin-top: -35px;
+  height: 35px;
+  overflow: visible;
+  position: relative;
+  z-index: 12;
+  background: none;
+}
+/* line 416, ../sass/screen.scss */
+.ui-tabs .ui-tabs-nav li.ui-tabs-active {
+  padding: 0;
+}
+/* line 421, ../sass/screen.scss */
+.ui-tabs .ui-tabs-nav li {
+  margin: 0 5px 0 0;
+  font-size: 0.75em;
+}
+/* line 425, ../sass/screen.scss */
+.ui-tabs .ui-tabs-nav li:last-child {
+  margin: 0;
+}
+/* line 429, ../sass/screen.scss */
+.ui-tabs .ui-tabs-nav li a {
+  line-height: 35px;
+  float: none;
+  display: block;
+  outline: none;
+}
+/* line 437, ../sass/screen.scss */
+.ui-tabs .ui-tabs-panel, .ui-tabs .ui-tabs-nav li a, .ui-tabs .ui-tabs-nav {
+  padding: 0;
+}
+
+/* line 442, ../sass/screen.scss */
+.ui-widget-header {
+  border: none;
+}
+
+/* line 449, ../sass/screen.scss */
+.ui-state-active a, .ui-widget-content .ui-state-active a, .ui-widget-header .ui-state-active a,
+.ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited,
+.ui-tabs .ui-tabs-nav li, .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default,
+.ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited {
+  color: white;
+}
+
+/* line 453, ../sass/screen.scss */
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  background: #0083c4;
+  border: none;
+  width: 164px;
+  text-align: center;
+  font-size: 15px;
+}
+
+/* line 461, ../sass/screen.scss */
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+  background: #0e265e;
+  border: none;
+}
+
+/* active indicator arrow */
+/* line 468, ../sass/screen.scss */
+.arrow-up {
+  width: 0;
+  height: 0;
+  margin: 0 auto;
+  position: relative;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 12px solid #0e265e;
+  margin-top: -12px;
+  display: none;
+}
+
+/* line 473, ../sass/screen.scss */
+.arrow-down {
+  width: 0;
+  height: 0;
+  margin: 0 auto;
+  position: relative;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid #0e265e;
+  margin-bottom: -12px;
+  display: none;
+}
+
+/* line 479, ../sass/screen.scss */
+.ui-state-active .arrow-up,
+.ui-state-active .arrow-down {
+  display: block;
+}
+
+/* big tabs */
+/* line 485, ../sass/screen.scss */
+.big_tabs {
+  font-size: 15px;
+}
+/* line 488, ../sass/screen.scss */
+.big_tabs .ui-tabs-nav {
+  width: 992px;
+  margin: 0 auto;
+  margin-bottom: 60px;
+}
+/* line 493, ../sass/screen.scss */
+.big_tabs .ui-state-default, .big_tabs .ui-widget-content .ui-state-default, .big_tabs .ui-widget-header .ui-state-default {
+  width: 49.5%;
+  margin: 0;
+  background: #e7e8e8;
+}
+/* line 499, ../sass/screen.scss */
+.big_tabs .ui-state-active, .big_tabs .ui-widget-content .ui-state-active, .big_tabs .ui-widget-header .ui-state-active {
+  background: #0e265e;
+}
+
+/* Header */
+/* line 506, ../sass/screen.scss */
+.site_header {
+  position: relative;
+  width: 100%;
+  height: 110px;
+  overflow: hidden;
+  z-index: 15;
+  font-family: "AvenirNextLTW01-Medium";
+  -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+/* line 515, ../sass/screen.scss */
+.site_header .logo {
+  clear: both;
+  float: left;
+}
+/* line 520, ../sass/screen.scss */
+.site_header .specialized-services {
+  background: #e7e8e8;
+  overflow: hidden;
+}
+/* line 524, ../sass/screen.scss */
+.site_header .specialized-services .nav {
+  float: right;
+  font-family: "AvenirNextLTW01-Regular";
+  font-size: 12px;
+  line-height: 20px;
+}
+/* line 530, ../sass/screen.scss */
+.site_header .specialized-services .nav li:first-child {
+  background: #1e2f59;
+}
+/* line 534, ../sass/screen.scss */
+.site_header .specialized-services .nav li:last-child {
+  background: #0083c4;
+}
+/* line 538, ../sass/screen.scss */
+.site_header .specialized-services .nav a {
+  color: white;
+}
+/* line 544, ../sass/screen.scss */
+.site_header .site_nav {
+  text-transform: uppercase;
+  float: right;
+}
+/* line 548, ../sass/screen.scss */
+.site_header .site_nav .nav {
+  float: left;
+  line-height: 90px;
+}
+/* line 552, ../sass/screen.scss */
+.site_header .site_nav .nav li {
+  font-family: "Avenir Next LT W01 Bold";
+}
+/* line 557, ../sass/screen.scss */
+.site_header .site_nav .contact {
+  float: left;
+  width: 250px;
+  height: 90px;
+  padding-top: 30px;
+}
+
+/* Sections */
+/* line 567, ../sass/screen.scss */
+.section {
+  clear: both;
+  margin-bottom: 2em;
+  overflow: hidden;
+  /* section types */
+  /* section variants that can be added to each of the above types */
+}
+/* line 572, ../sass/screen.scss */
+.section > .inner {
+  padding-top: 2em;
+}
+/* line 578, ../sass/screen.scss */
+.section.hero {
+  position: relative;
+  height: 500px;
+  background: url("../img/thedot.png");
+}
+/* line 583, ../sass/screen.scss */
+.section.hero .blue {
+  height: 35px;
+  width: 100%;
+  background: #0083c4;
+  background: rgba(68, 131, 191, 0.75);
+  position: absolute;
+  bottom: 0;
+  z-index: 11;
+}
+/* line 593, ../sass/screen.scss */
+.section.hero .inner {
+  height: 500px;
+  padding: 0;
+}
+/* line 598, ../sass/screen.scss */
+.section.hero h2 {
+  animation-duration: "2s";
+  animation-delay: "2s";
+  animation-iteration-count: "infinity";
+  -moz-animation-duration: "2s";
+  -moz-animation-delay: "2s";
+  -moz-animation-iteration-count: "infinity";
+  -webkit-animation-duration: "2s";
+  -webkit-animation-delay: "2s";
+  -webkit-animation-iteration-count: "infinity";
+  -ms-animation-duration: "2s";
+  -ms-animation-delay: "2s";
+  -ms-animation-iteration-count: "infinity";
+  -o-animation-duration: "2s";
+  -o-animation-delay: "2s";
+  -o-animation-iteration-count: "infinity";
+  font-weight: bold;
+  font-size: 3.5em;
+  line-height: 1.1em;
+  color: #0e265e;
+}
+/* line 606, ../sass/screen.scss */
+.section.hero h3 {
+  font-size: 1.75em;
+  font-family: "Charter ITC W01 Italic";
+  line-height: 1.2em;
+  color: #0083c4;
+  text-transform: none;
+}
+/* line 614, ../sass/screen.scss */
+.section.hero h2, .section.hero h3 {
+  margin-top: 0;
+  margin-bottom: 22.5px;
+}
+/* line 619, ../sass/screen.scss */
+.section.hero h3 + h2 {
+  padding-top: 0;
+}
+/* line 623, ../sass/screen.scss */
+.section.hero .content {
+  position: relative;
+  padding: 0 33% 0 0;
+}
+/* line 627, ../sass/screen.scss */
+.section.hero .content > :first-child {
+  padding-top: 35px;
+}
+/* line 631, ../sass/screen.scss */
+.section.hero .content .box {
+  background: rgba(68, 131, 191, 0.75);
+  border: none;
+  padding: 15px;
+  /* a box next to a box will have a different background color, but never more than two boxes */
+}
+/* line 636, ../sass/screen.scss */
+.section.hero .content .box h2, .section.hero .content .box h3, .section.hero .content .box p, .section.hero .content .box a {
+  color: white;
+}
+/* line 640, ../sass/screen.scss */
+.section.hero .content .box h3 {
+  font-family: "AvenirNextLTW01-Medium";
+  font-size: 1.35em;
+}
+/* line 645, ../sass/screen.scss */
+.section.hero .content .box a {
+  color: #0e265e;
+  font-family: "Avenir Next LT W01 Bold";
+}
+/* line 649, ../sass/screen.scss */
+.section.hero .content .box a:after {
+  content: " \00BB";
+}
+/* line 655, ../sass/screen.scss */
+.section.hero .content .box + .box {
+  /* fallback color for browsers lacking rgba support */
+  background: #53AFCB;
+  background: rgba(83, 175, 203, 0.85);
+}
+/* line 663, ../sass/screen.scss */
+.section.hero .image {
+  text-align: center;
+}
+/* line 666, ../sass/screen.scss */
+.section.hero .image img {
+  margin: 0 0 0 -471px;
+  padding: 0;
+}
+/* line 672, ../sass/screen.scss */
+.section.hero .slider {
+  height: 500px;
+}
+/* line 675, ../sass/screen.scss */
+.section.hero .slider + .content {
+  margin-top: -500px;
+  z-index: 12;
+}
+/* line 681, ../sass/screen.scss */
+.section.hero .tabs {
+  font-size: 15px;
+}
+/* line 686, ../sass/screen.scss */
+.section.hero .tabs .tab .image {
+  height: 500px;
+}
+/* line 690, ../sass/screen.scss */
+.section.hero .tabs .tab .content {
+  height: 500px;
+  margin-top: -500px;
+}
+/* line 700, ../sass/screen.scss */
+.section.two_column_50_50_section .block {
+  width: 49.5%;
+}
+/* line 708, ../sass/screen.scss */
+.section.three_column_section .block {
+  width: 33%;
+}
+/* line 715, ../sass/screen.scss */
+.section.two_column_67_33_section .inner > .block:first-child {
+  width: 66%;
+}
+/* line 719, ../sass/screen.scss */
+.section.two_column_67_33_section .inner > .block:last-child {
+  width: 33%;
+}
+/* line 724, ../sass/screen.scss */
+.section.centered_fullwidth_section {
+  text-align: center;
+}
+/* line 730, ../sass/screen.scss */
+.section.four_column_section .block {
+  width: 24.75%;
+}
+/* line 737, ../sass/screen.scss */
+.section.footer_testimonial .inner {
+  position: relative;
+  overflow: visible;
+  height: auto;
+}
+/* line 742, ../sass/screen.scss */
+.section.footer_testimonial .inner > img {
+  position: absolute;
+  bottom: 0;
+  left: -16.5%;
+  z-index: 12;
+}
+/* line 749, ../sass/screen.scss */
+.section.footer_testimonial .inner .block {
+  width: 66%;
+  position: relative;
+  float: none;
+  left: 33%;
+}
+/* line 755, ../sass/screen.scss */
+.section.footer_testimonial .inner .block > * {
+  padding: 0;
+}
+/* line 759, ../sass/screen.scss */
+.section.footer_testimonial .inner .block blockquote {
+  color: #0083c4;
+  font-size: 1.75em;
+  font-family: "Charter ITC W01 Italic";
+  line-height: 1.6em;
+  max-width: 80%;
+  margin: 0 auto 1em auto;
+  margin: 0 0 1em 0;
+}
+/* line 764, ../sass/screen.scss */
+.section.footer_testimonial .inner .block .attribution {
+  color: #5a5d5d;
+}
+/* line 767, ../sass/screen.scss */
+.section.footer_testimonial .inner .block .attribution strong {
+  font-family: "Avenir Next LT W01 Bold";
+}
+/* line 773, ../sass/screen.scss */
+.section.footer_testimonial .inner .block blockquote, .section.footer_testimonial .inner .block .attribution {
+  text-align: left;
+}
+/* line 777, ../sass/screen.scss */
+.section.footer_testimonial .inner .block form {
+  overflow: hidden;
+}
+/* line 780, ../sass/screen.scss */
+.section.footer_testimonial .inner .block form > div {
+  width: 49.5%;
+  float: left;
+}
+/* line 784, ../sass/screen.scss */
+.section.footer_testimonial .inner .block form > div input[type="text"], .section.footer_testimonial .inner .block form > div input[type="email"] {
+  width: 90%;
+  padding-right: 5%;
+}
+/* line 798, ../sass/screen.scss */
+.section.with_borders .inner > .block {
+  border-right: 1px solid #e9ebeb;
+  padding-top: 2em;
+}
+/* line 803, ../sass/screen.scss */
+.section.with_borders .inner > .block:last-child {
+  border-right: none;
+}
+/* line 810, ../sass/screen.scss */
+.section.centered .inner > .block {
+  text-align: center;
+}
+/* line 815, ../sass/screen.scss */
+.section.grey_background {
+  background: #f5f3f5;
+  padding-bottom: 2em;
+}
+/* line 819, ../sass/screen.scss */
+.section.grey_background h2, .section.grey_background h2 a {
+  font-size: 1.4em;
+  font-family: "Avenir Next LT W01 Bold";
+  line-height: 1.5em;
+  color: #0e265e;
+}
+/* line 827, ../sass/screen.scss */
+.section.logo_background {
+  background: url("../img/block-img.png") no-repeat right;
+}
+/* line 830, ../sass/screen.scss */
+.section.logo_background blockquote {
+  color: #0083c4;
+  font-size: 1.75em;
+  font-family: "Charter ITC W01 Italic";
+  line-height: 1.6em;
+  max-width: 80%;
+  margin: 0 auto 1em auto;
+}
+/* line 833, ../sass/screen.scss */
+.section.logo_background .attribution {
+  color: #5a5d5d;
+  text-align: center;
+}
+/* line 837, ../sass/screen.scss */
+.section.logo_background .attribution strong {
+  font-family: "Avenir Next LT W01 Bold";
+}
+/* line 843, ../sass/screen.scss */
+.section.crosshatch_background {
+  background: url("../img/block-img.png");
+}
+
+/* Footer */
+/* line 849, ../sass/screen.scss */
+.site_footer {
+  background: #1e2f59;
+  color: white;
+  padding-top: 3em;
+  font-size: 0.85em;
+}
+/* line 855, ../sass/screen.scss */
+.site_footer .resources {
+  width: 790px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+/* line 861, ../sass/screen.scss */
+.site_footer .block {
+  float: left;
+  width: 33%;
+  margin-bottom: 2em;
+  text-align: left;
+}
+/* line 867, ../sass/screen.scss */
+.site_footer .block > * {
+  padding: 0;
+}
+/* line 871, ../sass/screen.scss */
+.site_footer .block h3 {
+  font-family: "AvenirNextLTW01-Medium";
+  color: #0083c4;
+  text-transform: uppercase;
+}
+/* line 877, ../sass/screen.scss */
+.site_footer .block a {
+  color: white;
+}
+/* line 881, ../sass/screen.scss */
+.site_footer .block li {
+  line-height: 1.5em;
+}
+/* line 886, ../sass/screen.scss */
+.site_footer hr {
+  border-top: solid 2px #162A49;
+}
+/* line 890, ../sass/screen.scss */
+.site_footer h4 {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 2em;
+  color: white;
+  font-size: 18px;
+}
+/* line 898, ../sass/screen.scss */
+.site_footer .logos {
+  margin-bottom: 2em;
+  padding: 18px 0 18px 18px;
+}
+/* line 905, ../sass/screen.scss */
+.site_footer .logos * {
+  margin: 0 18px 0 0;
+}
+/* line 910, ../sass/screen.scss */
+.site_footer input[type="submit"] {
+  border-radius: 0;
+  padding: 0 10px;
+  margin: 0 0 0 -5px;
+  line-height: 1em;
+  height: 30px;
+  text-transform: uppercase;
+}
+/* line 919, ../sass/screen.scss */
+.site_footer .footer_info {
+  padding: 0 0 1em 0;
+  overflow: hidden;
+  font-family: "AvenirNextLTW01-Medium";
+  font-size: 0.75em;
+}
+/* line 925, ../sass/screen.scss */
+.site_footer .footer_info .copyright, .site_footer .footer_info .footer_nav {
+  width: 50%;
+  float: left;
+}
+/* line 932, ../sass/screen.scss */
+.site_footer .footer_info .footer_nav .nav {
+  text-align: right;
+}
+/* line 935, ../sass/screen.scss */
+.site_footer .footer_info .footer_nav .nav li {
+  display: inline-block;
+  float: none;
+  padding: 0;
+}
+/* line 940, ../sass/screen.scss */
+.site_footer .footer_info .footer_nav .nav li a {
+  padding: 0 5px;
+  color: white;
+  border-right: solid 1px white;
+}
+/* line 946, ../sass/screen.scss */
+.site_footer .footer_info .footer_nav .nav li:last-child a {
+  padding-right: 0;
+  border-right: none;
+}
+
+/* line 956, ../sass/screen.scss */
+::selection, ::-moz-selection {
+  background: #0483b6;
+  color: white;
+}
+
+/* line 960, ../sass/screen.scss */
+img::selection, img::-moz-selection {
+  background: transparent;
+}
+
+/* line 961, ../sass/screen.scss */
+body {
+  -webkit-tap-highlight-color: #0483b6;
+}

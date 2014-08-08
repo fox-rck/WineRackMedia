@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <template>ULTokens.txt</template>
+  <stylesheets>
+    <stylesheet>SMaKK_LeftMenu.css</stylesheet>
+  </stylesheets>
+</manifest>

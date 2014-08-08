@@ -1,0 +1,35 @@
+﻿<LicenceKey version="1.4">
+    <licenceType>Five</licenceType>
+    <product versionMajor="2" versionMinor="0">iFinity.UrlMaster</product>
+    <customerInfo>
+        <customerName>Scott Monaghan</customerName>
+        <customerEmail>scott@smkkstudios.com</customerEmail>
+    </customerInfo>
+    <expiryDate>9999-12-31</expiryDate>
+    <hostGuid>
+    </hostGuid>
+    <registeredDomains>
+        <siteDomains>
+            <mainDomain domainName="localdev.edoxusa.com" domainType="Test">
+                <subDomain subDomainName="www" />
+            </mainDomain>
+        </siteDomains>
+        <siteDomains>
+            <mainDomain domainName="inblackandwhitereporting.com" domainType="Full">
+                <subDomain subDomainName="www" />
+            </mainDomain>
+        </siteDomains>
+        <siteDomains>
+            <mainDomain domainName="edoxusa.com" domainType="Full">
+                <subDomain subDomainName="www" />
+            </mainDomain>
+        </siteDomains>
+        <siteDomains>
+            <mainDomain domainName="blog.waggo.com" domainType="Full">
+                <subDomain subDomainName="www" />
+            </mainDomain>
+        </siteDomains>
+    </registeredDomains>
+    <key>KeCHCkewsr5rmWoQILKS37UEXHk0TGjWGdtXLsjhwIrCVMSojqe3xGwnKJiwiv8gDKbEi4/Vf+X3v0HsJip91A==</key>
+    <key2>aSM1BQ0gh/GCytHzlmBme1/6cVQSo0/Ea2FHguwltQaZEb7e+CkyDLN0YsqhLAfWiH42kmGzDQ/FIy4QQw9uHg==</key2>
+</LicenceKey>

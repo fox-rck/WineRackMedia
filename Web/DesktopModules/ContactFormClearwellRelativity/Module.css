@@ -1,0 +1,26 @@
+﻿.contact-form{width:350px;}
+.contact-form input,.contact-form textarea, .thebox{width:340px;padding:5px;border:1px solid #ccc;display:block;color:#000;margin-bottom:5px;height:20px;font-family:AvenirNextLTW01-Regular;font-size:15px;}
+.contact-form select 
+{
+    border:1px solid #ccc;
+    display:block;
+    color:#000;
+    margin-bottom:5px;
+    font-family:AvenirNextLTW01-Regular;
+    font-size:15px;
+    padding:5px;
+    width:352px;
+}
+.contact-form select option 
+{
+    height:20px;
+}
+
+.contact-form textarea{height:150px; scroll:none; re-size:none;}
+
+.contact-form .lightText{color:#ccc;}
+
+.contact-form >div.right{width:290px; padding-left:23px;}
+.contact-form .clear{float:none;}
+.contact-form p{line-height:16px;margin:0;}
+.label span{float:right; position:relative; left:12px;}

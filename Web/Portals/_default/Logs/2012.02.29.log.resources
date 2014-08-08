@@ -1,0 +1,183 @@
+2012-02-29 11:31:52,144 [SMKKStudios-PC][Thread:7][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'IIS APPPOOL\sprout'.
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'IIS APPPOOL\sprout'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-29 11:31:52,334 [SMKKStudios-PC][Thread:7][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'IIS APPPOOL\sprout'.
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'IIS APPPOOL\sprout'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.DiscoverSpParameterSet(SqlConnection connection, String spName, Boolean includeReturnValueParameter, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSetInternal(SqlConnection connection, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddHostSetting(String SettingName, String SettingValue, Boolean SettingIsSecure, Int32 CreatedByUserID)
+   at DotNetNuke.Entities.Controllers.HostController.Update(ConfigurationSetting config, Boolean clearCache)
+2012-02-29 11:31:52,364 [SMKKStudios-PC][Thread:7][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'IIS APPPOOL\sprout'.
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'IIS APPPOOL\sprout'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-29 11:31:52,374 [SMKKStudios-PC][Thread:7][ERROR] iFinity.DNN.Modules.UrlMaster.UrlRewriteModule - Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'IIS APPPOOL\sprout'.
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'IIS APPPOOL\sprout'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetPortals()
+   at DotNetNuke.Entities.Portals.PortalController.GetPortals()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.ParseChosenPortalAliases()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.InitSettings(String name, String type, Boolean isCurrentProvider, NameValueCollection attributes)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings..ctor(Provider provider, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettingsCol..ctor(Provider provider, XmlNodeList providerPortals, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlProviderSettings(String providerName, Boolean urlMasterSettingsOnly, FriendlyUrlSettingsCol& settingsCol)
+   at iFinity.DNN.Modules.UrlMaster.UrlRewriteModule.OnBeginRequest(Object sender, EventArgs e)
+2012-02-29 11:34:02,655 [SMKKStudios-PC][Thread:5][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'IIS APPPOOL\sprout'.
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'IIS APPPOOL\sprout'.
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, Boolean redirectedUserInstance, SqlConnection owningObject, SqlConnectionString connectionOptions, TimeoutTimer timeout)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(SqlConnection owningObject, TimeoutTimer timeout, SqlConnectionString connectionOptions, String newPassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, Object providerInfo, String newPassword, SqlConnection owningObject, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.DiscoverSpParameterSet(SqlConnection connection, String spName, Boolean includeReturnValueParameter, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSetInternal(SqlConnection connection, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddHostSetting(String SettingName, String SettingValue, Boolean SettingIsSecure, Int32 CreatedByUserID)
+   at DotNetNuke.Entities.Controllers.HostController.Update(ConfigurationSetting config, Boolean clearCache)
+2012-02-29 11:34:02,655 [SMKKStudios-PC][Thread:5][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'IIS APPPOOL\sprout'.
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'IIS APPPOOL\sprout'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-29 11:34:02,665 [SMKKStudios-PC][Thread:5][ERROR] iFinity.DNN.Modules.UrlMaster.UrlRewriteModule - Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'IIS APPPOOL\sprout'.
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'IIS APPPOOL\sprout'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetPortals()
+   at DotNetNuke.Entities.Portals.PortalController.GetPortals()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.ParseChosenPortalAliases()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.InitSettings(String name, String type, Boolean isCurrentProvider, NameValueCollection attributes)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings..ctor(Provider provider, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettingsCol..ctor(Provider provider, XmlNodeList providerPortals, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlProviderSettings(String providerName, Boolean urlMasterSettingsOnly, FriendlyUrlSettingsCol& settingsCol)
+   at iFinity.DNN.Modules.UrlMaster.UrlRewriteModule.OnBeginRequest(Object sender, EventArgs e)
+2012-02-29 11:34:22,245 [SMKKStudios-PC][Thread:7][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'IIS APPPOOL\sprout'.
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'IIS APPPOOL\sprout'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-29 11:34:22,335 [SMKKStudios-PC][Thread:7][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'IIS APPPOOL\sprout'.
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'IIS APPPOOL\sprout'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.DiscoverSpParameterSet(SqlConnection connection, String spName, Boolean includeReturnValueParameter, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSetInternal(SqlConnection connection, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddHostSetting(String SettingName, String SettingValue, Boolean SettingIsSecure, Int32 CreatedByUserID)
+   at DotNetNuke.Entities.Controllers.HostController.Update(ConfigurationSetting config, Boolean clearCache)
+2012-02-29 11:34:22,355 [SMKKStudios-PC][Thread:7][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'IIS APPPOOL\sprout'.
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'IIS APPPOOL\sprout'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-29 11:34:22,365 [SMKKStudios-PC][Thread:7][ERROR] iFinity.DNN.Modules.UrlMaster.UrlRewriteModule - Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'IIS APPPOOL\sprout'.
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'IIS APPPOOL\sprout'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetPortals()
+   at DotNetNuke.Entities.Portals.PortalController.GetPortals()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.ParseChosenPortalAliases()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.InitSettings(String name, String type, Boolean isCurrentProvider, NameValueCollection attributes)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings..ctor(Provider provider, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettingsCol..ctor(Provider provider, XmlNodeList providerPortals, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlProviderSettings(String providerName, Boolean urlMasterSettingsOnly, FriendlyUrlSettingsCol& settingsCol)
+   at iFinity.DNN.Modules.UrlMaster.UrlRewriteModule.OnBeginRequest(Object sender, EventArgs e)
+2012-02-29 11:36:04,272 [SMKKStudios-PC][Thread:11][ERROR] DotNetNuke.Entities.Controllers.HostController - Violation of PRIMARY KEY constraint 'PK_HostSettings'. Cannot insert duplicate key in object 'dbo.HostSettings'. The duplicate key value is (ifty_InstanceGuid).
+The statement has been terminated.
+System.Data.SqlClient.SqlException (0x80131904): Violation of PRIMARY KEY constraint 'PK_HostSettings'. Cannot insert duplicate key in object 'dbo.HostSettings'. The duplicate key value is (ifty_InstanceGuid).
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddHostSetting(String SettingName, String SettingValue, Boolean SettingIsSecure, Int32 CreatedByUserID)
+   at DotNetNuke.Entities.Controllers.HostController.Update(ConfigurationSetting config, Boolean clearCache)

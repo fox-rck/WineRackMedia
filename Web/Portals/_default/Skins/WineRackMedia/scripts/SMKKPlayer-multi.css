@@ -1,0 +1,58 @@
+﻿/*-------------Modal Window----------------------------*/
+#closeButton
+{
+	width:inherit;
+	text-align:right;
+}
+
+#closeButton a
+{
+	color:#ffffff;
+	font-family: "ronnia-condensed-1","ronnia-condensed-2",arial,helvetica,Sans-Serif;
+	text-transform:uppercase;
+}
+
+div.iframe-wrapper {background:#000; width:640px; height:390px;}
+
+#dialog
+{
+	position:fixed;
+	_position:absolute;
+}
+
+#mask {  
+  position:absolute;  
+  z-index:9000;  
+  background:rgba(0,0,0,.7);
+  display:none;  
+  top:0;
+  left:0;
+}  
+	.no-opacity #mask {background:#000; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=70);}
+    
+#dialog.windowClosed {  
+  position:fixed;
+  _position:absolute;  
+  width:640px;  
+  height:0px;  
+  display:none;  
+  z-index:9999;  
+  padding:0px;  
+}  
+  
+  
+/* Customize your modal window here, you can add background image too */  
+.windowOpen   
+{
+ position:fixed;
+ _position:absolute; 
+  width:640px;   
+  height:385px;  
+  z-index:9999;  
+  padding:0px;
+}  
+
+
+
+/*-------------End Modal Window----------------------------*/

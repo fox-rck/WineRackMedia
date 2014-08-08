@@ -1,0 +1,36 @@
+﻿    /*nav*/
+    #smakk-content {background:url(images/SMakk_Left_Menu_Background.png) repeat-y scroll left top;} 
+    .smakk-leftMenu{width:265px; float:left; }
+   #dnnMenuLeft ul {list-style:none; margin:0; width:250px;padding:0; font-family:museo, Sans-Serif;}
+   #dnnMenuLeft ul.topLevel > li { position:relative;padding:3px 4px;width:251px; border-bottom:1px solid #e4e3e3; border-top:1px solid #fff; }
+  #dnnMenuLeft ul.topLevel > li.first {border-top:none;}
+    #dnnMenuLeft ul.topLevel > li.last{border-bottom:none;}
+  
+   #dnnMenuLeft ul.topLevel li.selected > a{color:#155924;}
+  
+   #dnnMenuLeft ul li  {list-style:none; list-style-type:none;}
+   
+    #dnnMenuLeft ul li.haschild span{float:right;}
+  
+   #dnnMenuLeft .subLevel,#dnnMenuLeft .subLevelRight {display:none;}
+  
+   #dnnMenuLeft ul.topLevel > li > a {display:block; padding:13px 8px;   font-weight:300;  color:#000; font-size:18px;}
+  
+   #dnnMenuLeft ul.topLevel > li > a:hover {color:#155924; text-decoration:none; background:url(images/SMakk_Left_Menu_Back_hover.png) repeat;}
+   
+   #dnnMenuLeft ul.topLevel > li.last > a {padding-right:11px; border:none;}
+   
+   #dnnMenuLeft .subLevelRight {width:227px; position:absolute; left:260px; top:0px;z-index:2000;}
+   #dnnMenuLeft .subLevelRight .subLevelRightTop {height:6px; background:url(images/SMakk_Left_subLevelRight-top.png) no-repeat left top;}
+   #dnnMenuLeft .subLevelRight .subLevelRightContent {padding-left:1px;background:url(images/SMakk_Left_Sub_Menu_Background.png) repeat-y left top; width:227px;}
+   #dnnMenuLeft .subLevelRight .subLevelRightContent >li {padding:4px 4px; border-bottom:1px solid #e4e3e3; border-top:1px solid #fff; width:211px;}
+   #dnnMenuLeft .subLevelRight .subLevelRightContent >li.first {border-top:none;}
+   #dnnMenuLeft .subLevelRight .subLevelRightContent >li.last {border-bottom:none;}
+   #dnnMenuLeft .subLevelRight .subLevelRightContent >li >a{display:block; white-space:nowrap; padding:12px 8px;  font-weight:300;  color:#000; font-size:16px;}
+   #dnnMenuLeft .subLevelRight .subLevelRightContent >li >a:hover {background:url(images/SMakk_Left_Sub_Menu_Back_hover.png) repeat; color:#155924; text-decoration:none;}
+   #dnnMenuLeft .subLevelRight .subLevelRightBottom {height:7px; background:url(images/SMakk_Left_subLevelRight-bottom.png) no-repeat left top;}
+
+  /*.SMaKK-ContentPaneRight{float:left; width:575px;margin-left:60px;}*/
+
+ #dnnMenuLeft #skp_Logo{background:url(images/SKP_logo.png) no-repeat 67px 50px; height:435px; width:262px;}
+ 

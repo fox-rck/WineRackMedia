@@ -1,0 +1,643 @@
+2012-02-25 14:22:59,204 [SMKKStudios-PC][Thread:5][FATAL] DotNetNuke.Common.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Common.Globals.get_Status()
+   at DotNetNuke.Common.Initialize.CheckVersion(HttpApplication app)
+   at DotNetNuke.Common.Initialize.InitializeApp(HttpApplication app)
+   at DotNetNuke.Common.Initialize.Init(HttpApplication app)
+   at DotNetNuke.Common.DotNetNukeHttpApplication.Application_BeginRequest(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2012-02-25 14:23:19,324 [SMKKStudios-PC][Thread:8][ERROR] DotNetNuke.Common.Initialize - Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Common.Globals.get_Status()
+   at DotNetNuke.Services.Log.EventLog.LogController.AddLog(LogInfo logInfo)
+   at DotNetNuke.Common.Initialize.LogEnd()
+2012-02-25 14:23:19,355 [SMKKStudios-PC][Thread:8][ERROR] DotNetNuke.Services.Exceptions.BasePortalException - Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Services.Exceptions.BasePortalException.InitializePrivateVariables()
+2012-02-25 14:23:27,506 [SMKKStudios-PC][Thread:5][FATAL] DotNetNuke.Common.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Common.Globals.get_Status()
+   at DotNetNuke.Common.Initialize.CheckVersion(HttpApplication app)
+   at DotNetNuke.Common.Initialize.InitializeApp(HttpApplication app)
+   at DotNetNuke.Common.Initialize.Init(HttpApplication app)
+   at DotNetNuke.Common.DotNetNukeHttpApplication.Application_BeginRequest(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2012-02-25 14:23:49,587 [SMKKStudios-PC][Thread:7][ERROR] DotNetNuke.Common.Initialize - Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Common.Globals.get_Status()
+   at DotNetNuke.Services.Log.EventLog.LogController.AddLog(LogInfo logInfo)
+   at DotNetNuke.Common.Initialize.LogEnd()
+2012-02-25 14:23:56,933 [SMKKStudios-PC][Thread:6][ERROR] DotNetNuke.Entities.Controllers.HostController - Login failed for user 'sproutskincare'.
+System.Data.SqlClient.SqlException: Login failed for user 'sproutskincare'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-25 14:23:57,031 [SMKKStudios-PC][Thread:6][ERROR] DotNetNuke.Entities.Controllers.HostController - Login failed for user 'sproutskincare'.
+System.Data.SqlClient.SqlException: Login failed for user 'sproutskincare'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.DiscoverSpParameterSet(SqlConnection connection, String spName, Boolean includeReturnValueParameter, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSetInternal(SqlConnection connection, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddHostSetting(String SettingName, String SettingValue, Boolean SettingIsSecure, Int32 CreatedByUserID)
+   at DotNetNuke.Entities.Controllers.HostController.Update(ConfigurationSetting config, Boolean clearCache)
+2012-02-25 14:23:57,049 [SMKKStudios-PC][Thread:6][ERROR] DotNetNuke.Entities.Controllers.HostController - Login failed for user 'sproutskincare'.
+System.Data.SqlClient.SqlException: Login failed for user 'sproutskincare'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-25 14:23:57,058 [SMKKStudios-PC][Thread:6][ERROR] iFinity.DNN.Modules.UrlMaster.UrlRewriteModule - Login failed for user 'sproutskincare'.
+System.Data.SqlClient.SqlException: Login failed for user 'sproutskincare'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetPortals()
+   at DotNetNuke.Entities.Portals.PortalController.GetPortals()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.ParseChosenPortalAliases()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.InitSettings(String name, String type, Boolean isCurrentProvider, NameValueCollection attributes)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings..ctor(Provider provider, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettingsCol..ctor(Provider provider, XmlNodeList providerPortals, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlProviderSettings(String providerName, Boolean urlMasterSettingsOnly, FriendlyUrlSettingsCol& settingsCol)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlSettingsCol()
+   at iFinity.DNN.Modules.UrlMaster.UrlRewriteModule.OnBeginRequest(Object sender, EventArgs e)
+2012-02-25 14:24:48,270 [SMKKStudios-PC][Thread:8][ERROR] DotNetNuke.Entities.Controllers.HostController - Login failed for user 'sproutskincare'.
+System.Data.SqlClient.SqlException: Login failed for user 'sproutskincare'.
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnection owningObject)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(String host, String newPassword, Boolean redirectedUserInstance, SqlConnection owningObject, SqlConnectionString connectionOptions, Int64 timerStart)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(SqlConnection owningObject, SqlConnectionString connectionOptions, String newPassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, Object providerInfo, String newPassword, SqlConnection owningObject, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.DiscoverSpParameterSet(SqlConnection connection, String spName, Boolean includeReturnValueParameter, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSetInternal(SqlConnection connection, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddHostSetting(String SettingName, String SettingValue, Boolean SettingIsSecure, Int32 CreatedByUserID)
+   at DotNetNuke.Entities.Controllers.HostController.Update(ConfigurationSetting config, Boolean clearCache)
+2012-02-25 14:24:48,273 [SMKKStudios-PC][Thread:8][ERROR] DotNetNuke.Entities.Controllers.HostController - Login failed for user 'sproutskincare'.
+System.Data.SqlClient.SqlException: Login failed for user 'sproutskincare'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-25 14:24:48,275 [SMKKStudios-PC][Thread:8][ERROR] iFinity.DNN.Modules.UrlMaster.UrlRewriteModule - Login failed for user 'sproutskincare'.
+System.Data.SqlClient.SqlException: Login failed for user 'sproutskincare'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetPortals()
+   at DotNetNuke.Entities.Portals.PortalController.GetPortals()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.ParseChosenPortalAliases()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.InitSettings(String name, String type, Boolean isCurrentProvider, NameValueCollection attributes)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings..ctor(Provider provider, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettingsCol..ctor(Provider provider, XmlNodeList providerPortals, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlProviderSettings(String providerName, Boolean urlMasterSettingsOnly, FriendlyUrlSettingsCol& settingsCol)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlSettingsCol()
+   at iFinity.DNN.Modules.UrlMaster.UrlRewriteModule.OnBeginRequest(Object sender, EventArgs e)
+2012-02-25 14:24:48,330 [SMKKStudios-PC][Thread:6][ERROR] DotNetNuke.Entities.Controllers.HostController - Login failed for user 'sproutskincare'.
+System.Data.SqlClient.SqlException: Login failed for user 'sproutskincare'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.DiscoverSpParameterSet(SqlConnection connection, String spName, Boolean includeReturnValueParameter, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSetInternal(SqlConnection connection, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddHostSetting(String SettingName, String SettingValue, Boolean SettingIsSecure, Int32 CreatedByUserID)
+   at DotNetNuke.Entities.Controllers.HostController.Update(ConfigurationSetting config, Boolean clearCache)
+2012-02-25 14:24:48,332 [SMKKStudios-PC][Thread:6][ERROR] DotNetNuke.Entities.Controllers.HostController - Login failed for user 'sproutskincare'.
+System.Data.SqlClient.SqlException: Login failed for user 'sproutskincare'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-25 14:24:48,333 [SMKKStudios-PC][Thread:6][ERROR] iFinity.DNN.Modules.UrlMaster.UrlRewriteModule - Login failed for user 'sproutskincare'.
+System.Data.SqlClient.SqlException: Login failed for user 'sproutskincare'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetPortals()
+   at DotNetNuke.Entities.Portals.PortalController.GetPortals()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.ParseChosenPortalAliases()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.InitSettings(String name, String type, Boolean isCurrentProvider, NameValueCollection attributes)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings..ctor(Provider provider, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettingsCol..ctor(Provider provider, XmlNodeList providerPortals, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlProviderSettings(String providerName, Boolean urlMasterSettingsOnly, FriendlyUrlSettingsCol& settingsCol)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlSettingsCol()
+   at iFinity.DNN.Modules.UrlMaster.UrlRewriteModule.OnBeginRequest(Object sender, EventArgs e)
+2012-02-25 14:24:48,338 [SMKKStudios-PC][Thread:7][ERROR] DotNetNuke.Entities.Controllers.HostController - Login failed for user 'sproutskincare'.
+System.Data.SqlClient.SqlException: Login failed for user 'sproutskincare'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.DiscoverSpParameterSet(SqlConnection connection, String spName, Boolean includeReturnValueParameter, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSetInternal(SqlConnection connection, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddHostSetting(String SettingName, String SettingValue, Boolean SettingIsSecure, Int32 CreatedByUserID)
+   at DotNetNuke.Entities.Controllers.HostController.Update(ConfigurationSetting config, Boolean clearCache)
+2012-02-25 14:24:48,339 [SMKKStudios-PC][Thread:7][ERROR] DotNetNuke.Entities.Controllers.HostController - Login failed for user 'sproutskincare'.
+System.Data.SqlClient.SqlException: Login failed for user 'sproutskincare'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-25 14:24:48,340 [SMKKStudios-PC][Thread:7][ERROR] iFinity.DNN.Modules.UrlMaster.UrlRewriteModule - Login failed for user 'sproutskincare'.
+System.Data.SqlClient.SqlException: Login failed for user 'sproutskincare'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetPortals()
+   at DotNetNuke.Entities.Portals.PortalController.GetPortals()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.ParseChosenPortalAliases()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.InitSettings(String name, String type, Boolean isCurrentProvider, NameValueCollection attributes)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings..ctor(Provider provider, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettingsCol..ctor(Provider provider, XmlNodeList providerPortals, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlProviderSettings(String providerName, Boolean urlMasterSettingsOnly, FriendlyUrlSettingsCol& settingsCol)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlSettingsCol()
+   at iFinity.DNN.Modules.UrlMaster.UrlRewriteModule.OnBeginRequest(Object sender, EventArgs e)
+2012-02-25 14:24:53,498 [SMKKStudios-PC][Thread:8][ERROR] DotNetNuke.Entities.Controllers.HostController - Login failed for user 'sproutskincare'.
+System.Data.SqlClient.SqlException: Login failed for user 'sproutskincare'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.DiscoverSpParameterSet(SqlConnection connection, String spName, Boolean includeReturnValueParameter, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSetInternal(SqlConnection connection, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddHostSetting(String SettingName, String SettingValue, Boolean SettingIsSecure, Int32 CreatedByUserID)
+   at DotNetNuke.Entities.Controllers.HostController.Update(ConfigurationSetting config, Boolean clearCache)
+2012-02-25 14:24:53,500 [SMKKStudios-PC][Thread:8][ERROR] DotNetNuke.Entities.Controllers.HostController - Login failed for user 'sproutskincare'.
+System.Data.SqlClient.SqlException: Login failed for user 'sproutskincare'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-25 14:24:53,502 [SMKKStudios-PC][Thread:8][ERROR] iFinity.DNN.Modules.UrlMaster.UrlRewriteModule - Login failed for user 'sproutskincare'.
+System.Data.SqlClient.SqlException: Login failed for user 'sproutskincare'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetPortals()
+   at DotNetNuke.Entities.Portals.PortalController.GetPortals()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.ParseChosenPortalAliases()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.InitSettings(String name, String type, Boolean isCurrentProvider, NameValueCollection attributes)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings..ctor(Provider provider, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettingsCol..ctor(Provider provider, XmlNodeList providerPortals, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlProviderSettings(String providerName, Boolean urlMasterSettingsOnly, FriendlyUrlSettingsCol& settingsCol)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlSettingsCol()
+   at iFinity.DNN.Modules.UrlMaster.UrlRewriteModule.OnBeginRequest(Object sender, EventArgs e)
+2012-02-25 14:24:53,569 [SMKKStudios-PC][Thread:6][ERROR] DotNetNuke.Entities.Controllers.HostController - Login failed for user 'sproutskincare'.
+System.Data.SqlClient.SqlException: Login failed for user 'sproutskincare'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.DiscoverSpParameterSet(SqlConnection connection, String spName, Boolean includeReturnValueParameter, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSetInternal(SqlConnection connection, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddHostSetting(String SettingName, String SettingValue, Boolean SettingIsSecure, Int32 CreatedByUserID)
+   at DotNetNuke.Entities.Controllers.HostController.Update(ConfigurationSetting config, Boolean clearCache)
+2012-02-25 14:24:53,571 [SMKKStudios-PC][Thread:6][ERROR] DotNetNuke.Entities.Controllers.HostController - Login failed for user 'sproutskincare'.
+System.Data.SqlClient.SqlException: Login failed for user 'sproutskincare'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-25 14:24:53,572 [SMKKStudios-PC][Thread:6][ERROR] iFinity.DNN.Modules.UrlMaster.UrlRewriteModule - Login failed for user 'sproutskincare'.
+System.Data.SqlClient.SqlException: Login failed for user 'sproutskincare'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetPortals()
+   at DotNetNuke.Entities.Portals.PortalController.GetPortals()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.ParseChosenPortalAliases()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.InitSettings(String name, String type, Boolean isCurrentProvider, NameValueCollection attributes)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings..ctor(Provider provider, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettingsCol..ctor(Provider provider, XmlNodeList providerPortals, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlProviderSettings(String providerName, Boolean urlMasterSettingsOnly, FriendlyUrlSettingsCol& settingsCol)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlSettingsCol()
+   at iFinity.DNN.Modules.UrlMaster.UrlRewriteModule.OnBeginRequest(Object sender, EventArgs e)
+2012-02-25 14:24:53,577 [SMKKStudios-PC][Thread:6][ERROR] DotNetNuke.Entities.Controllers.HostController - Login failed for user 'sproutskincare'.
+System.Data.SqlClient.SqlException: Login failed for user 'sproutskincare'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.DiscoverSpParameterSet(SqlConnection connection, String spName, Boolean includeReturnValueParameter, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSetInternal(SqlConnection connection, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddHostSetting(String SettingName, String SettingValue, Boolean SettingIsSecure, Int32 CreatedByUserID)
+   at DotNetNuke.Entities.Controllers.HostController.Update(ConfigurationSetting config, Boolean clearCache)
+2012-02-25 14:24:53,579 [SMKKStudios-PC][Thread:6][ERROR] DotNetNuke.Entities.Controllers.HostController - Login failed for user 'sproutskincare'.
+System.Data.SqlClient.SqlException: Login failed for user 'sproutskincare'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-25 14:24:53,580 [SMKKStudios-PC][Thread:6][ERROR] iFinity.DNN.Modules.UrlMaster.UrlRewriteModule - Login failed for user 'sproutskincare'.
+System.Data.SqlClient.SqlException: Login failed for user 'sproutskincare'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetPortals()
+   at DotNetNuke.Entities.Portals.PortalController.GetPortals()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.ParseChosenPortalAliases()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.InitSettings(String name, String type, Boolean isCurrentProvider, NameValueCollection attributes)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings..ctor(Provider provider, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettingsCol..ctor(Provider provider, XmlNodeList providerPortals, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlProviderSettings(String providerName, Boolean urlMasterSettingsOnly, FriendlyUrlSettingsCol& settingsCol)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlSettingsCol()
+   at iFinity.DNN.Modules.UrlMaster.UrlRewriteModule.OnBeginRequest(Object sender, EventArgs e)
+2012-02-25 14:25:21,879 [SMKKStudios-PC][Thread:7][ERROR] DotNetNuke.Entities.Controllers.HostController - Login failed for user 'sproutskincare'.
+System.Data.SqlClient.SqlException: Login failed for user 'sproutskincare'.
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnection owningObject)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(String host, String newPassword, Boolean redirectedUserInstance, SqlConnection owningObject, SqlConnectionString connectionOptions, Int64 timerStart)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(SqlConnection owningObject, SqlConnectionString connectionOptions, String newPassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, Object providerInfo, String newPassword, SqlConnection owningObject, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.DiscoverSpParameterSet(SqlConnection connection, String spName, Boolean includeReturnValueParameter, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSetInternal(SqlConnection connection, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddHostSetting(String SettingName, String SettingValue, Boolean SettingIsSecure, Int32 CreatedByUserID)
+   at DotNetNuke.Entities.Controllers.HostController.Update(ConfigurationSetting config, Boolean clearCache)
+2012-02-25 14:25:21,882 [SMKKStudios-PC][Thread:7][ERROR] DotNetNuke.Entities.Controllers.HostController - Login failed for user 'sproutskincare'.
+System.Data.SqlClient.SqlException: Login failed for user 'sproutskincare'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-25 14:25:21,884 [SMKKStudios-PC][Thread:7][ERROR] iFinity.DNN.Modules.UrlMaster.UrlRewriteModule - Login failed for user 'sproutskincare'.
+System.Data.SqlClient.SqlException: Login failed for user 'sproutskincare'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetPortals()
+   at DotNetNuke.Entities.Portals.PortalController.GetPortals()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.ParseChosenPortalAliases()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.InitSettings(String name, String type, Boolean isCurrentProvider, NameValueCollection attributes)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings..ctor(Provider provider, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettingsCol..ctor(Provider provider, XmlNodeList providerPortals, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlProviderSettings(String providerName, Boolean urlMasterSettingsOnly, FriendlyUrlSettingsCol& settingsCol)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlSettingsCol()
+   at iFinity.DNN.Modules.UrlMaster.UrlRewriteModule.OnBeginRequest(Object sender, EventArgs e)
+2012-02-25 14:25:21,934 [SMKKStudios-PC][Thread:8][ERROR] DotNetNuke.Entities.Controllers.HostController - Login failed for user 'sproutskincare'.
+System.Data.SqlClient.SqlException: Login failed for user 'sproutskincare'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.DiscoverSpParameterSet(SqlConnection connection, String spName, Boolean includeReturnValueParameter, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSetInternal(SqlConnection connection, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddHostSetting(String SettingName, String SettingValue, Boolean SettingIsSecure, Int32 CreatedByUserID)
+   at DotNetNuke.Entities.Controllers.HostController.Update(ConfigurationSetting config, Boolean clearCache)
+2012-02-25 14:25:21,936 [SMKKStudios-PC][Thread:8][ERROR] DotNetNuke.Entities.Controllers.HostController - Login failed for user 'sproutskincare'.
+System.Data.SqlClient.SqlException: Login failed for user 'sproutskincare'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-25 14:25:21,937 [SMKKStudios-PC][Thread:8][ERROR] iFinity.DNN.Modules.UrlMaster.UrlRewriteModule - Login failed for user 'sproutskincare'.
+System.Data.SqlClient.SqlException: Login failed for user 'sproutskincare'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetPortals()
+   at DotNetNuke.Entities.Portals.PortalController.GetPortals()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.ParseChosenPortalAliases()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.InitSettings(String name, String type, Boolean isCurrentProvider, NameValueCollection attributes)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings..ctor(Provider provider, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettingsCol..ctor(Provider provider, XmlNodeList providerPortals, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlProviderSettings(String providerName, Boolean urlMasterSettingsOnly, FriendlyUrlSettingsCol& settingsCol)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlSettingsCol()
+   at iFinity.DNN.Modules.UrlMaster.UrlRewriteModule.OnBeginRequest(Object sender, EventArgs e)
+2012-02-25 14:25:21,942 [SMKKStudios-PC][Thread:6][ERROR] DotNetNuke.Entities.Controllers.HostController - Login failed for user 'sproutskincare'.
+System.Data.SqlClient.SqlException: Login failed for user 'sproutskincare'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.DiscoverSpParameterSet(SqlConnection connection, String spName, Boolean includeReturnValueParameter, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSetInternal(SqlConnection connection, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddHostSetting(String SettingName, String SettingValue, Boolean SettingIsSecure, Int32 CreatedByUserID)
+   at DotNetNuke.Entities.Controllers.HostController.Update(ConfigurationSetting config, Boolean clearCache)
+2012-02-25 14:25:21,943 [SMKKStudios-PC][Thread:6][ERROR] DotNetNuke.Entities.Controllers.HostController - Login failed for user 'sproutskincare'.
+System.Data.SqlClient.SqlException: Login failed for user 'sproutskincare'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-25 14:25:21,944 [SMKKStudios-PC][Thread:6][ERROR] iFinity.DNN.Modules.UrlMaster.UrlRewriteModule - Login failed for user 'sproutskincare'.
+System.Data.SqlClient.SqlException: Login failed for user 'sproutskincare'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetPortals()
+   at DotNetNuke.Entities.Portals.PortalController.GetPortals()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.ParseChosenPortalAliases()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.InitSettings(String name, String type, Boolean isCurrentProvider, NameValueCollection attributes)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings..ctor(Provider provider, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettingsCol..ctor(Provider provider, XmlNodeList providerPortals, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlProviderSettings(String providerName, Boolean urlMasterSettingsOnly, FriendlyUrlSettingsCol& settingsCol)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlSettingsCol()
+   at iFinity.DNN.Modules.UrlMaster.UrlRewriteModule.OnBeginRequest(Object sender, EventArgs e)
+2012-02-25 15:04:05,267 [SMKKStudios-PC][Thread:8][ERROR] DotNetNuke.Common.Utilities.FileSystemUtils - Access to the path 'C:\Websites\sprout\Web\Portals\0\Cache\Pages\505_ACABA51644A302FBB325E30E7931BAF8.data.resources' is denied.
+System.UnauthorizedAccessException: Access to the path 'C:\Websites\sprout\Web\Portals\0\Cache\Pages\505_ACABA51644A302FBB325E30E7931BAF8.data.resources' is denied.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.File.Delete(String path)
+   at DotNetNuke.Common.Utilities.FileSystemUtils.DeleteFileWithWait(String filename, Int16 waitInMilliseconds, Int16 maxAttempts)
+2012-02-25 16:46:13,969 [SMKKStudios-PC][Thread:28][ERROR] DotNetNuke.UI.Modules.ModuleHost - Could not load file or assembly 'System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The system cannot find the file specified.
+System.Web.HttpParseException: Could not load file or assembly 'System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The system cannot find the file specified. ---> System.IO.FileNotFoundException: Could not load file or assembly 'System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The system cannot find the file specified.
+File name: 'System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' ---> System.IO.FileNotFoundException: Could not load file or assembly 'System.Web.Extensions, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The system cannot find the file specified.
+File name: 'System.Web.Extensions, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+   at System.Signature._GetSignature(SignatureStruct& signature, Void* pCorSig, Int32 cCorSig, IntPtr fieldHandle, IntPtr methodHandle, IntPtr declaringTypeHandle)
+   at System.Signature..ctor(RuntimeFieldHandle fieldHandle, RuntimeTypeHandle declaringTypeHandle)
+   at System.Reflection.RtFieldInfo.get_FieldType()
+   at System.Web.UI.Util.GetNonPrivateFieldType(Type classType, String fieldName)
+   at System.Web.Compilation.BaseTemplateCodeDomTreeGenerator.BuildFieldDeclaration(ControlBuilder builder)
+   at System.Web.Compilation.BaseTemplateCodeDomTreeGenerator.BuildSourceDataTreeFromBuilder(ControlBuilder builder, Boolean fInTemplate, Boolean topLevelControlInTemplate, PropertyEntry pse)
+   at System.Web.Compilation.BaseTemplateCodeDomTreeGenerator.BuildSourceDataTreeFromBuilder(ControlBuilder builder, Boolean fInTemplate, Boolean topLevelControlInTemplate, PropertyEntry pse)
+   at System.Web.Compilation.BaseTemplateCodeDomTreeGenerator.BuildSourceDataTreeFromBuilder(ControlBuilder builder, Boolean fInTemplate, Boolean topLevelControlInTemplate, PropertyEntry pse)
+   at System.Web.Compilation.TemplateControlCodeDomTreeGenerator.BuildMiscClassMembers()
+   at System.Web.Compilation.BaseCodeDomTreeGenerator.BuildSourceDataTree()
+   at System.Web.Compilation.BaseCodeDomTreeGenerator.GetCodeDomTree(CodeDomProvider codeDomProvider, StringResourceBuilder stringResourceBuilder, VirtualPath virtualPath)
+   at System.Web.Compilation.BaseTemplateBuildProvider.GenerateCode(AssemblyBuilder assemblyBuilder)
+   at System.Web.Compilation.AssemblyBuilder.AddBuildProvider(BuildProvider buildProvider)
+
+
+   --- End of inner exception stack trace ---
+   at System.Web.Compilation.AssemblyBuilder.AddBuildProvider(BuildProvider buildProvider)
+   at System.Web.Compilation.BuildProvidersCompiler.ProcessBuildProviders()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile)
+   at System.Web.UI.TemplateControl.LoadControl(VirtualPath virtualPath)
+   at DotNetNuke.UI.ControlUtilities.LoadControl[T](TemplateControl containerControl, String ControlSrc)
+   at DotNetNuke.UI.Modules.WebFormsModuleControlFactory.CreateModuleControl(TemplateControl containerControl, ModuleInfo moduleConfiguration)
+   at DotNetNuke.UI.Modules.ModuleControlFactory.LoadModuleControl(TemplateControl containerControl, ModuleInfo moduleConfiguration)
+   at DotNetNuke.UI.Modules.ModuleHost.LoadModuleControl()
+2012-02-25 16:46:14,084 [SMKKStudios-PC][Thread:28][ERROR] DotNetNuke.UI.Modules.ModuleHost - FriendlyMessage="Error: Friendly Url Settings is currently unavailable." ctrl="DotNetNuke.UI.Modules.ModuleControlBase" exc="System.Web.HttpParseException: Could not load file or assembly 'System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The system cannot find the file specified. ---> System.IO.FileNotFoundException: Could not load file or assembly 'System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The system cannot find the file specified.
+File name: 'System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' ---> System.IO.FileNotFoundException: Could not load file or assembly 'System.Web.Extensions, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The system cannot find the file specified.
+File name: 'System.Web.Extensions, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+   at System.Signature._GetSignature(SignatureStruct& signature, Void* pCorSig, Int32 cCorSig, IntPtr fieldHandle, IntPtr methodHandle, IntPtr declaringTypeHandle)
+   at System.Signature..ctor(RuntimeFieldHandle fieldHandle, RuntimeTypeHandle declaringTypeHandle)
+   at System.Reflection.RtFieldInfo.get_FieldType()
+   at System.Web.UI.Util.GetNonPrivateFieldType(Type classType, String fieldName)
+   at System.Web.Compilation.BaseTemplateCodeDomTreeGenerator.BuildFieldDeclaration(ControlBuilder builder)
+   at System.Web.Compilation.BaseTemplateCodeDomTreeGenerator.BuildSourceDataTreeFromBuilder(ControlBuilder builder, Boolean fInTemplate, Boolean topLevelControlInTemplate, PropertyEntry pse)
+   at System.Web.Compilation.BaseTemplateCodeDomTreeGenerator.BuildSourceDataTreeFromBuilder(ControlBuilder builder, Boolean fInTemplate, Boolean topLevelControlInTemplate, PropertyEntry pse)
+   at System.Web.Compilation.BaseTemplateCodeDomTreeGenerator.BuildSourceDataTreeFromBuilder(ControlBuilder builder, Boolean fInTemplate, Boolean topLevelControlInTemplate, PropertyEntry pse)
+   at System.Web.Compilation.TemplateControlCodeDomTreeGenerator.BuildMiscClassMembers()
+   at System.Web.Compilation.BaseCodeDomTreeGenerator.BuildSourceDataTree()
+   at System.Web.Compilation.BaseCodeDomTreeGenerator.GetCodeDomTree(CodeDomProvider codeDomProvider, StringResourceBuilder stringResourceBuilder, VirtualPath virtualPath)
+   at System.Web.Compilation.BaseTemplateBuildProvider.GenerateCode(AssemblyBuilder assemblyBuilder)
+   at System.Web.Compilation.AssemblyBuilder.AddBuildProvider(BuildProvider buildProvider)
+
+
+   --- End of inner exception stack trace ---
+   at System.Web.Compilation.AssemblyBuilder.AddBuildProvider(BuildProvider buildProvider)
+   at System.Web.Compilation.BuildProvidersCompiler.ProcessBuildProviders()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile)
+   at System.Web.UI.TemplateControl.LoadControl(VirtualPath virtualPath)
+   at DotNetNuke.UI.ControlUtilities.LoadControl[T](TemplateControl containerControl, String ControlSrc)
+   at DotNetNuke.UI.Modules.WebFormsModuleControlFactory.CreateModuleControl(TemplateControl containerControl, ModuleInfo moduleConfiguration)
+   at DotNetNuke.UI.Modules.ModuleControlFactory.LoadModuleControl(TemplateControl containerControl, ModuleInfo moduleConfiguration)
+   at DotNetNuke.UI.Modules.ModuleHost.LoadModuleControl()"
+2012-02-25 16:46:20,953 [SMKKStudios-PC][Thread:29][ERROR] DotNetNuke.UI.Modules.ModuleHost - Could not load file or assembly 'System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The system cannot find the file specified.
+System.Web.HttpParseException: Could not load file or assembly 'System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The system cannot find the file specified. ---> System.IO.FileNotFoundException: Could not load file or assembly 'System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The system cannot find the file specified.
+File name: 'System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' ---> System.IO.FileNotFoundException: Could not load file or assembly 'System.Web.Extensions, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The system cannot find the file specified.
+File name: 'System.Web.Extensions, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+   at System.Signature._GetSignature(SignatureStruct& signature, Void* pCorSig, Int32 cCorSig, IntPtr fieldHandle, IntPtr methodHandle, IntPtr declaringTypeHandle)
+   at System.Signature..ctor(RuntimeFieldHandle fieldHandle, RuntimeTypeHandle declaringTypeHandle)
+   at System.Reflection.RtFieldInfo.get_FieldType()
+   at System.Web.UI.Util.GetNonPrivateFieldType(Type classType, String fieldName)
+   at System.Web.Compilation.BaseTemplateCodeDomTreeGenerator.BuildFieldDeclaration(ControlBuilder builder)
+   at System.Web.Compilation.BaseTemplateCodeDomTreeGenerator.BuildSourceDataTreeFromBuilder(ControlBuilder builder, Boolean fInTemplate, Boolean topLevelControlInTemplate, PropertyEntry pse)
+   at System.Web.Compilation.BaseTemplateCodeDomTreeGenerator.BuildSourceDataTreeFromBuilder(ControlBuilder builder, Boolean fInTemplate, Boolean topLevelControlInTemplate, PropertyEntry pse)
+   at System.Web.Compilation.BaseTemplateCodeDomTreeGenerator.BuildSourceDataTreeFromBuilder(ControlBuilder builder, Boolean fInTemplate, Boolean topLevelControlInTemplate, PropertyEntry pse)
+   at System.Web.Compilation.TemplateControlCodeDomTreeGenerator.BuildMiscClassMembers()
+   at System.Web.Compilation.BaseCodeDomTreeGenerator.BuildSourceDataTree()
+   at System.Web.Compilation.BaseCodeDomTreeGenerator.GetCodeDomTree(CodeDomProvider codeDomProvider, StringResourceBuilder stringResourceBuilder, VirtualPath virtualPath)
+   at System.Web.Compilation.BaseTemplateBuildProvider.GenerateCode(AssemblyBuilder assemblyBuilder)
+   at System.Web.Compilation.AssemblyBuilder.AddBuildProvider(BuildProvider buildProvider)
+
+
+   --- End of inner exception stack trace ---
+   at System.Web.Compilation.AssemblyBuilder.AddBuildProvider(BuildProvider buildProvider)
+   at System.Web.Compilation.BuildProvidersCompiler.ProcessBuildProviders()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile)
+   at System.Web.UI.TemplateControl.LoadControl(VirtualPath virtualPath)
+   at DotNetNuke.UI.ControlUtilities.LoadControl[T](TemplateControl containerControl, String ControlSrc)
+   at DotNetNuke.UI.Modules.WebFormsModuleControlFactory.CreateModuleControl(TemplateControl containerControl, ModuleInfo moduleConfiguration)
+   at DotNetNuke.UI.Modules.ModuleControlFactory.LoadModuleControl(TemplateControl containerControl, ModuleInfo moduleConfiguration)
+   at DotNetNuke.UI.Modules.ModuleHost.LoadModuleControl()
+2012-02-25 16:46:20,958 [SMKKStudios-PC][Thread:29][ERROR] DotNetNuke.UI.Modules.ModuleHost - FriendlyMessage="Error: Friendly Url Settings is currently unavailable." ctrl="DotNetNuke.UI.Modules.ModuleControlBase" exc="System.Web.HttpParseException: Could not load file or assembly 'System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The system cannot find the file specified. ---> System.IO.FileNotFoundException: Could not load file or assembly 'System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The system cannot find the file specified.
+File name: 'System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' ---> System.IO.FileNotFoundException: Could not load file or assembly 'System.Web.Extensions, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The system cannot find the file specified.
+File name: 'System.Web.Extensions, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+   at System.Signature._GetSignature(SignatureStruct& signature, Void* pCorSig, Int32 cCorSig, IntPtr fieldHandle, IntPtr methodHandle, IntPtr declaringTypeHandle)
+   at System.Signature..ctor(RuntimeFieldHandle fieldHandle, RuntimeTypeHandle declaringTypeHandle)
+   at System.Reflection.RtFieldInfo.get_FieldType()
+   at System.Web.UI.Util.GetNonPrivateFieldType(Type classType, String fieldName)
+   at System.Web.Compilation.BaseTemplateCodeDomTreeGenerator.BuildFieldDeclaration(ControlBuilder builder)
+   at System.Web.Compilation.BaseTemplateCodeDomTreeGenerator.BuildSourceDataTreeFromBuilder(ControlBuilder builder, Boolean fInTemplate, Boolean topLevelControlInTemplate, PropertyEntry pse)
+   at System.Web.Compilation.BaseTemplateCodeDomTreeGenerator.BuildSourceDataTreeFromBuilder(ControlBuilder builder, Boolean fInTemplate, Boolean topLevelControlInTemplate, PropertyEntry pse)
+   at System.Web.Compilation.BaseTemplateCodeDomTreeGenerator.BuildSourceDataTreeFromBuilder(ControlBuilder builder, Boolean fInTemplate, Boolean topLevelControlInTemplate, PropertyEntry pse)
+   at System.Web.Compilation.TemplateControlCodeDomTreeGenerator.BuildMiscClassMembers()
+   at System.Web.Compilation.BaseCodeDomTreeGenerator.BuildSourceDataTree()
+   at System.Web.Compilation.BaseCodeDomTreeGenerator.GetCodeDomTree(CodeDomProvider codeDomProvider, StringResourceBuilder stringResourceBuilder, VirtualPath virtualPath)
+   at System.Web.Compilation.BaseTemplateBuildProvider.GenerateCode(AssemblyBuilder assemblyBuilder)
+   at System.Web.Compilation.AssemblyBuilder.AddBuildProvider(BuildProvider buildProvider)
+
+
+   --- End of inner exception stack trace ---
+   at System.Web.Compilation.AssemblyBuilder.AddBuildProvider(BuildProvider buildProvider)
+   at System.Web.Compilation.BuildProvidersCompiler.ProcessBuildProviders()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile)
+   at System.Web.UI.TemplateControl.LoadControl(VirtualPath virtualPath)
+   at DotNetNuke.UI.ControlUtilities.LoadControl[T](TemplateControl containerControl, String ControlSrc)
+   at DotNetNuke.UI.Modules.WebFormsModuleControlFactory.CreateModuleControl(TemplateControl containerControl, ModuleInfo moduleConfiguration)
+   at DotNetNuke.UI.Modules.ModuleControlFactory.LoadModuleControl(TemplateControl containerControl, ModuleInfo moduleConfiguration)
+   at DotNetNuke.UI.Modules.ModuleHost.LoadModuleControl()"
+2012-02-25 16:48:38,978 [SMKKStudios-PC][Thread:31][FATAL] DotNetNuke.Framework.PageBase - An error has occurred while loading page.
+System.Web.HttpRequestValidationException (0x80004005): A potentially dangerous Request.Form value was detected from the client (dnn$cp$RibbonBar$EditPage$SkinLst="<Use Default Site Sk...").
+   at System.Web.HttpRequest.ValidateString(String value, String collectionKey, RequestValidationSource requestCollection)
+   at System.Web.HttpRequest.ValidateNameValueCollection(NameValueCollection nvc, RequestValidationSource requestCollection)
+   at System.Web.HttpRequest.get_Form()
+   at System.Web.HttpRequest.get_HasForm()
+   at System.Web.UI.Page.GetCollectionBasedOnMethod(Boolean dontReturnNull)
+   at System.Web.UI.Page.DeterminePostBackMode()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+2012-02-25 16:48:39,127 [SMKKStudios-PC][Thread:31][ERROR] DotNetNuke.Services.Exceptions.ErrorPage - A potentially dangerous Request.Form value was detected from the client (dnn$cp$RibbonBar$EditPage$SkinLst="<Use Default Site Sk...").
+DotNetNuke.Services.Exceptions.PageLoadException: A potentially dangerous Request.Form value was detected from the client (dnn$cp$RibbonBar$EditPage$SkinLst="<Use Default Site Sk..."). ---> System.Web.HttpRequestValidationException: A potentially dangerous Request.Form value was detected from the client (dnn$cp$RibbonBar$EditPage$SkinLst="<Use Default Site Sk...").
+   at System.Web.HttpRequest.ValidateString(String value, String collectionKey, RequestValidationSource requestCollection)
+   at System.Web.HttpRequest.ValidateNameValueCollection(NameValueCollection nvc, RequestValidationSource requestCollection)
+   at System.Web.HttpRequest.get_Form()
+   at System.Web.HttpRequest.get_HasForm()
+   at System.Web.UI.Page.GetCollectionBasedOnMethod(Boolean dontReturnNull)
+   at System.Web.UI.Page.DeterminePostBackMode()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   --- End of inner exception stack trace ---
+2012-02-25 18:47:29,648 [SMKKStudios-PC][Thread:18][ERROR] DotNetNuke.Common.Utilities.FileSystemUtils - Access to the path 'C:\Websites\sprout\Web\Portals\0\Cache\Pages\505_ACABA51644A302FBB325E30E7931BAF8.data.resources' is denied.
+System.UnauthorizedAccessException: Access to the path 'C:\Websites\sprout\Web\Portals\0\Cache\Pages\505_ACABA51644A302FBB325E30E7931BAF8.data.resources' is denied.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.File.Delete(String path)
+   at DotNetNuke.Common.Utilities.FileSystemUtils.DeleteFileWithWait(String filename, Int16 waitInMilliseconds, Int16 maxAttempts)
+2012-02-25 19:13:55,324 [SMKKStudios-PC][Thread:46][ERROR] DotNetNuke.Common.Utilities.FileSystemUtils - Access to the path 'C:\Websites\sprout\Web\Portals\0\Cache\Pages\505_ACABA51644A302FBB325E30E7931BAF8.data.resources' is denied.
+System.UnauthorizedAccessException: Access to the path 'C:\Websites\sprout\Web\Portals\0\Cache\Pages\505_ACABA51644A302FBB325E30E7931BAF8.data.resources' is denied.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.File.Delete(String path)
+   at DotNetNuke.Common.Utilities.FileSystemUtils.DeleteFileWithWait(String filename, Int16 waitInMilliseconds, Int16 maxAttempts)

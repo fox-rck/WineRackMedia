@@ -1,0 +1,35 @@
+2012-02-27 09:30:53,116 [SMKKStudios-PC][Thread:81][ERROR] DotNetNuke.Common.Utilities.FileSystemUtils - Access to the path 'C:\Websites\sprout\Web\Portals\0\Cache\Pages\520_ACABA51644A302FBB325E30E7931BAF8.data.resources' is denied.
+System.UnauthorizedAccessException: Access to the path 'C:\Websites\sprout\Web\Portals\0\Cache\Pages\520_ACABA51644A302FBB325E30E7931BAF8.data.resources' is denied.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.File.Delete(String path)
+   at DotNetNuke.Common.Utilities.FileSystemUtils.DeleteFileWithWait(String filename, Int16 waitInMilliseconds, Int16 maxAttempts)
+2012-02-27 20:21:41,440 [SMKKStudios-PC][Thread:74][ERROR] DotNetNuke.Providers.RadEditorProvider.LinkClickUrlHandler - Index was outside the bounds of the array.
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at DotNetNuke.Providers.RadEditorProvider.LinkClickUrlHandler.HandleRequest()
+2012-02-27 20:49:12,561 [SMKKStudios-PC][Thread:66][ERROR] DotNetNuke.UI.Skins.Skin - Unhandled error loading page.
+DotNetNuke.Services.Exceptions.PageLoadException: Unhandled error loading page. ---> System.Web.HttpParseException: Unknown server tag 'dnn:SMaKKSitesFooter'. ---> System.Web.HttpParseException: Unknown server tag 'dnn:SMaKKSitesFooter'. ---> System.Web.HttpException: Unknown server tag 'dnn:SMaKKSitesFooter'.
+   at System.Web.UI.TagPrefixTagNameToTypeMapper.System.Web.UI.ITagNameToTypeMapper.GetControlType(String tagName, IDictionary attribs)
+   at System.Web.UI.RootBuilder.GetChildControlType(String tagName, IDictionary attribs)
+   at System.Web.UI.ControlBuilder.CreateChildBuilder(String filter, String tagName, IDictionary attribs, TemplateParser parser, ControlBuilder parentBuilder, String id, Int32 line, VirtualPath virtualPath, Type& childType, Boolean defaultProperty)
+   at System.Web.UI.TemplateParser.ProcessBeginTag(Match match, String inputText)
+   at System.Web.UI.TemplateParser.ParseStringInternal(String text, Encoding fileEncoding)
+   --- End of inner exception stack trace ---
+   at System.Web.UI.TemplateParser.ProcessException(Exception ex)
+   at System.Web.UI.TemplateParser.ParseStringInternal(String text, Encoding fileEncoding)
+   at System.Web.UI.TemplateParser.ParseString(String text, VirtualPath virtualPath, Encoding fileEncoding)
+   --- End of inner exception stack trace ---
+   at System.Web.UI.TemplateParser.ParseString(String text, VirtualPath virtualPath, Encoding fileEncoding)
+   at System.Web.UI.TemplateParser.ParseFile(String physicalPath, VirtualPath virtualPath)
+   at System.Web.UI.TemplateParser.Parse()
+   at System.Web.Compilation.BaseTemplateBuildProvider.get_CodeCompilerType()
+   at System.Web.Compilation.BuildProvider.GetCompilerTypeFromBuildProvider(BuildProvider buildProvider)
+   at System.Web.Compilation.BuildProvidersCompiler.ProcessBuildProviders()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResult(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean ensureIsUpToDate)
+   at System.Web.UI.TemplateControl.LoadControl(VirtualPath virtualPath)
+   at DotNetNuke.UI.ControlUtilities.LoadControl[T](TemplateControl containerControl, String ControlSrc)
+   at DotNetNuke.UI.Skins.Skin.LoadSkin(PageBase page, String skinPath)
+   --- End of inner exception stack trace ---

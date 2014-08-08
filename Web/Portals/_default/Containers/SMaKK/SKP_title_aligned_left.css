@@ -1,0 +1,15 @@
+    /*title_aligned_left*/
+    .title_aligned_left .Normal h2 
+    {
+        float:left; border-top: 1px solid #d1cfcf; border-bottom: 1px solid #d1cfcf; 
+        background:url(images/heading-background.png) no-repeat scroll left center; 
+        text-align:left; width: 231px; font-weight:bold;
+        font-size:20px; padding-top:15px; padding-bottom:15px; padding-left:20px;padding-right:35px;
+        margin-top:0px;
+        }
+        
+    .title_aligned_left .Normal h3, .title_aligned_left .Normal h4, .title_aligned_left .Normal h5,
+     .title_aligned_left .Normal p, .title_aligned_left .Normal ul, .title_aligned_left .Normal blockquote
+    {
+        margin-left: 325px;
+    } 

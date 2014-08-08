@@ -1,0 +1,13 @@
+2012-02-24 14:04:10,028 [SJMDesign-PC2][Thread:20][ERROR] DotNetNuke.Web.DDRMenu.SkinObject - FriendlyMessage="An error has occurred." ctrl="ASP.desktopmodules_ddrmenu_menu_ascx" exc="System.InvalidOperationException: Unable to generate a temporary class (result=1).
+error CS0016: Could not write to output file 'c:\Windows\Temp\xmluiiso.dll' -- 'The process cannot access the file because it is being used by another process. '
+
+   at System.Xml.Serialization.Compiler.Compile(Assembly parent, String ns, XmlSerializerCompilerParameters xmlParameters, Evidence evidence)
+   at System.Xml.Serialization.TempAssembly.GenerateAssembly(XmlMapping[] xmlMappings, Type[] types, String defaultNamespace, Evidence evidence, XmlSerializerCompilerParameters parameters, Assembly assembly, Hashtable assemblies)
+   at System.Xml.Serialization.TempAssembly..ctor(XmlMapping[] xmlMappings, Type[] types, String defaultNamespace, String location, Evidence evidence)
+   at System.Xml.Serialization.XmlSerializer.GenerateTempAssembly(XmlMapping xmlMapping, Type type, String defaultNamespace, String location, Evidence evidence)
+   at System.Xml.Serialization.XmlSerializer..ctor(Type type, XmlAttributeOverrides overrides, Type[] extraTypes, XmlRootAttribute root, String defaultNamespace, String location, Evidence evidence)
+   at System.Xml.Serialization.XmlSerializer..ctor(Type type, XmlRootAttribute root)
+   at DotNetNuke.Web.DDRMenu.DNNCommon.Utilities.SerialiserFor(Type t)
+   at DotNetNuke.Web.DDRMenu.TemplateEngine.XsltTemplateProcessor.Render(Object source, HtmlTextWriter htmlWriter)
+   at DotNetNuke.Web.DDRMenu.MenuBase.Render(HtmlTextWriter htmlWriter)
+   at DotNetNuke.Web.DDRMenu.SkinObject.Render(HtmlTextWriter writer)"

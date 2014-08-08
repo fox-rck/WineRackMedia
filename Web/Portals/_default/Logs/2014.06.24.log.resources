@@ -1,0 +1,20 @@
+2014-06-24 22:20:56,766 [TheMachine][Thread:7][ERROR] DotNetNuke.Services.Search.SearchDataStore - Violation of UNIQUE KEY constraint 'IX_SearchItemWord'. Cannot insert duplicate key in object 'dbo.SearchItemWord'. The duplicate key value is (222, 157).
+The statement has been terminated.
+System.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'IX_SearchItemWord'. Cannot insert duplicate key in object 'dbo.SearchItemWord'. The duplicate key value is (222, 157).
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteScalar(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteScalar(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddSearchItemWord(Int32 SearchItemId, Int32 SearchWordsID, Int32 Occurrences)
+   at DotNetNuke.Services.Search.SearchDataStore.AddIndexWords(Int32 indexId, SearchItemInfo searchItem, String language)
+   at DotNetNuke.Services.Search.SearchDataStore.StoreSearchItems(SearchItemInfoCollection SearchItems)
+ClientConnectionId:850f3009-c1d3-4ffc-83fe-969c7e5895a8

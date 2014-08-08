@@ -1,0 +1,10 @@
+﻿.contact-form{width:627px;padding:50px 0 20px;}
+.contact-form input{width:292px;padding:5px;border:1px solid #ccc;display:block;color:#000;margin-bottom:15px;height:20px;}
+.contact-form input.lightText{color:#ccc;}
+.contact-form >div{width:50%; float:left; }
+.contact-form >div.right{width:295px; padding-left:18px;}
+.contact-form .clear{float:none;}
+.contact-form p{line-height:16px;margin:0;}
+
+.label span{float:right;}
+.validator{padding-top:6px;}

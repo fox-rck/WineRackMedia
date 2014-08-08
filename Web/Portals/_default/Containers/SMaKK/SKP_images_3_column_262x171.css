@@ -1,0 +1,5 @@
+    /*images_3_column_262x171*/
+    .images_3_column_262x171 {padding-top:175px; float:left; width:305px; 
+                      background:url(images/image-frame.png) no-repeat scroll top left; 
+                      position:relative; padding-right:15px; z-index:9999;} 
+    .images_3_column_262x171 .Normal p img {position:absolute; top:4px; left:5px; width:262px !important; height:171px !important;}   

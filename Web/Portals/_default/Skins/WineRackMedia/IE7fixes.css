@@ -1,0 +1,10 @@
+﻿.svg ,svg,.svg img,.svg image{display:none !important;}
+.site_nav li .dd{margin-top:25px;margin-left:-150px;}
+.site_nav li .dd ul{float:left;}
+.site_header .site_nav .nav li .dd .navarrow{display:none;}
+hr{display:block;}
+
+.outlinebutton span{font-size:15px;}
+#casestudy_nav li.boxlink,#about_nav li.boxlink {width:243px;}
+
+.edicovery_consult .circleback{background:transparent url(images/png/color.balls.sm.png) no-repeat scroll 0 0;}

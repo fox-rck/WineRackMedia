@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <template>ULTokens.txt</template>
+  <scripts>
+    <script>SMaKK_LeftMenu.js</script>
+  </scripts>
+  <stylesheets>
+    <stylesheet>SMaKK_LeftMenu.css</stylesheet>
+  </stylesheets>
+</manifest>

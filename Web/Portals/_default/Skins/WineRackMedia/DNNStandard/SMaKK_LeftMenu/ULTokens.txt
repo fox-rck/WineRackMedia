@@ -1,0 +1,46 @@
+<div id="dnnMenuLeft">
+    <ul class="topLevel">
+	    [*>NODE-TOP]
+    </ul>
+	<div id="skp_Logo"></div>
+</div>
+[>NODE-TOP]
+	<li class="item[?FIRST] first[/?][?LAST] last[/?][?SELECTED] selected[/?][?NODE] haschild[/?]">
+		[?ENABLED]
+		<div class="wrapper">
+		<a href="[=URL]"><div>[=TEXT]</div></a></div>
+		[?ELSE]
+		<div class="wrapper">
+		<a><div>[=TEXT]</div></a></div>
+		[/?]
+		[?NODE]
+            <div class="subLevel">
+			    <div class="subLevelTop"></div>
+                <ul class="subLevelContent">
+				    [*>NODE]
+			    </ul>
+			    <div class="subLevelBottom"></div>
+            </div>
+		[/?]
+	</li>
+[/>]
+[>NODE]
+		<li class="item[?FIRST] first[/?][?LAST] last[/?][?SELECTED] selected[/?][?NODE] haschild[/?]">
+		[?ENABLED]
+		<div class="wrapper">
+		<a href="[=URL]"><span>	&raquo;</span><div>[=TEXT]</div></a></div>
+		[?ELSE]
+		<div class="wrapper">
+			<a><div>[=TEXT]</div></a></div>
+		[/?]
+		[?NODE]
+            <div class="subLevelRight">
+			    <div class="subLevelRightTop"></div>
+                <ul class="subLevelRightContent">
+				    [*>NODE]
+			    </ul>
+			    <div class="subLevelRightBottom"></div>
+            </div>
+		[/?]
+	</li>
+[/>]

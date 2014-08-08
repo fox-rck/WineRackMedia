@@ -1,0 +1,137 @@
+﻿/************************************************************/
+/*****              SQLDataProvider		                *****/
+/*****              iFinity.Url Master 02.04.00			*****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}	*****/
+/************************************************************/
+ /****** Object:  StoredProcedure {databaseOwner}[ifty_AddSite404Log]    Script Date: 04/19/2010 20:08:56 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}[ifty_AddSite404Log]') AND OBJECTPROPERTY(id,N'IsProcedure') = 1)
+BEGIN
+EXEC sp_executesql @statement = N'ALTER Procedure {databaseOwner}[ifty_AddSite404Log]
+(
+	 @Site404Id		uniqueidentifier 
+	,@RequestDateTime		datetime 
+	,@SequenceNum		int  OUTPUT
+	,@PortalId		int 
+	,@PortalAliasId		int 
+	,@Referer		nvarchar(510)
+	,@Url		nvarchar(510)
+	,@OriginalUrl		nvarchar(510)
+	,@UserAgent		nvarchar(512)
+	,@HostAddress		nvarchar(510)
+	,@HostName		nvarchar(510)
+	,@TabId		int 
+	,@max404LogSize int = 0
+)
+AS
+BEGIN
+
+/* =============================================
+	Author:      natives\bruce
+	Create date: 19/04/2010
+	Description: Adds a Site404LogInfo record
+   ============================================= 
+	
+	    Return Values
+	    -2  - No records modified. Commit Occured
+	    -1  - No record(s) returned. Procedure Executed Ok.
+	    0  - Successful Execution.
+	    1  - SQL Error. Rollback Occurred.
+	    2  - No records modified. Rollback Occurred.
+	    3  - Error in sub procedure - entire top procedure rolled back.
+	    4+ - Specific to procedure
+	
+	    Modified by:		Date:		Reason for Modification:
+		brc					16/02/2011	794 : Fix auto-truncate feature
+	   =============================================*/
+
+SET NOCOUNT ON 
+DECLARE @ErrStr 	varchar(100)	/* Return error string				*/
+DECLARE @Error		int		/* Return error value				*/
+DECLARE @Rowcount	int		/* Return related row count			*/
+DECLARE @TranCount  int     /* Keeps a record of the transaction count */
+DECLARE @CurUser    varChar(15)
+       ,@CurTime	dateTime
+SELECT @CurUser = Current_User
+      ,@CurTime = GetDate()
+DECLARE @RetVal int	/* return value from sub procedure */
+
+SELECT @TranCount = @@TRANCOUNT
+IF @TranCount = 0 BEGIN TRANSACTION T1
+
+	if @portalId = -1 
+		set @portalId = null
+
+	SELECT @SequenceNum = Coalesce(Max(SequenceNum),0) + 1
+	FROM {databaseOwner}ifty_Site404Log
+	WHERE PortalId = @PortalId
+	
+	INSERT INTO {databaseOwner}ifty_Site404Log(
+		  Site404Id
+		 ,RequestDateTime
+		,SequenceNum
+		 ,PortalId
+		 ,PortalAliasId
+		 ,Referer
+		 ,Url
+		 ,OriginalUrl
+		 ,UserAgent
+		 ,HostAddress
+		 ,HostName
+		 ,TabId
+	) VALUES (
+		  @Site404Id
+		 ,@RequestDateTime
+		,@SequenceNum
+		 ,@PortalId
+		 ,case when @PortalAliasId = -1 then null else @portalALiasId END
+		 ,@Referer
+		 ,@Url
+		 ,@OriginalUrl
+		 ,@UserAgent
+		 ,@HostAddress
+		 ,@HostName
+		 ,case when @TabId = -1 then null else @tabId END
+	)
+
+	SELECT @Error = @@ERROR, @RowCount = @@RowCount
+	IF @Error <> 0
+	BEGIN
+		IF @TranCount = 0 ROLLBACK TRANSACTION T1
+		SELECT @ErrStr=''Error in ''+ OBJECT_NAME(@@PROCID) + ''. Stmt No.=1, Db=''+db_name()+'',Err=''+CONVERT(varchar(10),@Error)
+		RAISERROR(@ErrStr,16,1)
+		RETURN 1 /* statement failed */
+	END
+
+	/* now trim the max log size if found to be oversize */
+	if (@max404LogSize > 0)
+	BEGIN
+		declare @maxRows int
+		set @maxRows = @max404LogSize * 1.1 --actually lets it exceed by 10% before trimming
+		if @maxRows < (select count(*) 
+			from {databaseOwner}ifty_Site404Log
+			where PortalId = @PortalId)
+		BEGIN
+			DELETE FROM {databaseOwner}ifty_Site404Log
+			WHERE SequenceNum < (@sequenceNum - @max404LogSize)
+		      AND PortalId = @PortalId
+		END
+	END
+
+	/* finished procedure, commit and return */
+	IF @TranCount = 0 COMMIT TRANSACTION T1
+	IF @RowCount = 0
+		RETURN -2	  /*** Procedure did nothing. Records committed */
+	ELSE
+		RETURN 0	  /*** Procedure executed ok. Records committed */
+END
+
+' 
+END
+GO

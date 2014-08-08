@@ -1,0 +1,211 @@
+﻿/************************************************************/
+/*****              SQLDataProvider		                *****/
+/*****              iFinity.Url Master 1.00.00			*****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for  and {objectQualifier}	*****/
+/************************************************************/
+/* 736 : remove addTabAndTabModule for 5.5 compatibiltiy changes */
+/* create the table that contains all the actions to process when a new module control is added */
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}[ifty_TabModuleCreation]') AND type in (N'U'))
+BEGIN
+	/* this table is used to create a new tab and tab module 
+	for the specified module control file automatically upon module creation 
+	The values are for the input to the AddTab and AddTabModule procedures
+	*/
+	CREATE TABLE {databaseOwner}ifty_TabModuleCreation
+	(    PortalId int null
+	   , ControlSource nvarchar(256) NOT NULL
+	   , TabName nvarchar(255) NOT NULL
+	   , IsVisible bit
+	   , DisableLink bit
+	   , ParentId int null
+	   , TabIconFile nvarchar(100) 
+	   , Title nvarchar(200) NOT NULL
+	   , Description nvarchar(255)
+	   , KeyWords nvarchar(500)
+	   , SkinSrc nvarchar(200)
+	   , ContainerSrc nvarchar(200)
+	   , TabPath nvarchar(255) NOT NULL
+	   , StartDate datetime
+	   , EndDate datetime
+	   , RefreshInterval int
+	   , PageHeadText nvarchar(500)
+	   , IsSecure bit
+	   , TabOrder int NOT NULL
+	   , IsAdmin bit 
+	   , PaneName nvarchar(50) 
+	   , CacheTime int
+	   , Alignment nvarchar(10) 
+	   , Color nvarchar(20)
+	   , Border nvarchar(1)
+	   , ModuleIconFile nvarchar(100)
+	   , Visibility int
+	   , DisplayTitle bit
+	   , DisplayPrint bit
+	   , DisplaySyndicate bit
+	   , SetDesktopModuleAdmin bit
+	   , DeleteTabOnModuleRemove bit
+	   , TabId int null
+	   , ModuleId int null
+	   , ModuleDefId int null
+	   , Completed bit
+	   ) 
+END 
+/*845 : create index for Azure compatibility */
+IF NOT EXISTS (select * From sysindexes where name = 'ix_ifty_tabModuleCreation')
+BEGIN
+CREATE CLUSTERED INDEX [IX_ifty_TabModuleCreation] ON  {databaseOwner}ifty_TabModuleCreation
+(
+	[PortalId] ASC
+	,[TabName] ASC
+) 
+END
+
+/* create a new tab, module and tab module for the UrlOptions.ascx control */
+DEClARE @newControlSource nvarchar(255), @targetPortalId int
+SET @NewControlSource = 'DesktopModules/iFinity.UrlMaster/UrlOptions.ascx'
+SET @targetPortalId = NULL
+
+IF NOT EXISTS (Select * from {databaseOwner}ifty_TabModuleCreation 
+			   WHERE (portalId = @targetPortalId or (@targetPortalId is null and PortalId is null))
+				and ControlSource = @newControlSource)
+BEGIN
+	/* find the host settings tab id and path */
+	Declare @hostTabId int, @tabPath nvarchar(255), @tabOrder int
+
+	SELECT @hostTabId = TabId
+		 , @tabPath = TabPath + '//FriendlyUrlSettings'
+	FROM {databaseOwner}{objectQualifier}Tabs t
+	WHERE (portalId = @targetPortalId or (@targetPortalId is null and PortalId is null))
+	  AND parentId is null  --this defines the host page, parent Id = null and portalId = null
+	  AND tabPath is not null
+	  
+	SELECT @tabOrder = coalesce(max(tabOrder), 0) + 1  --taborder is the last tab in the host tabs
+	FROM {databaseOwner}{objectQualifier}Tabs t
+	WHERE (portalId = @targetPortalId or (@targetPortalId is null and PortalId is null))
+
+	/* now insert the values to be created */
+	INSERT INTO {databaseOwner}ifty_TabModuleCreation
+	( PortalId, ControlSource, TabName, IsVisible, DisableLink, ParentId, TabIconFile, Title, Description, KeyWords, SkinSrc, ContainerSrc, 
+	  TabPath, StartDate, EndDate, RefreshInterval, PageHeadText, IsSecure, TabOrder, IsAdmin, PaneName, CacheTime, Alignment, Color, 
+	  Border, ModuleIconFile, Visibility, DisplayTitle, DisplayPrint, DisplaySyndicate, SetDesktopModuleAdmin, DeleteTabOnModuleRemove,
+	  TabId, ModuleId, ModuleDefId, Completed)
+	 VALUES
+	 ( @targetPortalId, @newControlSource, 'Friendly Url Settings', 1, 0, @hostTabId, 'Friendly-Urls-Icon16.gif', 'Friendly Url Settings', '', '',NULL, NULL, 
+	   @tabPath, NULL, NULL, 0, NULL, 0, @tabOrder, 1, 'ContentPane', 0,  NULL, NULL,
+	   NULL, 'Friendly-Urls-Icon.gif', 0, 1, 0, 0, 1, 1, NULL, NULL, NULL, 0)
+	  
+END
+
+
+/* now insert the page list values */
+
+SET @NewControlSource = 'DesktopModules/iFinity.UrlMaster/PageList.ascx'
+IF NOT EXISTS (Select * from {databaseOwner}ifty_TabModuleCreation where ControlSource = @newControlSource)
+BEGIN
+
+	DECLARE Portal_Curs CURSOR FOR
+	SELECT PortalId
+	FROM {databaseOwner}{objectQualifier}Portals
+	open Portal_Curs
+	FETCH FROM Portal_Curs into @targetPortalId
+	WHILE @@Fetch_Status = 0
+	BEGIN
+		/* insert an admin / Page Urls page for each portal */		
+		Declare @AdminTabId int
+
+		/* find the admin tab for the portal by working backwards from the site settings control */
+		SELECT @adminTabId = pt.TabId
+			 , @tabPath = pt.TabPath
+		FROM {objectQualifier}Modules m
+		INNER JOIN {objectQualifier}MOduleDefinitions md
+		 on m.ModuleDefId=  md.ModuleDefId
+		INNER JOIN {objectQualifier}ModuleControls mc
+		 on md.ModuleDefId = mc.ModuleDefId
+		INNER JOIN {objectQualifier}TabModules tm
+		 on tm.ModuleId = m.ModuleId
+		INNER JOIN {objectQualifier}tabs t
+		 on tm.TabId = t.TabId
+		INNER JOIN {objectQualifier}tabs pt
+		 on t.ParentId = pt.TabId
+		WHERE (ControlSrc = 'DesktopModules/Admin/Portals/SiteSettings.ascx'
+		   OR  ControlSrc = 'Admin/Portal/SiteSettings.ascx') --either dnn5 (desktopModules) or dnn4 (admin/portal)
+		  AND ControlKey is NULL
+		  AND t.PortalId = @targetPortalId
+		  
+		SELECT @tabOrder = coalesce(max(tabOrder), 0) + 1  --taborder is the last tab in the host tabs
+		FROM {databaseOwner}{objectQualifier}Tabs t
+		WHERE portalId = @targetPortalId 
+		  AND t.ParentId = @adminTabId
+		  
+		-- update the tab path for the page urls page
+		SET @tabPath = @tabPath + '//PageUrls'
+
+		/* now insert the values to be created */
+		INSERT INTO {databaseOwner}ifty_TabModuleCreation
+		( PortalId, ControlSource, TabName, IsVisible, DisableLink, ParentId, TabIconFile, Title, Description, KeyWords, SkinSrc, ContainerSrc, 
+		  TabPath, StartDate, EndDate, RefreshInterval, PageHeadText, IsSecure, TabOrder, IsAdmin, PaneName, CacheTime, Alignment, Color, 
+		  Border, ModuleIconFile, Visibility, DisplayTitle, DisplayPrint, DisplaySyndicate, SetDesktopModuleAdmin, DeleteTabOnModuleRemove,
+		  TabId, ModuleId, ModuleDefId, Completed)
+		 VALUES
+		 ( @targetPortalId, @newControlSource, 'Page Urls', 1, 0, @adminTabId, 'Page-Urls-Icon16.gif', 'Page Urls', '', '',NULL, NULL, 
+		   @tabPath, NULL, NULL, 0, NULL, 0, @tabOrder, 1, 'ContentPane', 0,  NULL, NULL,
+		   NULL, 'Page-Urls-Icon.gif', 0, 1, 0, 0, 1, 1, NULL, NULL, NULL, 0)
+		
+
+		FETCH FROM Portal_Curs into @targetPortalId
+	END
+	CLOSE Portal_Curs
+	DEALLOCATE Portal_Curs
+
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+/* create a trigger that calls the stored procedure that takes records from the table and creates tabs, modules and tab modules */
+IF NOT EXISTS (select * from sysobjects where id = OBJECT_ID(N'{databaseOwner}[ifty_OnNewModuleControl]') and xtype='TR')
+EXEC sp_executesql @statement = N'CREATE TRIGGER {databaseOwner}[ifty_OnNewModuleControl] on {databaseOwner}[{objectQualifier}ModuleControls]
+FOR INSERT 
+as 
+
+-- =============================================
+-- Author:		Bruce Chapman
+-- Create date: 5 Mar 2008
+-- Description:	Checks and runs tab and tabmodule creation
+--              when a TabModuleCreation record exists to do
+--				so.  Note that this trigger drops itself
+--				when there are no more records in the tabModule
+--				creation table to run.
+-- =============================================
+
+declare @moduleDefId int, @moduleControlId int, @controlSource nvarchar(255)
+
+
+select @moduleDefId = md.ModuleDefId
+	 , @moduleControlId = mc.ModuleControlId
+ 	 , @controlSource = mc.ControlSrc
+from {databaseOwner}{objectQualifier}ModuleDefinitions md
+inner join inserted mc
+on mc.ModuleDefId = md.ModuleDefId
+
+IF EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N''{databaseOwner}[ifty_TabModuleCreation]'') AND type in (N''U''))
+BEGIN
+
+	if exists (select * from {databaseOwner}[ifty_TabModuleCreation] where completed = 0)
+	BEgin
+		exec {databaseOwner}ifty_AddTabAndTabModule @moduleDefId, @moduleControlId
+	END
+
+	if not exists (select * from {databaseOwner}[ifty_TabModuleCreation] where completed = 0)
+	BEGIN
+		DROP TRIGGER {databaseOwner}ifty_OnNewModuleControl
+	END
+
+END 
+' 

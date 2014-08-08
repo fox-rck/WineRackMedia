@@ -1,0 +1,234 @@
+﻿/************************************************************/
+/*****              SQLDataProvider		                *****/
+/*****              iFinity.Url Master 02.04.04			*****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}	*****/
+/************************************************************/
+
+/****** Object:  StoredProcedure {databaseOwner}[ifty_GetTabRedirectsForTab]    Script Date: 08/30/2011 19:50:10 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[ifty_GetTabRedirectsForTab]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC sp_executesql @statement = N'ALTER Procedure {databaseOwner}[ifty_GetTabRedirectsForTab]
+(
+	 @TabId		int 
+)
+AS
+BEGIN
+
+/* =============================================
+	Author:      WOMBAT\Bruce
+	Create date: 13/02/2008
+	Description: Gets a ifty_TabRedirect record
+   ============================================= 
+	
+	    Return Values
+	    0  - Successful Execution.
+	    1  - SQL Error. Rollback Occurred.
+	    2  - No records modified. Rollback Occurred.
+	    3  - No records modified. Commit Occured
+	    4  - Error in sub procedure - entire top procedure rolled back.
+	    5  - No record(s) returned. Procedure Executed Ok.
+	    6+ - Specific to procedure
+	
+	    Modified by:		Date:		Reason for Modification:
+		brc					15/09/09	Add new cultureCode column
+		brc					10/10/10	Add in portal alias id and usage
+		brc					11/03/11	Add join on culture code to remove duplicates
+		brc					01/04/11	Change join to use tr instead of t.  t.CultureCode not in DNN 4.x
+		brc					29/08/11	Change join to filter correctly with parentTr (858)
+	   =============================================*/
+
+SET NOCOUNT ON 
+DECLARE @ErrStr 	varchar(100)	/* Return error string				*/
+DECLARE @Error		int		/* Return error value				*/
+DECLARE @Rowcount	int		/* Return related row count			*/
+
+	SELECT 
+	    tr.TabId	
+	   ,tr.SeqNum	
+	   ,tr.Url	
+	   ,tr.HttpStatus	
+	   ,tr.RedirectTabId	
+	   ,tr.CultureCode
+   	   ,case when parentTr.PortalAliasUsage = 1 /* parent is set to ''child pages inherit'' so get parent portal alias id */
+			 then 
+				case when Coalesce(tr.PortalAliasId, 0) < 1 /* if this page has no specific alias id, then use parent*/
+				then parentTr.PortalAliasId 
+				else tr.PortalAliasId END /* otherwise, use this page alias id */
+			 else tr.PortalALiasId END as PortalAliasId 
+  	   ,case when Coalesce(tr.PortalAliasUsage,0) = 0 and coalesce(tr.PortalALiasId,0) < 1 /* default value and no specific alias */
+			 then /* check for inheritance from parent */
+				case when Coalesce(parentTr.PortalALiasUsage,0) = 1 and Coalesce(parentTr.PortalAliasId, 0) > 0 /* parent specifies an alias */
+				then 3 /* inherited from parent */
+				else 0 END /* default value */
+			 when Coalesce(tr.PortalAliasId,0) > 0 /*specific alias for this tab */
+			 then case when coalesce(tr.PortalALiasUsage,0) < 1 
+				  then 1 /* if not set, default to ''child pages inherit''*/
+				  else tr.PortalAliasUsage END
+			 else 
+				0 /* default - fall through value */
+				 END as PortalAliasUsage 
+	FROM {databaseOwner}ifty_TabRedirect tr
+	INNER JOIN {databaseOwner}{objectQualifier}Tabs t
+		on t.TabId = tr.TabId
+	LEFT JOIN {databaseOwner}ifty_TabRedirect parentTr
+	    on t.ParentId = parentTr.TabId
+	   AND tr.CultureCode = parentTr.CultureCode
+	   and parentTr.PortalAliasUsage > 0
+	WHERE tr.TabId = @TabId
+	
+	SELECT @Error = @@ERROR, @RowCount = @@RowCount
+	IF @Error <> 0
+	BEGIN
+		SELECT @ErrStr=''Error in ''+ OBJECT_NAME(@@PROCID) + ''. Stmt No.=1, Db=''+db_name()+'',Err=''+CONVERT(varchar(10),@Error)
+		RAISERROR(@ErrStr,16,1)
+		RETURN 1 /* statement failed */
+	END
+	/* finished procedure, return value and exit */
+	RETURN 0	  /*** Procedure executed ok. */
+END
+
+' 
+END
+GO
+/****** Object:  StoredProcedure {databaseOwner}[ifty_GetTabsAndRedirects]    Script Date: 08/30/2011 19:50:10 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[ifty_GetTabsAndRedirects]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC sp_executesql @statement = N'
+ALTER Procedure {databaseOwner}[ifty_GetTabsAndRedirects]
+(
+	 @portalId		int 
+	,@includeAdminPages  bit
+	,@includeHostPages   bit
+)
+AS
+BEGIN
+
+/* =============================================
+	Author:      WOMBAT\Bruce
+	Create date: 13/02/2008
+	Description: Gets all tabs and ifty_TabRedirect records
+   ============================================= 
+	
+	    Return Values
+	    0  - Successful Execution.
+	    1  - SQL Error. Rollback Occurred.
+	    2  - No records modified. Rollback Occurred.
+	    3  - No records modified. Commit Occured
+	    4  - Error in sub procedure - entire top procedure rolled back.
+	    5  - No record(s) returned. Procedure Executed Ok.
+	    6+ - Specific to procedure
+	
+	    Modified by:		Date:		Reason for Modification:
+		brc					23/07/09	Change to use {objectQualifier}Vw_tabs to match expected object columns (643)
+		brc					15/09/09	Add in new cultureCode column
+		brc					10/10/10	Add in portal alias Id column (770)
+		brc					29/08/11	Change join to filter correctly with parentTr (858)
+	   =============================================*/
+
+SET NOCOUNT ON 
+DECLARE @ErrStr 	varchar(100)	/* Return error string				*/
+DECLARE @Error		int		/* Return error value				*/
+DECLARE @Rowcount	int		/* Return related row count			*/
+
+	Select *
+	From {databaseOwner}{objectQualifier}vw_Tabs
+	Where ((@portalId = PortalId OR (PortalId is NULL and @includeHostPages = 1))
+	    OR (@portalId = -1 AND ((PortalID is NOT NULL and @includeHOstPages = 0) 
+	    OR  @includeHostPages = 1)))
+		/* admin tabs */
+	  AND ((taBorder between 10000 and 10050 and @includeAdminPages = 1)
+	   OR (taBorder NOT between 10000 and 10050))
+	ORDER BY PortalId, TabOrder
+
+	SELECT @Error = @@ERROR, @RowCount = @@RowCount
+	IF @Error <> 0
+	BEGIN
+		SELECT @ErrStr=''Error in ''+ OBJECT_NAME(@@PROCID) + ''. Stmt No.=1, Db=''+db_name()+'',Err=''+CONVERT(varchar(10),@Error)
+		RAISERROR(@ErrStr,16,1)
+		RETURN 1 /* statement failed */
+	END
+
+	SELECT 
+	    tr.TabId	
+	   ,tr.SeqNum	
+	   ,tr.Url	
+	   ,tr.HttpStatus	
+	   ,tr.RedirectTabId	
+	   ,tr.CultureCode
+	   ,case when parentTr.PortalAliasUsage = 1 /* parent is set to ''child pages inherit'' so get parent portal alias id */
+			 then 
+				case when Coalesce(tr.PortalAliasId, 0) < 1 /* if this page has no specific alias id, then use parent*/
+				then parentTr.PortalAliasId 
+				else tr.PortalAliasId END /* otherwise, use this page alias id */
+			 else tr.PortalALiasId END as PortalAliasId 
+
+  	   ,case when Coalesce(tr.PortalAliasUsage,0) = 0 and coalesce(tr.PortalALiasId,0) < 1 /* default value and no specific alias */
+			 then /* check for inheritance from parent */
+				case when Coalesce(parentTr.PortalALiasUsage,0) = 1 and Coalesce(parentTr.PortalAliasId, 0) > 0 /* parent specifies an alias */
+				then 3 /* inherited from parent */
+				else 0 END /* default value */
+			 when Coalesce(tr.PortalAliasId,0) > 0 /*specific alias for this tab */
+			 then case when coalesce(tr.PortalALiasUsage,0) < 1 
+				  then 1 /* if not set, default to ''child pages inherit''*/
+				  else tr.PortalAliasUsage END
+			 else 
+				0 /* default - fall through value */
+				 END as PortalAliasUsage 
+	FROM {databaseOwner}ifty_TabRedirect tr
+	INNER JOIN {databaseOwner}{objectQualifier}Tabs t
+		on t.TabId = tr.TabId
+	LEFT JOIN {databaseOwner}ifty_TabRedirect parentTr
+	    on t.ParentId = parentTr.TabId
+	   AND parentTr.CultureCode = tr.CultureCode
+	  and parentTr.PortalAliasUsage > 0	   
+	WHERE (@portalId = PortalId OR @portalId = -1)
+	  AND ((taBorder between 10000 and 10050 and @includeAdminPages = 1)
+	   OR (taBorder NOT between 10000 and 10050))
+	ORDER BY PortalId, TabOrder, tr.SeqNum
+
+	SELECT @Error = @@ERROR, @RowCount = @@RowCount
+	IF @Error <> 0
+	BEGIN
+		SELECT @ErrStr=''Error in ''+ OBJECT_NAME(@@PROCID) + ''. Stmt No.=2, Db=''+db_name()+'',Err=''+CONVERT(varchar(10),@Error)
+		RAISERROR(@ErrStr,16,1)
+		RETURN 1 /* statement failed */
+	END
+
+	/* now select a list of tabs and custom alias values where a child of a tab with a custom redirect + custom alias exists */
+	SELECT t.TabId, Coalesce(trp.CultureCode, '''') as CultureCode, pa.HttpAlias
+	FROM {databaseOwner}{objectQualifier}Tabs t
+	INNER JOIN {databaseOwner}ifty_TabRedirect trp
+		ON trp.TabId = t.ParentId	
+	INNER JOIN {databaseOwner}{objectQualifier}PortalALias pa
+		ON trp.PortalAliasId = pa.PortalAliasId
+	WHERE trp.PortalAliasUsage = 1 /* child tabs inherit */
+	  AND (@portalId = t.PortalId OR @portalId = -1)
+	  AND NOT EXISTS (SELECT tr2.TabId FROM {databaseOwner}ifty_TabRedirect tr2 where tr2.TabId = t.TabId and tr2.CultureCode = trp.CultureCode)
+
+	SELECT @Error = @@ERROR, @RowCount = @@RowCount
+	IF @Error <> 0
+	BEGIN
+		SELECT @ErrStr=''Error in ''+ OBJECT_NAME(@@PROCID) + ''. Stmt No.=3, Db=''+db_name()+'',Err=''+CONVERT(varchar(10),@Error)
+		RAISERROR(@ErrStr,16,1)
+		RETURN 1 /* statement failed */
+	END
+
+	/* finished procedure, return value and exit */
+	RETURN 0	  /*** Procedure executed ok. */
+END
+
+
+' 
+END
+GO

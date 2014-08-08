@@ -1,0 +1,178 @@
+﻿/************************************************************/
+/*****              SQLDataProvider		                *****/
+/*****              iFinity.Url Master 1.15.04			*****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}	*****/
+/************************************************************/
+/* 736 : remove addTabAndTabModule for 5.5 compatibiltiy changes */
+/* 706 : new content items tables changes for dnn 5.3 */
+
+
+/* updates for getusername and getdisplayname */
+/****** Object:  StoredProcedure {databaseOwner}[ifty_GetUsernameForUser]    Script Date: 03/19/2010 16:54:14 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sysobjects where id = OBJECT_ID(N'{databaseOwner}[ifty_GetUsernameForUser]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC sp_executesql @statement = N'
+CREATE Procedure {databaseOwner}[ifty_GetUsernameForUser]
+(
+	 @userID		int 
+	,@spaceReplacement char(1)
+)	
+AS
+BEGIN
+
+/* ===============================U==============
+	Author:      Bruce Chapman
+	Create date: 19/03/2010
+	Description: Returns the username for a specified user id
+   ============================================= 
+	
+	    Return Values
+	    0  - Successful Execution.
+	    1  - SQL Error. Rollback Occurred.
+	    2  - No records modified. Rollback Occurred.
+	    3  - No records modified. Commit Occured
+	    4  - Error in sub procedure - entire top procedure rolled back.
+	    5  - No record(s) returned. Procedure Executed Ok.
+	    6+ - Specific to procedure
+	
+	    Modified by:		Date:		Reason for Modification:
+		
+	   =============================================*/
+
+SET NOCOUNT ON 
+DECLARE @ErrStr 	varchar(100)	/* Return error string				*/
+DECLARE @Error		int		/* Return error value				*/
+DECLARE @RowCount	int
+
+	SELECT UserId 
+		,  Username
+  		, case when not t.TabId is null
+			 then ''Duplicate''
+		   when not tr.Url is null
+			and httpStatus = ''200''
+			 then ''Duplicate'' 
+		 else ''Unique'' END as HasPageDuplicate
+	FROM {databaseOwner}{objectQualifier}vw_Users u
+	left join {databaseOwner}{objectQualifier}vw_tabs t
+	  on t.Level = 0
+	 and (t.PortalId = u.PortalId or u.PortalId = null)
+	 and (u.Username = t.TabName   --direct match
+	   or u.Username = replace(t.TabName, '' '',@spaceReplacement) --username = replaced tab name
+	   or u.Username = replace(t.TabName, '' '','''')) --username = tabname with no spaces
+	left join {databaseOwner}ifty_tabRedirect tr
+	 on (tr.Url = u.Username) --matches custom url
+	left join {databaseOwner}{objectQualifier}Tabs trt
+	   on tr.TabId = trt.TabId
+	  and (trt.PortalId = u.PortalId or u.POrtalId = null)
+	WHERE UserID = @userID
+
+	SELECT @Error = @@ERROR, @RowCount = @@RowCount
+	IF @Error <> 0
+	BEGIN
+		SELECT @ErrStr=''Error in ''+ OBJECT_NAME(@@PROCID) + ''. Stmt No.=1, Db=''+db_name()+'',Err=''+CONVERT(varchar(10),@Error)
+		RAISERROR(@ErrStr,16,1)
+		RETURN 1 /* statement failed */
+	END
+	ELSE
+		RETURN 0	  /*** Procedure executed ok. Records committed */
+END
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure {databaseOwner}[ifty_GetDisplayNameForUser]    Script Date: 03/19/2010 16:54:14 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF EXISTS (SELECT * FROM sysobjects where id = OBJECT_ID(N'{databaseOwner}[ifty_GetDisplayNameForUser]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC sp_executesql @statement = N'
+ALTER Procedure {databaseOwner}[ifty_GetDisplayNameForUser]
+(
+	 @userID		int 
+	,@spaceReplacement char(1)
+)	
+AS
+BEGIN
+
+/* =============================================
+	Author:      Bruce Chapman
+	Create date: 11/06/2009
+	Description: Returns the userid for a nominated display name
+   ============================================= 
+	
+	    Return Values
+	    0  - Successful Execution.
+	    1  - SQL Error. Rollback Occurred.
+	    2  - No records modified. Rollback Occurred.
+	    3  - No records modified. Commit Occured
+	    4  - Error in sub procedure - entire top procedure rolled back.
+	    5  - No record(s) returned. Procedure Executed Ok.
+	    6+ - Specific to procedure
+	
+	    Modified by:		Date:		Reason for Modification:
+		brc					19/03/2010	Also check tab names for potential duplicates (704)
+		brc					05/02/2011	collation changes (795)
+	   =============================================*/
+
+SET NOCOUNT ON 
+DECLARE @ErrStr 	varchar(100)	/* Return error string				*/
+DECLARE @Error		int		/* Return error value				*/
+DECLARE @RowCount	int
+
+	SELECT UserId 
+		,  DisplayName
+		,  Case When (Select min(u2.UserId) from {databaseOwner}{objectQualifier}vw_users u2
+		   where (u2.PortalId = u.PortalId or u.PortalId is null)
+			 and (u.DisplayName = u2.DisplayName
+		  or  u2.DisplayName = replace(u.DisplayName,'' '',@spaceReplacement))
+	   ) < u.UserId then ''Duplicate'' else ''Original'' end as CanUseAsUrl
+	,case when not t.TabId is null
+			 then ''Duplicate''
+		   when not tr.Url is null
+			and httpStatus = ''200''
+			 then ''Duplicate'' 
+		else ''Unique'' END as HasPageDuplicate
+	FROM {databaseOwner}{objectQualifier}vw_Users u
+	left join {databaseOwner}{objectQualifier}vw_tabs t
+	  on t.Level = 0
+	 and (t.PortalId = u.PortalId or u.PortalId = null)
+	 and (u.DisplayName = t.TabName   --direct match
+		 or replace(u.DisplayName, '' '', @spaceReplacement) = t.TabName collate database_default  --replaced display name = tabname
+	     or replace(u.DisplayName, '' '', @spaceReplacement)  = replace(t.TabName, '' '',@spaceReplacement) collate database_default 
+		 or u.DisplayName = replace(t.TabName, '' '',@spaceReplacement) collate database_default  --display name = replaced tab name
+		 or u.DisplayName = replace(t.TabName, '' '','''') collate database_default ) --display name = tabname with no spaces
+	left join {databaseOwner}ifty_tabRedirect tr
+	 on (tr.Url = u.DisplayName 
+		  or replace(u.DisplayName, '' '', @spaceReplacement) = tr.Url collate database_default)  --matches custom url
+	left join {databaseOwner}{objectQualifier}Tabs trt
+	   on tr.TabId = trt.TabId
+	  and (trt.PortalId = u.PortalId or u.POrtalId = null)
+
+	WHERE UserID = @userID
+
+	SELECT @Error = @@ERROR, @RowCount = @@RowCount
+	IF @Error <> 0
+	BEGIN
+		SELECT @ErrStr=''Error in ''+ OBJECT_NAME(@@PROCID) + ''. Stmt No.=1, Db=''+db_name()+'',Err=''+CONVERT(varchar(10),@Error)
+		RAISERROR(@ErrStr,16,1)
+		RETURN 1 /* statement failed */
+	END
+	ELSE
+		RETURN 0	  /*** Procedure executed ok. Records committed */
+END
+
+
+' 
+END
+GO
+

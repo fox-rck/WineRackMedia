@@ -1,0 +1,390 @@
+﻿/************************************************************/
+/*****              SQLDataProvider		                *****/
+/*****              iFinity.Url Master 1.14.06			*****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}	*****/
+/************************************************************/
+/* new column for userprofile table */
+IF NOT EXISTS (SELECT * FROM sysobjects so INNER JOIN syscolumns sc on sc.Id = so.id
+		   WHERE so.id = object_id(N'{databaseOwner}[ifty_UserProfileAction]') AND so.type in (N'U')
+			 and sc.name = 'ProfileType')
+BEGIN
+	ALTER TABLE ifty_UserProfileAction
+	ADD ProfileType nvarchar(100) NOT NULL Default 'Username'
+END
+
+
+/****** Object:  StoredProcedure {databaseOwner}[ifty_GetUserProfileActions]    Script Date: 06/12/2009 17:35:35 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}[ifty_GetUserProfileActions]') AND OBJECTPROPERTY(id,N'IsProcedure') = 1)
+BEGIN
+EXEC sp_executesql @statement = N'
+ALTER Procedure {databaseOwner}[ifty_GetUserProfileActions]
+(
+	 @PortalID		int 
+)
+AS
+BEGIN
+
+/* =============================================
+	Author:      bruce
+	Create date: 21/04/2009
+	Description: Gets all UserProfileAction records
+				 for a portal
+   ============================================= 
+	
+	    Return Values
+	    -2  - No records modified. Commit Occured
+	    -1  - No record(s) returned. Procedure Executed Ok.
+	    0  - Successful Execution.
+	    1  - SQL Error. Rollback Occurred.
+	    2  - No records modified. Rollback Occurred.
+	    3  - Error in sub procedure - entire top procedure rolled back.
+	    4+ - Specific to procedure
+	
+	    Modified by:		Date:		Reason for Modification:
+		brc					12/06/09	add new profileType column	
+	   =============================================*/
+
+SET NOCOUNT ON 
+DECLARE @ErrStr 	varchar(100)	/* Return error string				*/
+DECLARE @Error		int		/* Return error value				*/
+DECLARE @Rowcount	int		/* Return related row count			*/
+
+	SELECT 
+	    PortalID	
+	   ,DestinationTabID	
+	   ,ParameterName	
+	   ,DoRedirect	
+	   ,AllowOtherParameters	
+	   ,OtherParameters
+	   ,ProfileType
+	FROM ifty_UserProfileAction
+	WHERE (PortalID = @PortalID or @portalId = -1)
+	
+	SELECT @Error = @@ERROR, @RowCount = @@RowCount
+	IF @Error <> 0
+	BEGIN
+		SELECT @ErrStr=''Error in ''+ OBJECT_NAME(@@PROCID) + ''. Stmt No.=1, Db=''+db_name()+'',Err=''+CONVERT(varchar(10),@Error)
+		RAISERROR(@ErrStr,16,1)
+		RETURN 1 /* statement failed */
+	END
+	/* finished procedure, return value and exit */
+	RETURN 0	  /*** Procedure executed ok. */
+END
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure {databaseOwner}[ifty_UpdateUserProfileAction]    Script Date: 06/12/2009 17:35:35 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}[ifty_UpdateUserProfileAction]') AND OBJECTPROPERTY(id,N'IsProcedure') = 1)
+BEGIN
+EXEC sp_executesql @statement = N'
+ALTER Procedure {databaseOwner}[ifty_UpdateUserProfileAction]
+(
+	 @PortalID		int 
+	,@DestinationTabID		int 
+	,@ParameterName		nvarchar(50)
+	,@DoRedirect		bit 
+	,@AllowOtherParameters		bit 
+	,@OtherParameters		nvarchar(50)
+	,@ProfileType			nvarchar(20)
+)
+AS
+BEGIN
+
+/* =============================================
+	Author:      bruce
+	Create date: 21/04/2009
+	Description: Updates a UserProfileAction record
+   ============================================= 
+	
+	    Return Values
+	    -2  - No records modified. Commit Occured
+	    -1  - No record(s) returned. Procedure Executed Ok.
+	    0  - Successful Execution.
+	    1  - SQL Error. Rollback Occurred.
+	    2  - No records modified. Rollback Occurred.
+	    3  - Error in sub procedure - entire top procedure rolled back.
+	    4+ - Specific to procedure
+	
+	    Modified by:		Date:		Reason for Modification:
+		brc					12/06/09	add new profileType column	
+	   =============================================*/
+
+SET NOCOUNT ON 
+DECLARE @ErrStr 	varchar(100)	/* Return error string				*/
+DECLARE @Error		int		/* Return error value				*/
+DECLARE @Rowcount	int		/* Return related row count			*/
+DECLARE @TranCount  int     /* Keeps a record of the transaction count */
+DECLARE @CurUser    varChar(15)
+       ,@CurTime	dateTime
+SELECT @CurUser = Current_User
+      ,@CurTime = GetDate()
+DECLARE @RetVal int	/* return value from sub procedure */
+
+SELECT @TranCount = @@TRANCOUNT
+IF @TranCount = 0 BEGIN TRANSACTION T1
+	UPDATE ifty_UserProfileAction
+	Set PortalID	 = 	@PortalID
+	  ,DestinationTabID	 = 	@DestinationTabID
+	  ,ParameterName	 = 	@ParameterName
+	  ,DoRedirect	 = 	@DoRedirect
+	  ,AllowOtherParameters	 = 	@AllowOtherParameters
+	  ,OtherParameters = @OtherParameters
+	  ,ProfileTYpe = @ProfileType
+	WHERE PortalID = @PortalID
+	
+	SELECT @Error = @@ERROR, @RowCount = @@RowCount
+	IF @Error <> 0
+	BEGIN
+		IF @TranCount = 0 ROLLBACK TRANSACTION T1
+		SELECT @ErrStr=''Error in ''+ OBJECT_NAME(@@PROCID) + ''. Stmt No.=1, Db=''+db_name()+'',Err=''+CONVERT(varchar(10),@Error)
+		RAISERROR(@ErrStr,16,1)
+		RETURN 1 /* statement failed */
+	END
+	/* finished procedure, commit and return */
+	IF @TranCount = 0 COMMIT TRANSACTION T1
+	IF @RowCount = 0
+		RETURN -2	  /*** Procedure did nothing. Records committed */
+	ELSE
+		RETURN 0	  /*** Procedure executed ok. Records committed */
+END
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure {databaseOwner}[ifty_AddUserProfileAction]    Script Date: 06/12/2009 17:35:36 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}[ifty_AddUserProfileAction]') AND OBJECTPROPERTY(id,N'IsProcedure') = 1)
+BEGIN
+EXEC sp_executesql @statement = N'
+ALTER Procedure {databaseOwner}[ifty_AddUserProfileAction]
+(
+	 @PortalID		int 
+	,@DestinationTabID		int 
+	,@ParameterName		nvarchar(50)
+	,@DoRedirect		bit 
+	,@AllowOtherParameters		bit 
+	,@OtherParameters		nvarchar(50)
+	,@ProfileType			nvarchar(20)
+)
+AS
+BEGIN
+
+/* =============================================
+	Author:      bruce
+	Create date: 21/04/2009
+	Description: Adds a UserProfileAction record
+   ============================================= 
+	
+	    Return Values
+	    -2  - No records modified. Commit Occured
+	    -1  - No record(s) returned. Procedure Executed Ok.
+	    0  - Successful Execution.
+	    1  - SQL Error. Rollback Occurred.
+	    2  - No records modified. Rollback Occurred.
+	    3  - Error in sub procedure - entire top procedure rolled back.
+	    4+ - Specific to procedure
+	
+	    Modified by:		Date:		Reason for Modification:
+		brc					12/06/09	add new profileType column
+	   =============================================*/
+
+SET NOCOUNT ON 
+DECLARE @ErrStr 	varchar(100)	/* Return error string				*/
+DECLARE @Error		int		/* Return error value				*/
+DECLARE @Rowcount	int		/* Return related row count			*/
+DECLARE @TranCount  int     /* Keeps a record of the transaction count */
+DECLARE @CurUser    varChar(15)
+       ,@CurTime	dateTime
+SELECT @CurUser = Current_User
+      ,@CurTime = GetDate()
+DECLARE @RetVal int	/* return value from sub procedure */
+
+SELECT @TranCount = @@TRANCOUNT
+IF @TranCount = 0 BEGIN TRANSACTION T1
+	INSERT INTO ifty_UserProfileAction(
+		  PortalID
+		 ,DestinationTabID
+		 ,ParameterName
+		 ,DoRedirect
+		 ,AllowOtherParameters
+		 ,OtherParameters
+		 ,ProfileType
+	) VALUES (
+		  @PortalID
+		 ,@DestinationTabID
+		 ,@ParameterName
+		 ,@DoRedirect
+		 ,@AllowOtherParameters
+		 ,@OtherParameters
+		 ,@ProfileType
+	)
+
+	
+	SELECT @Error = @@ERROR, @RowCount = @@RowCount
+	IF @Error <> 0
+	BEGIN
+		IF @TranCount = 0 ROLLBACK TRANSACTION T1
+		SELECT @ErrStr=''Error in ''+ OBJECT_NAME(@@PROCID) + ''. Stmt No.=1, Db=''+db_name()+'',Err=''+CONVERT(varchar(10),@Error)
+		RAISERROR(@ErrStr,16,1)
+		RETURN 1 /* statement failed */
+	END
+	/* finished procedure, commit and return */
+	IF @TranCount = 0 COMMIT TRANSACTION T1
+	IF @RowCount = 0
+		RETURN -2	  /*** Procedure did nothing. Records committed */
+	ELSE
+		RETURN 0	  /*** Procedure executed ok. Records committed */
+END
+
+
+' 
+END
+GO
+
+
+/****** Object:  StoredProcedure {databaseOwner}[ifty_GetDisplayNameForUser]    Script Date: 06/12/2009 17:45:08 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}[ifty_GetDisplayNameForUser]') AND OBJECTPROPERTY(id,N'IsProcedure') = 1)
+BEGIN
+EXEC sp_executesql @statement = N'
+CREATE Procedure {databaseOwner}[ifty_GetDisplayNameForUser]
+(
+	 @userID		int 
+	,@spaceReplacement char(1)
+)	
+AS
+BEGIN
+
+/* =============================================
+	Author:      Bruce Chapman
+	Create date: 11/06/2009
+	Description: Returns the userid for a nominated display name
+   ============================================= 
+	
+	    Return Values
+	    0  - Successful Execution.
+	    1  - SQL Error. Rollback Occurred.
+	    2  - No records modified. Rollback Occurred.
+	    3  - No records modified. Commit Occured
+	    4  - Error in sub procedure - entire top procedure rolled back.
+	    5  - No record(s) returned. Procedure Executed Ok.
+	    6+ - Specific to procedure
+	
+	    Modified by:		Date:		Reason for Modification:
+	
+	   =============================================*/
+
+SET NOCOUNT ON 
+DECLARE @ErrStr 	varchar(100)	/* Return error string				*/
+DECLARE @Error		int		/* Return error value				*/
+DECLARE @RowCount	int
+	
+	SELECT UserId 
+		,  DisplayName
+		,  Case When (Select min(u2.UserId) from {databaseOwner}{objectQualifier}vw_users u2
+		   where (u2.PortalId = u.PortalId or u.PortalId is null)
+			 and (u.DisplayName = u2.DisplayName
+		  or  u2.DisplayName = replace(u.DisplayName,'' '', @spaceReplacement))
+	   ) < u.UserId then ''Duplicate'' else ''Original'' end as CanUseAsUrl
+	FROM {databaseOwner}{objectQualifier}vw_Users u
+	WHERE UserID = @userID
+
+	SELECT @Error = @@ERROR, @RowCount = @@RowCount
+	IF @Error <> 0
+	BEGIN
+		SELECT @ErrStr=''Error in ''+ OBJECT_NAME(@@PROCID) + ''. Stmt No.=1, Db=''+db_name()+'',Err=''+CONVERT(varchar(10),@Error)
+		RAISERROR(@ErrStr,16,1)
+		RETURN 1 /* statement failed */
+	END
+	ELSE
+		RETURN 0	  /*** Procedure executed ok. Records committed */
+END
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure {databaseOwner}[ifty_GetUserByDisplayName]    Script Date: 06/12/2009 17:45:09 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}[ifty_GetUserByDisplayName]') AND OBJECTPROPERTY(id,N'IsProcedure') = 1)
+BEGIN
+EXEC sp_executesql @statement = N'
+CREATE Procedure {databaseOwner}[ifty_GetUserByDisplayName]
+(
+	  @portalId int
+	, @displayNameReplaced nvarchar(100)
+	, @displayNameStripped nvarchar(100)
+)
+AS
+BEGIN
+
+/* =============================================
+	Author:      Bruce Chapman
+	Create date: 11/06/2009
+	Description: Returns the display name for a nominated user
+   ============================================= 
+	
+	    Return Values
+	    0  - Successful Execution.
+	    1  - SQL Error. Rollback Occurred.
+	    2  - No records modified. Rollback Occurred.
+	    3  - No records modified. Commit Occured
+	    4  - Error in sub procedure - entire top procedure rolled back.
+	    5  - No record(s) returned. Procedure Executed Ok.
+	    6+ - Specific to procedure
+	
+	    Modified by:		Date:		Reason for Modification:
+	
+	   =============================================*/
+
+SET NOCOUNT ON 
+DECLARE @ErrStr 	varchar(100)	/* Return error string				*/
+DECLARE @Error		int		/* Return error value				*/
+DECLARE @RowCount	int
+	
+	SELECT top 1 UserId 
+		,  case when DisplayName = @displayNameReplaced then ''encoded'' else ''stripped'' end as MatchType
+		,  DisplayName
+	FROM {databaseOwner}{objectQualifier}vw_Users
+	WHERE (DisplayName = @displayNameReplaced or DisplayName = @displayNameStripped)
+	  AND (PortalId = @PortalID OR IsSuperUser = 1 OR @PortalID is null)
+	ORDER BY UserId ASC
+
+	SELECT @Error = @@ERROR, @RowCount = @@RowCount
+	IF @Error <> 0
+	BEGIN
+		SELECT @ErrStr=''Error in ''+ OBJECT_NAME(@@PROCID) + ''. Stmt No.=1, Db=''+db_name()+'',Err=''+CONVERT(varchar(10),@Error)
+		RAISERROR(@ErrStr,16,1)
+		RETURN 1 /* statement failed */
+	END
+	ELSE
+		RETURN 0	  /*** Procedure executed ok. Records committed */
+END
+
+
+' 
+END
+GO

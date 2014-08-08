@@ -1,0 +1,23 @@
+﻿/************************************************************/
+/*****              SQLDataProvider		                *****/
+/*****              iFinity.Url Master 1.10.04			*****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}	*****/
+/************************************************************/
+/* 736 : remove addTabAndTabModule for 5.5 compatibiltiy changes */
+/* fix up the permissions for administrators for the Page Urls screen */
+/* 720 test for existence before inserting */
+INSERT into {databaseOwner}{objectQualifier}TabPermission
+(TabId, PermissionId, AllowAccess, RoleId, UserId)
+select TabId, 1, 1, 0, null
+ from {databaseOwner}{objectQualifier}Tabs 
+where (TabName = 'Page Urls' or TabName = 'Portal Urls')
+ and not exists (select * from {databaseOwner}{objectQualifier}TabPermission
+				 where TabId = {databaseOwner}{objectQualifier}Tabs.TabId
+				   and  PermissionId = 1)
+
+ 
+
+ /* 736 : ifty_onNewModule trigger removed */

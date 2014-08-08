@@ -1,0 +1,1226 @@
+2012-02-22 11:04:38,011 [SJMDesign-PC2][Thread:5][FATAL] DotNetNuke.Common.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Common.Globals.get_Status()
+   at DotNetNuke.Common.Initialize.CheckVersion(HttpApplication app)
+   at DotNetNuke.Common.Initialize.InitializeApp(HttpApplication app)
+   at DotNetNuke.Common.Initialize.Init(HttpApplication app)
+   at DotNetNuke.Common.DotNetNukeHttpApplication.Application_BeginRequest(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2012-02-22 11:06:17,046 [SJMDesign-PC2][Thread:10][ERROR] DotNetNuke.Common.Initialize - Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Common.Globals.get_Status()
+   at DotNetNuke.Services.Log.EventLog.LogController.AddLog(LogInfo logInfo)
+   at DotNetNuke.Common.Initialize.LogEnd()
+2012-02-22 11:06:49,356 [SJMDesign-PC2][Thread:12][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "Sprout" requested by the login. The login failed.
+Login failed for user 'IIS APPPOOL\sprout'.
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "Sprout" requested by the login. The login failed.
+Login failed for user 'IIS APPPOOL\sprout'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-22 11:06:49,634 [SJMDesign-PC2][Thread:12][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "Sprout" requested by the login. The login failed.
+Login failed for user 'IIS APPPOOL\sprout'.
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "Sprout" requested by the login. The login failed.
+Login failed for user 'IIS APPPOOL\sprout'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.DiscoverSpParameterSet(SqlConnection connection, String spName, Boolean includeReturnValueParameter, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSetInternal(SqlConnection connection, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddHostSetting(String SettingName, String SettingValue, Boolean SettingIsSecure, Int32 CreatedByUserID)
+   at DotNetNuke.Entities.Controllers.HostController.Update(ConfigurationSetting config, Boolean clearCache)
+2012-02-22 11:06:49,759 [SJMDesign-PC2][Thread:12][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "Sprout" requested by the login. The login failed.
+Login failed for user 'IIS APPPOOL\sprout'.
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "Sprout" requested by the login. The login failed.
+Login failed for user 'IIS APPPOOL\sprout'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-22 11:06:49,796 [SJMDesign-PC2][Thread:12][ERROR] iFinity.DNN.Modules.UrlMaster.UrlRewriteModule - Cannot open database "Sprout" requested by the login. The login failed.
+Login failed for user 'IIS APPPOOL\sprout'.
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "Sprout" requested by the login. The login failed.
+Login failed for user 'IIS APPPOOL\sprout'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetPortals()
+   at DotNetNuke.Entities.Portals.PortalController.GetPortals()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.ParseChosenPortalAliases()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.InitSettings(String name, String type, Boolean isCurrentProvider, NameValueCollection attributes)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings..ctor(Provider provider, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettingsCol..ctor(Provider provider, XmlNodeList providerPortals, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlProviderSettings(String providerName, Boolean urlMasterSettingsOnly, FriendlyUrlSettingsCol& settingsCol)
+   at iFinity.DNN.Modules.UrlMaster.UrlRewriteModule.OnBeginRequest(Object sender, EventArgs e)
+2012-02-22 11:07:40,218 [SJMDesign-PC2][Thread:5][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "Sprout" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "Sprout" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-22 11:07:40,753 [SJMDesign-PC2][Thread:5][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "Sprout" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "Sprout" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.DiscoverSpParameterSet(SqlConnection connection, String spName, Boolean includeReturnValueParameter, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSetInternal(SqlConnection connection, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddHostSetting(String SettingName, String SettingValue, Boolean SettingIsSecure, Int32 CreatedByUserID)
+   at DotNetNuke.Entities.Controllers.HostController.Update(ConfigurationSetting config, Boolean clearCache)
+2012-02-22 11:07:40,842 [SJMDesign-PC2][Thread:5][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "Sprout" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "Sprout" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-22 11:07:40,858 [SJMDesign-PC2][Thread:5][ERROR] iFinity.DNN.Modules.UrlMaster.UrlRewriteModule - Cannot open database "Sprout" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "Sprout" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetPortals()
+   at DotNetNuke.Entities.Portals.PortalController.GetPortals()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.ParseChosenPortalAliases()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.InitSettings(String name, String type, Boolean isCurrentProvider, NameValueCollection attributes)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings..ctor(Provider provider, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettingsCol..ctor(Provider provider, XmlNodeList providerPortals, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlProviderSettings(String providerName, Boolean urlMasterSettingsOnly, FriendlyUrlSettingsCol& settingsCol)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlSettingsCol()
+   at iFinity.DNN.Modules.UrlMaster.UrlRewriteModule.OnBeginRequest(Object sender, EventArgs e)
+2012-02-22 11:07:51,757 [SJMDesign-PC2][Thread:5][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "Sprout" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "Sprout" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnection owningObject)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(String host, String newPassword, Boolean redirectedUserInstance, SqlConnection owningObject, SqlConnectionString connectionOptions, Int64 timerStart)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(SqlConnection owningObject, SqlConnectionString connectionOptions, String newPassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, Object providerInfo, String newPassword, SqlConnection owningObject, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.DiscoverSpParameterSet(SqlConnection connection, String spName, Boolean includeReturnValueParameter, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSetInternal(SqlConnection connection, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddHostSetting(String SettingName, String SettingValue, Boolean SettingIsSecure, Int32 CreatedByUserID)
+   at DotNetNuke.Entities.Controllers.HostController.Update(ConfigurationSetting config, Boolean clearCache)
+2012-02-22 11:07:51,770 [SJMDesign-PC2][Thread:5][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "Sprout" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "Sprout" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-22 11:07:51,773 [SJMDesign-PC2][Thread:5][ERROR] iFinity.DNN.Modules.UrlMaster.UrlRewriteModule - Cannot open database "Sprout" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "Sprout" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetPortals()
+   at DotNetNuke.Entities.Portals.PortalController.GetPortals()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.ParseChosenPortalAliases()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.InitSettings(String name, String type, Boolean isCurrentProvider, NameValueCollection attributes)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings..ctor(Provider provider, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettingsCol..ctor(Provider provider, XmlNodeList providerPortals, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlProviderSettings(String providerName, Boolean urlMasterSettingsOnly, FriendlyUrlSettingsCol& settingsCol)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlSettingsCol()
+   at iFinity.DNN.Modules.UrlMaster.UrlRewriteModule.OnBeginRequest(Object sender, EventArgs e)
+2012-02-22 11:07:54,499 [SJMDesign-PC2][Thread:5][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "Sprout" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "Sprout" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.DiscoverSpParameterSet(SqlConnection connection, String spName, Boolean includeReturnValueParameter, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSetInternal(SqlConnection connection, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddHostSetting(String SettingName, String SettingValue, Boolean SettingIsSecure, Int32 CreatedByUserID)
+   at DotNetNuke.Entities.Controllers.HostController.Update(ConfigurationSetting config, Boolean clearCache)
+2012-02-22 11:07:54,504 [SJMDesign-PC2][Thread:5][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "Sprout" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "Sprout" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-22 11:07:54,508 [SJMDesign-PC2][Thread:5][ERROR] iFinity.DNN.Modules.UrlMaster.UrlRewriteModule - Cannot open database "Sprout" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "Sprout" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetPortals()
+   at DotNetNuke.Entities.Portals.PortalController.GetPortals()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.ParseChosenPortalAliases()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.InitSettings(String name, String type, Boolean isCurrentProvider, NameValueCollection attributes)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings..ctor(Provider provider, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettingsCol..ctor(Provider provider, XmlNodeList providerPortals, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlProviderSettings(String providerName, Boolean urlMasterSettingsOnly, FriendlyUrlSettingsCol& settingsCol)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlSettingsCol()
+   at iFinity.DNN.Modules.UrlMaster.UrlRewriteModule.OnBeginRequest(Object sender, EventArgs e)
+2012-02-22 11:08:38,810 [SJMDesign-PC2][Thread:5][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-22 11:08:38,956 [SJMDesign-PC2][Thread:5][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.DiscoverSpParameterSet(SqlConnection connection, String spName, Boolean includeReturnValueParameter, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSetInternal(SqlConnection connection, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddHostSetting(String SettingName, String SettingValue, Boolean SettingIsSecure, Int32 CreatedByUserID)
+   at DotNetNuke.Entities.Controllers.HostController.Update(ConfigurationSetting config, Boolean clearCache)
+2012-02-22 11:08:38,992 [SJMDesign-PC2][Thread:5][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-22 11:08:39,007 [SJMDesign-PC2][Thread:5][ERROR] iFinity.DNN.Modules.UrlMaster.UrlRewriteModule - Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetPortals()
+   at DotNetNuke.Entities.Portals.PortalController.GetPortals()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.ParseChosenPortalAliases()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.InitSettings(String name, String type, Boolean isCurrentProvider, NameValueCollection attributes)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings..ctor(Provider provider, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettingsCol..ctor(Provider provider, XmlNodeList providerPortals, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlProviderSettings(String providerName, Boolean urlMasterSettingsOnly, FriendlyUrlSettingsCol& settingsCol)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlSettingsCol()
+   at iFinity.DNN.Modules.UrlMaster.UrlRewriteModule.OnBeginRequest(Object sender, EventArgs e)
+2012-02-22 11:08:43,808 [SJMDesign-PC2][Thread:5][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnection owningObject)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(String host, String newPassword, Boolean redirectedUserInstance, SqlConnection owningObject, SqlConnectionString connectionOptions, Int64 timerStart)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(SqlConnection owningObject, SqlConnectionString connectionOptions, String newPassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, Object providerInfo, String newPassword, SqlConnection owningObject, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.DiscoverSpParameterSet(SqlConnection connection, String spName, Boolean includeReturnValueParameter, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSetInternal(SqlConnection connection, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddHostSetting(String SettingName, String SettingValue, Boolean SettingIsSecure, Int32 CreatedByUserID)
+   at DotNetNuke.Entities.Controllers.HostController.Update(ConfigurationSetting config, Boolean clearCache)
+2012-02-22 11:08:43,811 [SJMDesign-PC2][Thread:5][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-22 11:08:43,814 [SJMDesign-PC2][Thread:5][ERROR] iFinity.DNN.Modules.UrlMaster.UrlRewriteModule - Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetPortals()
+   at DotNetNuke.Entities.Portals.PortalController.GetPortals()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.ParseChosenPortalAliases()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.InitSettings(String name, String type, Boolean isCurrentProvider, NameValueCollection attributes)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings..ctor(Provider provider, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettingsCol..ctor(Provider provider, XmlNodeList providerPortals, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlProviderSettings(String providerName, Boolean urlMasterSettingsOnly, FriendlyUrlSettingsCol& settingsCol)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlSettingsCol()
+   at iFinity.DNN.Modules.UrlMaster.UrlRewriteModule.OnBeginRequest(Object sender, EventArgs e)
+2012-02-22 11:08:43,868 [SJMDesign-PC2][Thread:5][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.DiscoverSpParameterSet(SqlConnection connection, String spName, Boolean includeReturnValueParameter, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSetInternal(SqlConnection connection, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddHostSetting(String SettingName, String SettingValue, Boolean SettingIsSecure, Int32 CreatedByUserID)
+   at DotNetNuke.Entities.Controllers.HostController.Update(ConfigurationSetting config, Boolean clearCache)
+2012-02-22 11:08:43,872 [SJMDesign-PC2][Thread:5][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-22 11:08:43,875 [SJMDesign-PC2][Thread:5][ERROR] iFinity.DNN.Modules.UrlMaster.UrlRewriteModule - Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetPortals()
+   at DotNetNuke.Entities.Portals.PortalController.GetPortals()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.ParseChosenPortalAliases()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.InitSettings(String name, String type, Boolean isCurrentProvider, NameValueCollection attributes)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings..ctor(Provider provider, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettingsCol..ctor(Provider provider, XmlNodeList providerPortals, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlProviderSettings(String providerName, Boolean urlMasterSettingsOnly, FriendlyUrlSettingsCol& settingsCol)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlSettingsCol()
+   at iFinity.DNN.Modules.UrlMaster.UrlRewriteModule.OnBeginRequest(Object sender, EventArgs e)
+2012-02-22 11:08:43,886 [SJMDesign-PC2][Thread:8][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.DiscoverSpParameterSet(SqlConnection connection, String spName, Boolean includeReturnValueParameter, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSetInternal(SqlConnection connection, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddHostSetting(String SettingName, String SettingValue, Boolean SettingIsSecure, Int32 CreatedByUserID)
+   at DotNetNuke.Entities.Controllers.HostController.Update(ConfigurationSetting config, Boolean clearCache)
+2012-02-22 11:08:43,890 [SJMDesign-PC2][Thread:8][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-22 11:08:43,894 [SJMDesign-PC2][Thread:8][ERROR] iFinity.DNN.Modules.UrlMaster.UrlRewriteModule - Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetPortals()
+   at DotNetNuke.Entities.Portals.PortalController.GetPortals()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.ParseChosenPortalAliases()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.InitSettings(String name, String type, Boolean isCurrentProvider, NameValueCollection attributes)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings..ctor(Provider provider, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettingsCol..ctor(Provider provider, XmlNodeList providerPortals, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlProviderSettings(String providerName, Boolean urlMasterSettingsOnly, FriendlyUrlSettingsCol& settingsCol)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlSettingsCol()
+   at iFinity.DNN.Modules.UrlMaster.UrlRewriteModule.OnBeginRequest(Object sender, EventArgs e)
+2012-02-22 11:08:43,905 [SJMDesign-PC2][Thread:8][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.DiscoverSpParameterSet(SqlConnection connection, String spName, Boolean includeReturnValueParameter, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSetInternal(SqlConnection connection, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddHostSetting(String SettingName, String SettingValue, Boolean SettingIsSecure, Int32 CreatedByUserID)
+   at DotNetNuke.Entities.Controllers.HostController.Update(ConfigurationSetting config, Boolean clearCache)
+2012-02-22 11:08:43,908 [SJMDesign-PC2][Thread:8][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-22 11:08:43,911 [SJMDesign-PC2][Thread:8][ERROR] iFinity.DNN.Modules.UrlMaster.UrlRewriteModule - Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetPortals()
+   at DotNetNuke.Entities.Portals.PortalController.GetPortals()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.ParseChosenPortalAliases()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.InitSettings(String name, String type, Boolean isCurrentProvider, NameValueCollection attributes)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings..ctor(Provider provider, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettingsCol..ctor(Provider provider, XmlNodeList providerPortals, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlProviderSettings(String providerName, Boolean urlMasterSettingsOnly, FriendlyUrlSettingsCol& settingsCol)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlSettingsCol()
+   at iFinity.DNN.Modules.UrlMaster.UrlRewriteModule.OnBeginRequest(Object sender, EventArgs e)
+2012-02-22 11:10:53,362 [SJMDesign-PC2][Thread:8][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-22 11:10:53,510 [SJMDesign-PC2][Thread:8][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.DiscoverSpParameterSet(SqlConnection connection, String spName, Boolean includeReturnValueParameter, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSetInternal(SqlConnection connection, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddHostSetting(String SettingName, String SettingValue, Boolean SettingIsSecure, Int32 CreatedByUserID)
+   at DotNetNuke.Entities.Controllers.HostController.Update(ConfigurationSetting config, Boolean clearCache)
+2012-02-22 11:10:53,560 [SJMDesign-PC2][Thread:8][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-22 11:10:53,581 [SJMDesign-PC2][Thread:8][ERROR] iFinity.DNN.Modules.UrlMaster.UrlRewriteModule - Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetPortals()
+   at DotNetNuke.Entities.Portals.PortalController.GetPortals()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.ParseChosenPortalAliases()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.InitSettings(String name, String type, Boolean isCurrentProvider, NameValueCollection attributes)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings..ctor(Provider provider, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettingsCol..ctor(Provider provider, XmlNodeList providerPortals, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlProviderSettings(String providerName, Boolean urlMasterSettingsOnly, FriendlyUrlSettingsCol& settingsCol)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlSettingsCol()
+   at iFinity.DNN.Modules.UrlMaster.UrlRewriteModule.OnBeginRequest(Object sender, EventArgs e)
+2012-02-22 11:15:51,364 [SJMDesign-PC2][Thread:5][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnection owningObject)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(String host, String newPassword, Boolean redirectedUserInstance, SqlConnection owningObject, SqlConnectionString connectionOptions, Int64 timerStart)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(SqlConnection owningObject, SqlConnectionString connectionOptions, String newPassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, Object providerInfo, String newPassword, SqlConnection owningObject, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.DiscoverSpParameterSet(SqlConnection connection, String spName, Boolean includeReturnValueParameter, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSetInternal(SqlConnection connection, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddHostSetting(String SettingName, String SettingValue, Boolean SettingIsSecure, Int32 CreatedByUserID)
+   at DotNetNuke.Entities.Controllers.HostController.Update(ConfigurationSetting config, Boolean clearCache)
+2012-02-22 11:15:51,412 [SJMDesign-PC2][Thread:5][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-22 11:15:51,416 [SJMDesign-PC2][Thread:5][ERROR] iFinity.DNN.Modules.UrlMaster.UrlRewriteModule - Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetPortals()
+   at DotNetNuke.Entities.Portals.PortalController.GetPortals()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.ParseChosenPortalAliases()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.InitSettings(String name, String type, Boolean isCurrentProvider, NameValueCollection attributes)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings..ctor(Provider provider, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettingsCol..ctor(Provider provider, XmlNodeList providerPortals, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlProviderSettings(String providerName, Boolean urlMasterSettingsOnly, FriendlyUrlSettingsCol& settingsCol)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlSettingsCol()
+   at iFinity.DNN.Modules.UrlMaster.UrlRewriteModule.OnBeginRequest(Object sender, EventArgs e)
+2012-02-22 11:17:54,425 [SJMDesign-PC2][Thread:5][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnection owningObject)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(String host, String newPassword, Boolean redirectedUserInstance, SqlConnection owningObject, SqlConnectionString connectionOptions, Int64 timerStart)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(SqlConnection owningObject, SqlConnectionString connectionOptions, String newPassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, Object providerInfo, String newPassword, SqlConnection owningObject, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.DiscoverSpParameterSet(SqlConnection connection, String spName, Boolean includeReturnValueParameter, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSetInternal(SqlConnection connection, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddHostSetting(String SettingName, String SettingValue, Boolean SettingIsSecure, Int32 CreatedByUserID)
+   at DotNetNuke.Entities.Controllers.HostController.Update(ConfigurationSetting config, Boolean clearCache)
+2012-02-22 11:17:54,429 [SJMDesign-PC2][Thread:5][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-22 11:17:54,432 [SJMDesign-PC2][Thread:5][ERROR] iFinity.DNN.Modules.UrlMaster.UrlRewriteModule - Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "SPROUT" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetPortals()
+   at DotNetNuke.Entities.Portals.PortalController.GetPortals()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.ParseChosenPortalAliases()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.InitSettings(String name, String type, Boolean isCurrentProvider, NameValueCollection attributes)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings..ctor(Provider provider, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettingsCol..ctor(Provider provider, XmlNodeList providerPortals, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlProviderSettings(String providerName, Boolean urlMasterSettingsOnly, FriendlyUrlSettingsCol& settingsCol)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlSettingsCol()
+   at iFinity.DNN.Modules.UrlMaster.UrlRewriteModule.OnBeginRequest(Object sender, EventArgs e)
+2012-02-22 11:21:55,886 [SJMDesign-PC2][Thread:8][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-22 11:21:56,024 [SJMDesign-PC2][Thread:8][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.DiscoverSpParameterSet(SqlConnection connection, String spName, Boolean includeReturnValueParameter, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSetInternal(SqlConnection connection, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddHostSetting(String SettingName, String SettingValue, Boolean SettingIsSecure, Int32 CreatedByUserID)
+   at DotNetNuke.Entities.Controllers.HostController.Update(ConfigurationSetting config, Boolean clearCache)
+2012-02-22 11:21:56,060 [SJMDesign-PC2][Thread:8][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-22 11:21:56,076 [SJMDesign-PC2][Thread:8][ERROR] iFinity.DNN.Modules.UrlMaster.UrlRewriteModule - Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetPortals()
+   at DotNetNuke.Entities.Portals.PortalController.GetPortals()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.ParseChosenPortalAliases()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.InitSettings(String name, String type, Boolean isCurrentProvider, NameValueCollection attributes)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings..ctor(Provider provider, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettingsCol..ctor(Provider provider, XmlNodeList providerPortals, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlProviderSettings(String providerName, Boolean urlMasterSettingsOnly, FriendlyUrlSettingsCol& settingsCol)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlSettingsCol()
+   at iFinity.DNN.Modules.UrlMaster.UrlRewriteModule.OnBeginRequest(Object sender, EventArgs e)
+2012-02-22 11:23:23,217 [SJMDesign-PC2][Thread:8][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnection owningObject)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(String host, String newPassword, Boolean redirectedUserInstance, SqlConnection owningObject, SqlConnectionString connectionOptions, Int64 timerStart)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(SqlConnection owningObject, SqlConnectionString connectionOptions, String newPassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, Object providerInfo, String newPassword, SqlConnection owningObject, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.DiscoverSpParameterSet(SqlConnection connection, String spName, Boolean includeReturnValueParameter, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSetInternal(SqlConnection connection, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddHostSetting(String SettingName, String SettingValue, Boolean SettingIsSecure, Int32 CreatedByUserID)
+   at DotNetNuke.Entities.Controllers.HostController.Update(ConfigurationSetting config, Boolean clearCache)
+2012-02-22 11:23:23,220 [SJMDesign-PC2][Thread:8][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-22 11:23:23,223 [SJMDesign-PC2][Thread:8][ERROR] iFinity.DNN.Modules.UrlMaster.UrlRewriteModule - Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetPortals()
+   at DotNetNuke.Entities.Portals.PortalController.GetPortals()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.ParseChosenPortalAliases()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.InitSettings(String name, String type, Boolean isCurrentProvider, NameValueCollection attributes)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings..ctor(Provider provider, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettingsCol..ctor(Provider provider, XmlNodeList providerPortals, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlProviderSettings(String providerName, Boolean urlMasterSettingsOnly, FriendlyUrlSettingsCol& settingsCol)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlSettingsCol()
+   at iFinity.DNN.Modules.UrlMaster.UrlRewriteModule.OnBeginRequest(Object sender, EventArgs e)
+2012-02-22 11:23:34,839 [SJMDesign-PC2][Thread:8][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnection owningObject)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(String host, String newPassword, Boolean redirectedUserInstance, SqlConnection owningObject, SqlConnectionString connectionOptions, Int64 timerStart)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(SqlConnection owningObject, SqlConnectionString connectionOptions, String newPassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, Object providerInfo, String newPassword, SqlConnection owningObject, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.DiscoverSpParameterSet(SqlConnection connection, String spName, Boolean includeReturnValueParameter, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSetInternal(SqlConnection connection, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddHostSetting(String SettingName, String SettingValue, Boolean SettingIsSecure, Int32 CreatedByUserID)
+   at DotNetNuke.Entities.Controllers.HostController.Update(ConfigurationSetting config, Boolean clearCache)
+2012-02-22 11:23:34,843 [SJMDesign-PC2][Thread:8][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-22 11:23:34,846 [SJMDesign-PC2][Thread:8][ERROR] iFinity.DNN.Modules.UrlMaster.UrlRewriteModule - Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetPortals()
+   at DotNetNuke.Entities.Portals.PortalController.GetPortals()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.ParseChosenPortalAliases()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.InitSettings(String name, String type, Boolean isCurrentProvider, NameValueCollection attributes)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings..ctor(Provider provider, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettingsCol..ctor(Provider provider, XmlNodeList providerPortals, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlProviderSettings(String providerName, Boolean urlMasterSettingsOnly, FriendlyUrlSettingsCol& settingsCol)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlSettingsCol()
+   at iFinity.DNN.Modules.UrlMaster.UrlRewriteModule.OnBeginRequest(Object sender, EventArgs e)
+2012-02-22 11:23:34,905 [SJMDesign-PC2][Thread:5][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.DiscoverSpParameterSet(SqlConnection connection, String spName, Boolean includeReturnValueParameter, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSetInternal(SqlConnection connection, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddHostSetting(String SettingName, String SettingValue, Boolean SettingIsSecure, Int32 CreatedByUserID)
+   at DotNetNuke.Entities.Controllers.HostController.Update(ConfigurationSetting config, Boolean clearCache)
+2012-02-22 11:23:34,910 [SJMDesign-PC2][Thread:5][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-22 11:23:34,913 [SJMDesign-PC2][Thread:5][ERROR] iFinity.DNN.Modules.UrlMaster.UrlRewriteModule - Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetPortals()
+   at DotNetNuke.Entities.Portals.PortalController.GetPortals()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.ParseChosenPortalAliases()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.InitSettings(String name, String type, Boolean isCurrentProvider, NameValueCollection attributes)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings..ctor(Provider provider, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettingsCol..ctor(Provider provider, XmlNodeList providerPortals, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlProviderSettings(String providerName, Boolean urlMasterSettingsOnly, FriendlyUrlSettingsCol& settingsCol)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlSettingsCol()
+   at iFinity.DNN.Modules.UrlMaster.UrlRewriteModule.OnBeginRequest(Object sender, EventArgs e)
+2012-02-22 11:23:34,923 [SJMDesign-PC2][Thread:5][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.DiscoverSpParameterSet(SqlConnection connection, String spName, Boolean includeReturnValueParameter, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSetInternal(SqlConnection connection, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddHostSetting(String SettingName, String SettingValue, Boolean SettingIsSecure, Int32 CreatedByUserID)
+   at DotNetNuke.Entities.Controllers.HostController.Update(ConfigurationSetting config, Boolean clearCache)
+2012-02-22 11:23:34,945 [SJMDesign-PC2][Thread:5][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-22 11:23:34,949 [SJMDesign-PC2][Thread:5][ERROR] iFinity.DNN.Modules.UrlMaster.UrlRewriteModule - Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetPortals()
+   at DotNetNuke.Entities.Portals.PortalController.GetPortals()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.ParseChosenPortalAliases()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.InitSettings(String name, String type, Boolean isCurrentProvider, NameValueCollection attributes)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings..ctor(Provider provider, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettingsCol..ctor(Provider provider, XmlNodeList providerPortals, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlProviderSettings(String providerName, Boolean urlMasterSettingsOnly, FriendlyUrlSettingsCol& settingsCol)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlSettingsCol()
+   at iFinity.DNN.Modules.UrlMaster.UrlRewriteModule.OnBeginRequest(Object sender, EventArgs e)
+2012-02-22 11:23:34,958 [SJMDesign-PC2][Thread:5][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.DiscoverSpParameterSet(SqlConnection connection, String spName, Boolean includeReturnValueParameter, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSetInternal(SqlConnection connection, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddHostSetting(String SettingName, String SettingValue, Boolean SettingIsSecure, Int32 CreatedByUserID)
+   at DotNetNuke.Entities.Controllers.HostController.Update(ConfigurationSetting config, Boolean clearCache)
+2012-02-22 11:23:34,961 [SJMDesign-PC2][Thread:5][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-22 11:23:34,964 [SJMDesign-PC2][Thread:5][ERROR] iFinity.DNN.Modules.UrlMaster.UrlRewriteModule - Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetPortals()
+   at DotNetNuke.Entities.Portals.PortalController.GetPortals()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.ParseChosenPortalAliases()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.InitSettings(String name, String type, Boolean isCurrentProvider, NameValueCollection attributes)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings..ctor(Provider provider, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettingsCol..ctor(Provider provider, XmlNodeList providerPortals, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlProviderSettings(String providerName, Boolean urlMasterSettingsOnly, FriendlyUrlSettingsCol& settingsCol)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlSettingsCol()
+   at iFinity.DNN.Modules.UrlMaster.UrlRewriteModule.OnBeginRequest(Object sender, EventArgs e)
+2012-02-22 11:26:37,924 [SJMDesign-PC2][Thread:8][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-22 11:26:38,065 [SJMDesign-PC2][Thread:8][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.DiscoverSpParameterSet(SqlConnection connection, String spName, Boolean includeReturnValueParameter, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSetInternal(SqlConnection connection, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddHostSetting(String SettingName, String SettingValue, Boolean SettingIsSecure, Int32 CreatedByUserID)
+   at DotNetNuke.Entities.Controllers.HostController.Update(ConfigurationSetting config, Boolean clearCache)
+2012-02-22 11:26:38,101 [SJMDesign-PC2][Thread:8][ERROR] DotNetNuke.Entities.Controllers.HostController - Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-22 11:26:38,116 [SJMDesign-PC2][Thread:8][ERROR] iFinity.DNN.Modules.UrlMaster.UrlRewriteModule - Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+System.Data.SqlClient.SqlException: Cannot open database "sproutskincare" requested by the login. The login failed.
+Login failed for user 'NT AUTHORITY\NETWORK SERVICE'.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetPortals()
+   at DotNetNuke.Entities.Portals.PortalController.GetPortals()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.ParseChosenPortalAliases()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.InitSettings(String name, String type, Boolean isCurrentProvider, NameValueCollection attributes)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings..ctor(Provider provider, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettingsCol..ctor(Provider provider, XmlNodeList providerPortals, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlProviderSettings(String providerName, Boolean urlMasterSettingsOnly, FriendlyUrlSettingsCol& settingsCol)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlSettingsCol()
+   at iFinity.DNN.Modules.UrlMaster.UrlRewriteModule.OnBeginRequest(Object sender, EventArgs e)
+2012-02-22 11:28:57,060 [SJMDesign-PC2][Thread:8][ERROR] DotNetNuke.Entities.Controllers.HostController - The EXECUTE permission was denied on the object 'GetHostSettings', database 'sproutskincare', schema 'dbo'.
+System.Data.SqlClient.SqlException: The EXECUTE permission was denied on the object 'GetHostSettings', database 'sproutskincare', schema 'dbo'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlDataReader.ConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(SqlConnection connection, SqlTransaction transaction, CommandType commandType, String commandText, SqlParameter[] commandParameters, SqlConnectionOwnership connectionOwnership)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-22 11:28:57,970 [SJMDesign-PC2][Thread:8][ERROR] DotNetNuke.Entities.Controllers.HostController - The stored procedure 'dbo.AddHostSetting' doesn't exist.
+System.InvalidOperationException: The stored procedure 'dbo.AddHostSetting' doesn't exist.
+   at System.Data.SqlClient.SqlCommand.DeriveParameters()
+   at System.Data.SqlClient.SqlCommandBuilder.DeriveParameters(SqlCommand command)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.DiscoverSpParameterSet(SqlConnection connection, String spName, Boolean includeReturnValueParameter, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSetInternal(SqlConnection connection, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddHostSetting(String SettingName, String SettingValue, Boolean SettingIsSecure, Int32 CreatedByUserID)
+   at DotNetNuke.Entities.Controllers.HostController.Update(ConfigurationSetting config, Boolean clearCache)
+2012-02-22 11:28:58,042 [SJMDesign-PC2][Thread:8][ERROR] DotNetNuke.Entities.Controllers.HostController - The EXECUTE permission was denied on the object 'GetHostSettings', database 'sproutskincare', schema 'dbo'.
+System.Data.SqlClient.SqlException: The EXECUTE permission was denied on the object 'GetHostSettings', database 'sproutskincare', schema 'dbo'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlDataReader.ConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(SqlConnection connection, SqlTransaction transaction, CommandType commandType, String commandText, SqlParameter[] commandParameters, SqlConnectionOwnership connectionOwnership)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-22 11:28:58,058 [SJMDesign-PC2][Thread:8][ERROR] iFinity.DNN.Modules.UrlMaster.UrlRewriteModule - The EXECUTE permission was denied on the object 'GetPortals', database 'sproutskincare', schema 'dbo'.
+System.Data.SqlClient.SqlException: The EXECUTE permission was denied on the object 'GetPortals', database 'sproutskincare', schema 'dbo'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlDataReader.ConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(SqlConnection connection, SqlTransaction transaction, CommandType commandType, String commandText, SqlParameter[] commandParameters, SqlConnectionOwnership connectionOwnership)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetPortals()
+   at DotNetNuke.Entities.Portals.PortalController.GetPortals()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.ParseChosenPortalAliases()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.InitSettings(String name, String type, Boolean isCurrentProvider, NameValueCollection attributes)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings..ctor(Provider provider, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettingsCol..ctor(Provider provider, XmlNodeList providerPortals, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlProviderSettings(String providerName, Boolean urlMasterSettingsOnly, FriendlyUrlSettingsCol& settingsCol)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlSettingsCol()
+   at iFinity.DNN.Modules.UrlMaster.UrlRewriteModule.OnBeginRequest(Object sender, EventArgs e)
+2012-02-22 11:29:01,753 [SJMDesign-PC2][Thread:5][ERROR] DotNetNuke.Entities.Controllers.HostController - The stored procedure 'dbo.AddHostSetting' doesn't exist.
+System.InvalidOperationException: The stored procedure 'dbo.AddHostSetting' doesn't exist.
+   at System.Data.SqlClient.SqlCommand.DeriveParameters()
+   at System.Data.SqlClient.SqlCommandBuilder.DeriveParameters(SqlCommand command)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.DiscoverSpParameterSet(SqlConnection connection, String spName, Boolean includeReturnValueParameter, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSetInternal(SqlConnection connection, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddHostSetting(String SettingName, String SettingValue, Boolean SettingIsSecure, Int32 CreatedByUserID)
+   at DotNetNuke.Entities.Controllers.HostController.Update(ConfigurationSetting config, Boolean clearCache)
+2012-02-22 11:29:01,757 [SJMDesign-PC2][Thread:5][ERROR] DotNetNuke.Entities.Controllers.HostController - The EXECUTE permission was denied on the object 'GetHostSettings', database 'sproutskincare', schema 'dbo'.
+System.Data.SqlClient.SqlException: The EXECUTE permission was denied on the object 'GetHostSettings', database 'sproutskincare', schema 'dbo'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlDataReader.ConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(SqlConnection connection, SqlTransaction transaction, CommandType commandType, String commandText, SqlParameter[] commandParameters, SqlConnectionOwnership connectionOwnership)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-22 11:29:01,762 [SJMDesign-PC2][Thread:5][ERROR] iFinity.DNN.Modules.UrlMaster.UrlRewriteModule - The EXECUTE permission was denied on the object 'GetPortals', database 'sproutskincare', schema 'dbo'.
+System.Data.SqlClient.SqlException: The EXECUTE permission was denied on the object 'GetPortals', database 'sproutskincare', schema 'dbo'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlDataReader.ConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(SqlConnection connection, SqlTransaction transaction, CommandType commandType, String commandText, SqlParameter[] commandParameters, SqlConnectionOwnership connectionOwnership)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetPortals()
+   at DotNetNuke.Entities.Portals.PortalController.GetPortals()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.ParseChosenPortalAliases()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.InitSettings(String name, String type, Boolean isCurrentProvider, NameValueCollection attributes)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings..ctor(Provider provider, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettingsCol..ctor(Provider provider, XmlNodeList providerPortals, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlProviderSettings(String providerName, Boolean urlMasterSettingsOnly, FriendlyUrlSettingsCol& settingsCol)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlSettingsCol()
+   at iFinity.DNN.Modules.UrlMaster.UrlRewriteModule.OnBeginRequest(Object sender, EventArgs e)
+2012-02-22 11:29:06,849 [SJMDesign-PC2][Thread:8][ERROR] DotNetNuke.Entities.Controllers.HostController - The stored procedure 'dbo.AddHostSetting' doesn't exist.
+System.InvalidOperationException: The stored procedure 'dbo.AddHostSetting' doesn't exist.
+   at System.Data.SqlClient.SqlCommand.DeriveParameters()
+   at System.Data.SqlClient.SqlCommandBuilder.DeriveParameters(SqlCommand command)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.DiscoverSpParameterSet(SqlConnection connection, String spName, Boolean includeReturnValueParameter, Object[] parameterValues)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSetInternal(SqlConnection connection, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName, Boolean includeReturnValueParameter)
+   at Microsoft.ApplicationBlocks.Data.SqlHelperParameterCache.GetSpParameterSet(String connectionString, String spName)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddHostSetting(String SettingName, String SettingValue, Boolean SettingIsSecure, Int32 CreatedByUserID)
+   at DotNetNuke.Entities.Controllers.HostController.Update(ConfigurationSetting config, Boolean clearCache)
+2012-02-22 11:29:06,853 [SJMDesign-PC2][Thread:8][ERROR] DotNetNuke.Entities.Controllers.HostController - The EXECUTE permission was denied on the object 'GetHostSettings', database 'sproutskincare', schema 'dbo'.
+System.Data.SqlClient.SqlException: The EXECUTE permission was denied on the object 'GetHostSettings', database 'sproutskincare', schema 'dbo'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlDataReader.ConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(SqlConnection connection, SqlTransaction transaction, CommandType commandType, String commandText, SqlParameter[] commandParameters, SqlConnectionOwnership connectionOwnership)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetHostSettings()
+   at DotNetNuke.Entities.Controllers.HostController.GetSettingsDictionaryCallBack(CacheItemArgs cacheItemArgs)
+2012-02-22 11:29:06,857 [SJMDesign-PC2][Thread:8][ERROR] iFinity.DNN.Modules.UrlMaster.UrlRewriteModule - The EXECUTE permission was denied on the object 'GetPortals', database 'sproutskincare', schema 'dbo'.
+System.Data.SqlClient.SqlException: The EXECUTE permission was denied on the object 'GetPortals', database 'sproutskincare', schema 'dbo'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlDataReader.ConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(SqlConnection connection, SqlTransaction transaction, CommandType commandType, String commandText, SqlParameter[] commandParameters, SqlConnectionOwnership connectionOwnership)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.GetPortals()
+   at DotNetNuke.Entities.Portals.PortalController.GetPortals()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.ParseChosenPortalAliases()
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings.InitSettings(String name, String type, Boolean isCurrentProvider, NameValueCollection attributes)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettings..ctor(Provider provider, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.Entities.FriendlyUrlSettingsCol..ctor(Provider provider, XmlNodeList providerPortals, Boolean isCurrentProvider)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlProviderSettings(String providerName, Boolean urlMasterSettingsOnly, FriendlyUrlSettingsCol& settingsCol)
+   at iFinity.DNN.Modules.UrlMaster.FriendlyUrlSettingsController.GetFriendlyUrlSettingsCol()
+   at iFinity.DNN.Modules.UrlMaster.UrlRewriteModule.OnBeginRequest(Object sender, EventArgs e)
+2012-02-22 11:29:40,769 [SJMDesign-PC2][Thread:8][ERROR] DotNetNuke.Entities.Controllers.HostController - Violation of PRIMARY KEY constraint 'PK_HostSettings'. Cannot insert duplicate key in object 'dbo.HostSettings'.
+The statement has been terminated.
+System.Data.SqlClient.SqlException: Violation of PRIMARY KEY constraint 'PK_HostSettings'. Cannot insert duplicate key in object 'dbo.HostSettings'.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(SqlConnection connection, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
+   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteNonQuery(String connectionString, String spName, Object[] parameterValues)
+   at DotNetNuke.Data.SqlDataProvider.AddHostSetting(String SettingName, String SettingValue, Boolean SettingIsSecure, Int32 CreatedByUserID)
+   at DotNetNuke.Entities.Controllers.HostController.Update(ConfigurationSetting config, Boolean clearCache)

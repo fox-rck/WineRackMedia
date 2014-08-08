@@ -1,0 +1,14 @@
+﻿/************************************************************/
+/*****              SQLDataProvider		                *****/
+/*****              iFinity.Url Master 1.13.02			*****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}	*****/
+/************************************************************/
+/* 736 : remove addTabAndTabModule for 5.5 compatibiltiy changes */
+/* this file contains changes for the addTabAndTabModule, plus trigger
+   on the {objectQualifier}Modules table, to stop the return of the tabid where the 
+   module id should be, when called as a scalar return value */
+   
+/* 736 onnewModule removed */   

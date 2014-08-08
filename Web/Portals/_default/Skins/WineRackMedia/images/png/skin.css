@@ -1,0 +1,316 @@
+    *{outline:none !important;-webkit-text-size-adjust:none;}
+   
+    /*HEADER*/
+    .site_header{text-align:center;width:100%;min-width:980px;position:absolute;top:50px; left:0px;z-index:20; height:200px;background:url(images/png/ieherofall.png) repeat scroll; background:rgba(0,0,0,.7);}
+	.site_header >a{display:block;margin:20px auto 25px;width:326px;}
+    .site_header ul{margin:0;padding:0;}
+    .site_header li{padding:0; margin:0; list-style:none;display:inline-block;}
+    .site_header ul a{font:500 17px/20px "Questrial",Arial,san-serif; padding:20px 35px;color:#fff;display: inline-block;text-transform:uppercase;}
+/*NAV*/
+#dnnMenu .selected a{color:#9C1E2D;}
+    /*Heros*/
+    #dnn_HeroSlides{width:100%;overflow:hidden;}
+    #dnn_HeroSlides .Normal{max-height:617px; overflow:hidden; position:relative;width:100% !important; height:617px;}
+    #dnn_HeroSlides .Normal > div{width:100%;display:none;}
+    
+    #dnn_HeroSlides .Normal img{width:100%;min-height:617px;min-width:1201px;}
+    #dnn_HeroSlides .content{position:absolute;top:250px;width:100%;text-align:center;color:#fff;}
+    #dnn_HeroSlides .heading{font:700 90px/105px "Lora",Arial,serif;margin-bottom:5px;margin-top:70px;}
+    .page-home #dnn_HeroSlides .heading{font:700 60px/95px "Lora",Arial,serif;margin-bottom:5px;margin-top:50px;}
+   .page-home #dnn_HeroSlides .subheading{font:500 28px/40px "Questrial",Arial,san-serif;}
+    #dnn_HeroSlides .subheading{font:500 48px/55px "Questrial",Arial,san-serif;}
+    #dnn_HeroSlides .cta{text-align:center;margin-top: 50px;}
+    #dnn_HeroSlides .cta a{display:inline-block;height:40px;font:500 20px/40px "Questrial",Arial,san-serif;background:#9C1E2D;color:#fff;padding:0 10px;}
+    #dnn_HeroSlides .cta a:hover{text-decoration:none;color:#000;}
+    
+    .title{font:700 48px/60px "Lora",Arial,serif;text-align:center;}
+    .subtitle{font:700 24px/30px "Questrial",Arial,san-serif;color:#808285;text-align:center;margin-top:20px;}
+    
+    /*Hero Nav*/
+      .imgSelectNav{text-align:center;margin-top:20px;}
+    .imgSelectNav a{background:#D1D3D4 !important;width:20px;height:20px;border-radius:20px; display:inline-block;margin:3px;}
+    .imgSelectNav a.activeSlide{background:#9C1E2D !important;}
+/*Full Width Default*/
+.full_width{margin:75px;}
+
+/*Full Width Red*/
+.full_width_red {position:relative;overflow:hidden;height:500px; background:url(images/png/redback.jpg) repeat; color:#fff;}
+.full_width_red .title{font:700 48px/55px "Lora",Arial,serif;margin-top:30px;}
+.full_width_red  .columns {width:763px; margin:25px auto 0;}
+.full_width_red .cta{font:700 25px/50px "Lora",Arial,serif;clear:both;text-align:center;}
+.full_width_red .cta a{padding:0 15px;border:1px solid #fff; display:inline-block;color:#fff;margin-top:50px;}
+.full_width_red .cta a:hover{text-decoration:none; border-color:#000;color:#000;}
+.full_width_red p{float:left;width:345px;margin:20 25px;font:500 16px/20px "Questrial",Arial,san-serif;}
+.full_width_red p:first-child{border-right:1px solid #fff; padding-right:25px;margin-right:45px;}
+
+/*Full Width Black*/
+.full_width_black{position:relative;overflow:hidden;height:500px; background:url(images/png/black.leather.background.jpg) repeat; color:#fff;}
+.full_width_black .title{margin-top:30px;}
+
+/*Red Line */
+ .full_width_redline{background:none;padding-bottom:75px; border-bottom:3px solid #9C1E2D;width:960px; margin:0 auto;}
+.full_width_redline .title{font:700 28px/55px "Lora",Arial,serif;margin-top:30px; color:#9C1E2D;}
+.full_width_redline  .columns {width:763px; margin:25px auto 0;}
+.full_width_redline p{float:left;width:345px;margin:20 25px;font:500 16px/20px "Questrial",Arial,san-serif; color:#808285;}
+.full_width_redline p:first-child{ padding-right:25px;margin-right:45px;}
+
+/*GreyLine Container*/
+.full_width_greyline{border-bottom:1px solid #E6E7E8;padding:50px 0;width:960px;margin:50px auto 35px;}
+.full_width_greyline .title{font:700 48px/55px "Lora",Arial,serif;}
+.full_width_greyline .subtitles{font:500 24px/85px "Questrial",Arial,san-serif;color:#808285;text-align:center;}
+
+/*Contact Container*/
+.contact_container{background:#E6E7E8;}
+.contact_container .Normal > div{text-align:center;height:285px;padding-top:40px;display:block; font:700 25px/35px "Lora",Arial,serif;color:#939598}
+.contact_container .Normal a{position:relative;height:125px;width:115px;display:inline-block;overflow:hidden;top:10px;}
+.contact_container .Normal a img{position:absolute; top:0; left:0;}
+.contact_container .Normal a:hover img{top:-138px;}
+
+/*Expandable*/
+.expandablewrapper {
+    width:960px; margin:50px auto 100px;
+}
+.expandable {
+    padding-bottom: 10px;
+    position: relative;
+}
+.expandable.last {
+}
+.expandable > a {
+    background: url("images/png/dropdown.arrows.png") no-repeat scroll 0 -38px;
+    font-size: 30px;
+    line-height: 35px;
+    overflow: hidden;
+    padding-left: 75px;
+    text-decoration: none;
+    color:#231F20;
+    display:inline-block;
+    height:40px;
+}
+.expandable > a:hover {
+    color: #9C1E2D;
+}
+.expandable > a.open {
+    background-position: 0 1px;
+    color: #9C1E2D;
+}
+.more {
+    left: 0;
+    padding: 0 75px 20px;
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+    color:#808285;
+     
+}
+.more h2{font:500 16px/21px "Questrial",Arial,san-serif;}
+.more .title{ font:500 20px/27px "Questrial",Arial,san-serif;  color: #9C1E2D;text-align:left;}
+
+    /*MAIN*/
+    .inner{width:960px;margin:0 auto;}
+
+    /*footer*/
+    .footerContainer{background:#000;color:#fff;height:155px;width:100%;min-width:980px;}
+    .footerContainer .inner{width:960px;margin:0px auto 0;}
+    .footerContainer .inner .Normal > *{float:left; font:500 14px/17px "Questrial",Arial,san-serif;margin:65px 15px 0;}
+    .footerContainer .inner .first{text-align:right;margin-left:190px;}
+    .footerContainer .redbar{width:3px; height:42px;background:#9C1E2D;}
+    .footerContainer .logo{position:relative; top:-5px;}
+
+    /*General*/
+    #page-wrapper{min-width:980px;overflow:hidden;width:100%;}
+    #content-wrapper{position:relative;z-index:10; }
+    .clear{clear:both;}
+    #dnn_HeroSlides .dnnActionMenu{top:200px;position:relative;width: 96px;}
+    
+    /*PopUP*/
+    #popupwrapper {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 9999;
+    color:#fff;
+    display:none;
+}
+#popupwrapper.open{display:block;}
+
+#popupcontent {
+    background: none repeat scroll 0 0 #CCCCCC;
+    border-radius: 4px 0 4px 4px;
+    font-size: 20px;
+    line-height: 23px;
+    margin: 0 auto;
+    min-height: 200px;
+    padding: 30px;
+    position: relative;
+    width: 500px;
+   
+}
+.close {
+    background: url("images/png/close.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    color: #FFFFFF;
+    font-size: 0;
+    height: 30px;
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    width: 30px;
+}
+.close:hover {
+    background-position: 0 -30px;
+    cursor: pointer;
+}
+
+    
+   
+    /*######################## DEV ONLY ##############################*/
+ /*   #Body> div:nth-child(2){display:none !important;} */
+
+    /*STICKY FOOTER*/
+    html, body {height: 100%;}
+ #wrap,form{min-height:100%;min-width:980px;}
+form{height: 100%;}
+    #main {overflow:auto;
+	    padding-bottom: 150px;}  /* must be same height as the footer */
+
+    #footer {position: relative;
+	    margin-top: -155px; /* negative value of footer height */
+	    height: 155px;
+	    clear:both;} 
+
+    /*######################## Pages ##############################*/
+ /*LOGIN*/
+.page-login_page #content-wrapper{top:250px;height:425px;}    
+ /*PRODUCTS*/
+.page-products{}   
+
+
+.solutionheadings{position:relative;text-align:center;font:500 14px/20px "Questrial",Arial,san-serif;width:925px;margin:0 auto;}
+.solutionheadings > div{float:right;}
+.solutionheadings img{display:block;margin:10px;}
+ 
+.tablecontainer{margin:0 auto;width:985px;}
+.tablecontainer.t1{background:url(images/png/box.1.jpg) no-repeat;height:728px;}
+.tablecontainer.t1 table{position:relative; top:25px;}
+
+.tablecontainer.t2{background:url(images/png/box.2.jpg) no-repeat;height:345px;}
+.tablecontainer.t2 table{position:relative; top:25px;}
+
+.tablecontainer.t3{background:url(images/png/box.3.jpg) no-repeat;height:572px;margin-bottom:45px;}
+.tablecontainer.t3 table{position:relative; top:25px;}
+.sectiontitle{font:700 40px/85px "Lora",Arial,serif;color:#9C1E2D;}
+.servicetitle{font:500 22px/30px "Questrial",Arial,san-serif;color:#000;height:62px;}
+.tablecontainer .icon1{border-right:1px solid #999;width:150px;}
+.tablecontainer .icon2{width:150px;}
+
+/*Features*/
+.page-features .full_width_content .title{font:700 40px/105px "Lora",Arial,serif;margin-top:15px;}
+.page-features .full_width_content .more .title{ font:500 20px/27px "Questrial",Arial,san-serif;margin-top:0px;  color: #9C1E2D;text-align:left;}
+/*Features*/
+.page-services .full_width_content .title{font:700 40px/105px "Lora",Arial,serif;margin-top:15px;}
+.page-services .full_width_content .more .title{ font:500 20px/27px "Questrial",Arial,san-serif;margin-top:0px;  color: #9C1E2D;text-align:left;}
+
+/*About*/
+.page-about .full_width_content h2{font:700 30px/35px "Lora",Arial,serif;margin-top:15px; text-align:center;}
+.page-about .full_width_content h2 span{color:#9C1E2D;}
+.page-about .full_width_content p{ font:500 20px/25px "Questrial",Arial,san-serif;margin-top:0px;  color: #808285;text-align:left;text-align:center;margin-bottom:50px;}
+.row{margin:50px auto;width:960px;}
+.member {
+    float: left;
+    text-align: center;
+    width: 155px;
+    margin:18px;
+}
+
+.member:hover {
+    cursor: pointer;
+}
+.member .info {
+    display: none;
+}
+.member img {
+    display: block;
+    margin: 0 auto;
+}
+.member .name {
+    color: #FFFFFF;
+   font:700 21px/40px "Lora",Arial,serif;
+    text-transform: uppercase;
+}
+.member .role {
+    color: #FFFFFF;
+   font:500 14px/20px "Questrial",Arial,san-serif;
+    text-transform: uppercase;
+}
+/*Contact*/
+.page-contact   .content{width:960px; margin:0 auto 50px;}
+.page-contact .left,.page-contact .right{float: left;
+    width: 50%;}
+    
+    .page-contact .left p{font:700 24px/30px "Lora",Arial,serif;}
+    .page-contact .left .addy{color:#9C1E2D;font:500 21px/26px "Questrial",Arial,san-serif; border-top:5px solid #9C1E2D;margin-top:75px;padding-top:35px;}
+    .page-Contact .right .error {
+    float: right;
+    visibility: hidden;
+}
+.page-contact .right .form {
+    margin-top: 30px;
+    padding-left:55px;
+}
+.page-contact .right .form > div {
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+.page-contact .right input, .page-contact .right textarea {
+    border: 1px solid #ccc;
+    float: right;
+    padding: 5px;
+    width: 405px;
+    color:#ccc;
+    height:40px;
+    font:500 16px/20px "Questrial",Arial,san-serif;
+}
+.page-contact .right a {
+    background: none repeat scroll 0 0 #9C1E2D;
+    color: #FFFFFF;
+    display: inline-block;
+    float: right;
+    height: 40px;
+    padding: 0 15px;
+    text-decoration: none;
+    font:500 20px/40px "Questrial",Arial,san-serif;
+}
+.page-contact .right a:hover {
+    background: none repeat scroll 0 0 #999999;
+   
+}
+.page-contact .right #message {
+   
+    height: 150px;
+    resize: none;
+}
+
+.page-contact .radioselect input,.page-contact .radioselect label{float:left;width:auto;height:auto;}
+.page-contact .radioselect input{border:none;   background: none repeat scroll 0 0 #9C1E2D;}
+.page-contact .radioselect span{padding-right:30px;}
+.page-contact .right h1 {
+    color: #5A0202;
+    font-size: 16px;
+    padding-left: 80px;
+    text-align: center;
+}
+.page-contact .right div span,.page-contact .right div label{float:left;  font:500 18px/20px "Questrial",Arial,san-serif;}
+.page-contact .right .error{visibility:hidden;}
+.waiting {
+    display: none;
+}
+.waiting img {
+    display: block;
+    margin: 50px auto;
+    padding-left: 80px;
+}
+@media only screen 
+and (min-width : 1600px) 
+ {
+ #dnn_HeroSlides img{top:-100px;position:relative;}
+}

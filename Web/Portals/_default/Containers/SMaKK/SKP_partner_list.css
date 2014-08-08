@@ -1,0 +1,37 @@
+    /*partner_list*/
+    #smakk-content .partner_list {background: url(images/skp-partner-list-logo.png) no-repeat scroll 175px 90px;}
+    
+    #smakk-content .partner_list .Normal h2 
+    {
+        border-top: 1px solid #d1cfcf; border-bottom: 1px solid #d1cfcf; 
+        background:url(images/partner-list-h2-background.gif) repeat scroll left top; 
+        text-align:left; font-weight:bold;
+        font-size:20px; padding-top:15px; padding-bottom:15px; padding-left:20px;
+        margin-top:0px;
+    }
+    
+     #smakk-content .partner_list .Normal p
+     {
+         margin-left:325px; margin-bottom:5px;
+     }
+     
+     #smakk-content .partner_list .Normal p a
+     {
+         display:block;
+         width:603px;
+         height:47px;
+         background:url(images/partner-background.png);
+         color:#818181;
+         font-weight:300;
+         padding-left:10px;
+         padding-top:10px;
+     }
+     
+     #smakk-content .partner_list .Normal p a strong {color:#000; font-weight:500;}
+     
+     #smakk-content .partner_list .Normal p a:hover
+     {
+         background-position: 0 -57px;
+         text-decoration:none;
+     }
+

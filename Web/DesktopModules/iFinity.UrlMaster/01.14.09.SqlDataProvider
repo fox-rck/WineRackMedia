@@ -1,0 +1,96 @@
+﻿/************************************************************/
+/*****              SQLDataProvider		                *****/
+/*****              iFinity.Url Master 1.15.00			*****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}	*****/
+/************************************************************/
+/****** Object:  StoredProcedure {databaseOwner}[ifty_GetTabsAndRedirects]    Script Date: 07/23/2009 17:19:45 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF EXISTS (SELECT * FROM sysobjects where id = OBJECT_ID(N'{databaseOwner}[ifty_GetTabsAndRedirects]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC sp_executesql @statement = N'
+ALTER Procedure {databaseOwner}[ifty_GetTabsAndRedirects]
+(
+	 @portalId		int 
+	,@includeAdminPages  bit
+	,@includeHostPages   bit
+)
+AS
+BEGIN
+
+/* =============================================
+	Author:      WOMBAT\Bruce
+	Create date: 13/02/2008
+	Description: Gets all tabs and ifty_TabRedirect records
+   ============================================= 
+	
+	    Return Values
+	    0  - Successful Execution.
+	    1  - SQL Error. Rollback Occurred.
+	    2  - No records modified. Rollback Occurred.
+	    3  - No records modified. Commit Occured
+	    4  - Error in sub procedure - entire top procedure rolled back.
+	    5  - No record(s) returned. Procedure Executed Ok.
+	    6+ - Specific to procedure
+	
+	    Modified by:		Date:		Reason for Modification:
+		brc					23/07/09	Change to use {objectQualifier}Vw_tabs to match expected object columns (643)
+	   =============================================*/
+
+SET NOCOUNT ON 
+DECLARE @ErrStr 	varchar(100)	/* Return error string				*/
+DECLARE @Error		int		/* Return error value				*/
+DECLARE @Rowcount	int		/* Return related row count			*/
+
+	Select *
+	From {objectQualifier}vw_Tabs
+	Where ((@portalId = PortalId OR (PortalId is NULL and @includeHostPages = 1))
+	    OR (@portalId = -1 AND ((PortalID is NOT NULL and @includeHOstPages = 0) 
+	    OR  @includeHostPages = 1)))
+		/* admin tabs */
+	  AND ((taBorder between 10000 and 10050 and @includeAdminPages = 1)
+	   OR (taBorder NOT between 10000 and 10050))
+	ORDER BY PortalId, TabOrder
+
+	SELECT @Error = @@ERROR, @RowCount = @@RowCount
+	IF @Error <> 0
+	BEGIN
+		SELECT @ErrStr=''Error in ''+ OBJECT_NAME(@@PROCID) + ''. Stmt No.=1, Db=''+db_name()+'',Err=''+CONVERT(varchar(10),@Error)
+		RAISERROR(@ErrStr,16,1)
+		RETURN 1 /* statement failed */
+	END
+
+	SELECT 
+	    tr.TabId	
+	   ,tr.SeqNum	
+	   ,tr.Url	
+	   ,tr.HttpStatus	
+	   ,tr.RedirectTabId	
+	FROM {databaseOwner}ifty_TabRedirect tr
+	INNER JOIN {objectQualifier}Tabs t
+		on t.TabId = tr.TabId
+	WHERE (@portalId = PortalId OR @portalId = -1)
+	  AND ((taBorder between 10000 and 10050 and @includeAdminPages = 1)
+	   OR (taBorder NOT between 10000 and 10050))
+	ORDER BY PortalId, TabOrder, SeqNum
+
+	SELECT @Error = @@ERROR, @RowCount = @@RowCount
+	IF @Error <> 0
+	BEGIN
+		SELECT @ErrStr=''Error in ''+ OBJECT_NAME(@@PROCID) + ''. Stmt No.=2, Db=''+db_name()+'',Err=''+CONVERT(varchar(10),@Error)
+		RAISERROR(@ErrStr,16,1)
+		RETURN 1 /* statement failed */
+	END
+	/* finished procedure, return value and exit */
+	RETURN 0	  /*** Procedure executed ok. */
+END
+
+
+' 
+END
+GO

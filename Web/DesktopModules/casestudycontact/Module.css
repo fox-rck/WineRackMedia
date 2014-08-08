@@ -1,0 +1,15 @@
+﻿.contact-form{width:400px;padding:20px 0 0 0;}
+.contact-form input,.contact-form textarea,.thebox{width:367px;padding:5px;border:1px solid #ccc;display:block;color:#000;margin-bottom:5px;height:20px;font-family:AvenirNextLTW01-Regular;font-size:15px;}
+.contact-form textarea{height:150px; scroll:none; re-size:none;}
+
+.contact-form .lightText{color:#ccc;}
+
+.contact-form >div.right{width:290px; padding-left:23px;}
+.contact-form .clear{float:none;}
+.contact-form p{line-height:16px;margin:0;}
+
+
+.label span{float:right;}
+.contact-form .thebox{background:#fff;overflow:hidden;}
+.contact-form .radio_row{position:relative; top:2px;}
+.contact-form .radio_row input{display:inline; height:auto; width:20px;position:relative;top:0px;margin-left:0;}

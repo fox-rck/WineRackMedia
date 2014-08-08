@@ -1,0 +1,158 @@
+﻿/************************************************************/
+/*****              SQLDataProvider		                *****/
+/*****              iFinity.Url Master 1.15.05			*****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}	*****/
+/************************************************************/
+/* 736 : remove addTabAndTabModule for 5.5 compatibiltiy changes */
+/* update tabAndTabModule for hideadminborder setting*/
+
+
+/****** Object:  StoredProcedure {databaseOwner}[ifty_GetUserByDisplayName]    Script Date: 04/20/2010 14:05:22 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}[ifty_GetUserByDisplayName]') AND OBJECTPROPERTY(id,N'IsProcedure') = 1)
+BEGIN
+EXEC sp_executesql @statement = N'
+ALTER Procedure {databaseOwner}[ifty_GetUserByDisplayName]
+(
+	  @portalId int
+	, @displayNameReplaced nvarchar(100)
+	, @displayNameStripped nvarchar(100)
+)
+AS
+BEGIN
+
+/* =============================================
+	Author:      Bruce Chapman
+	Create date: 11/06/2009
+	Description: Returns the display name for a nominated user
+   ============================================= 
+	
+	    Return Values
+	    0  - Successful Execution.
+	    1  - SQL Error. Rollback Occurred.
+	    2  - No records modified. Rollback Occurred.
+	    3  - No records modified. Commit Occured
+	    4  - Error in sub procedure - entire top procedure rolled back.
+	    5  - No record(s) returned. Procedure Executed Ok.
+	    6+ - Specific to procedure
+	
+	    Modified by:		Date:		Reason for Modification:
+		BRC					20/04/2010	implemented lookup to stop returning when pagename clash
+	   =============================================*/
+
+SET NOCOUNT ON 
+DECLARE @ErrStr 	varchar(100)	/* Return error string				*/
+DECLARE @Error		int		/* Return error value				*/
+DECLARE @RowCount	int
+	
+	SELECT top 1 UserId 
+		,  case when DisplayName = @displayNameReplaced then ''encoded'' else ''stripped'' end as MatchType
+		,  DisplayName
+	FROM {databaseOwner}{objectQualifier}vw_Users u
+	WHERE (DisplayName = @displayNameReplaced or DisplayName = @displayNameStripped)
+	  AND (PortalId = @PortalID OR IsSuperUser = 1 OR @PortalID is null)
+	and not exists (select * FROM {databaseOwner}{objectQualifier}vw_tabs t
+					 where t.Level = 0
+					 and (t.PortalId = u.PortalId or u.PortalId is null or t.PortalId is null)
+					 and (u.Username = t.TabName))
+	and not exists (select * FROM {databaseOwner}ifty_tabRedirect tr
+					left join {databaseOwner}{objectQualifier}Tabs trt
+					   on tr.TabId = trt.TabId
+					where  (tr.Url = u.Username) --matches custom url)
+					  and (trt.PortalId = u.PortalId or u.POrtalId is null))
+
+	ORDER BY UserId ASC
+
+	SELECT @Error = @@ERROR, @RowCount = @@RowCount
+	IF @Error <> 0
+	BEGIN
+		SELECT @ErrStr=''Error in ''+ OBJECT_NAME(@@PROCID) + ''. Stmt No.=1, Db=''+db_name()+'',Err=''+CONVERT(varchar(10),@Error)
+		RAISERROR(@ErrStr,16,1)
+		RETURN 1 /* statement failed */
+	END
+	ELSE
+		RETURN 0	  /*** Procedure executed ok. Records committed */
+END
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure {databaseOwner}[ifty_GetUserByUsername]    Script Date: 04/20/2010 14:05:22 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}[ifty_GetUserByUsername]') AND OBJECTPROPERTY(id,N'IsProcedure') = 1)
+BEGIN
+EXEC sp_executesql @statement = N'
+CREATE Procedure {databaseOwner}[ifty_GetUserByUsername]
+(
+	  @username nvarchar(100)
+	, @usernameStripped nvarchar(100)
+)
+AS
+BEGIN
+
+/* =============================================
+	Author:      Bruce Chapman
+	Create date: 20/04/2010
+	Description: Returns the user record for a nominated username, only if there
+				 are no pagename clashes
+   ============================================= 
+	
+	    Return Values
+	    0  - Successful Execution.
+	    1  - SQL Error. Rollback Occurred.
+	    2  - No records modified. Rollback Occurred.
+	    3  - No records modified. Commit Occured
+	    4  - Error in sub procedure - entire top procedure rolled back.
+	    5  - No record(s) returned. Procedure Executed Ok.
+	    6+ - Specific to procedure
+	
+	    Modified by:		Date:		Reason for Modification:
+	
+	   =============================================*/
+
+SET NOCOUNT ON 
+DECLARE @ErrStr 	varchar(100)	/* Return error string				*/
+DECLARE @Error		int		/* Return error value				*/
+DECLARE @RowCount	int
+	
+	SELECT top 1 UserId 
+		,  case when username = @usernameStripped then ''encoded'' else ''stripped'' end as MatchType
+		,  Username
+	FROM {databaseOwner}{objectQualifier}vw_Users u
+	WHERE (Username = @username or Username = @usernameStripped)
+	and not exists (select * FROM {databaseOwner}{objectQualifier}vw_tabs t
+					 where t.Level = 0
+					 and (t.PortalId = u.PortalId or u.PortalId is null or t.PortalId is null)
+					 and (u.Username = t.TabName))
+	and not exists (select * FROM {databaseOwner}ifty_tabRedirect tr
+					left join {databaseOwner}{objectQualifier}Tabs trt
+					   on tr.TabId = trt.TabId
+					where  (tr.Url = u.Username) --matches custom url)
+					  and (trt.PortalId = u.PortalId or u.POrtalId is null))
+	ORDER BY UserId ASC
+
+	SELECT @Error = @@ERROR, @RowCount = @@RowCount
+	IF @Error <> 0
+	BEGIN
+		SELECT @ErrStr=''Error in ''+ OBJECT_NAME(@@PROCID) + ''. Stmt No.=1, Db=''+db_name()+'',Err=''+CONVERT(varchar(10),@Error)
+		RAISERROR(@ErrStr,16,1)
+		RETURN 1 /* statement failed */
+	END
+	ELSE
+		RETURN 0	  /*** Procedure executed ok. Records committed */
+END
+
+
+' 
+END
+GO

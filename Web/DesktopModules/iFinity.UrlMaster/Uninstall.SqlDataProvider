@@ -1,0 +1,128 @@
+﻿/************************************************************/
+/*****              Uninstall SQLDataProvider		    *****/
+/*****              iFinity.Url Master 1.00.00			*****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for  {databaseOwner} and {objectQualifier}	*****/
+/************************************************************/
+
+IF EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}[ifty_TabModuleCreation]') AND type in (N'U'))
+BEGIN
+	/* remove tabs declared as 'to remove' when deleting */
+	Delete from {databaseOwner}{objectQualifier}Tabs
+	where TabID in (select TabId FROM {databaseOwner}ifty_TabModuleCreation 
+					WHERE Completed = 1 
+					  AND ControlSource in ('DesktopModules/iFinity.UrlMaster/UrlOptions.ascx','DesktopModules/iFinity.UrlMaster/PageList.ascx')
+					  AND DeleteTabOnModuleRemove = 1)
+
+	/* remove all 'complete' records from the table, that match the controls */
+	delete from {databaseOwner}ifty_TabMOduleCreation
+	WHERE ControlSource in ('DesktopModules/iFinity.UrlMaster/UrlOptions.ascx','DesktopModules/iFinity.UrlMaster/PageList.ascx')
+		drop table {databaseOwner}ifty_TabModuleCreation
+
+		/* drop the trigger if it still exists */		
+		IF EXISTS (select * from sysobjects where id = OBJECT_ID(N'{databaseOwner}[ifty_OnNewModule]') and xtype='TR')
+			drop trigger {databaseOwner}[ifty_OnNewModule]
+
+		/* drop the trigger if it still exists */		
+		IF EXISTS (select * from sysobjects where id = OBJECT_ID(N'{databaseOwner}[ifty_OnNewModuleControl]') and xtype='TR')
+			drop trigger {databaseOwner}[ifty_OnNewModuleControl]
+
+
+		/* drop the procedure if it still exists */
+		IF EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}[ifty_AddTabAndTabModule]') AND type in (N'P', N'PC'))
+			DROP PROCEDURE {databaseOwner}[ifty_AddTabAndTabModule]
+
+END
+
+/****** Object:  StoredProcedure {databaseOwner}[ifty_AddTabRedirect]    Script Date: 05/28/2010 16:01:40 ******/
+IF  EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}[ifty_AddTabRedirect]') AND OBJECTPROPERTY(id,N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}[ifty_AddTabRedirect]
+GO
+/****** Object:  StoredProcedure {databaseOwner}[ifty_UpdateTabRedirect]    Script Date: 05/28/2010 16:01:40 ******/
+IF  EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}[ifty_UpdateTabRedirect]') AND OBJECTPROPERTY(id,N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}[ifty_UpdateTabRedirect]
+GO
+/****** Object:  StoredProcedure {databaseOwner}[ifty_DeleteTabRedirect]    Script Date: 05/28/2010 16:01:40 ******/
+IF  EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}[ifty_DeleteTabRedirect]') AND OBJECTPROPERTY(id,N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}[ifty_DeleteTabRedirect]
+GO
+/****** Object:  StoredProcedure {databaseOwner}[ifty_GetTabRedirectsForTab]    Script Date: 05/28/2010 16:01:40 ******/
+IF  EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}[ifty_GetTabRedirectsForTab]') AND OBJECTPROPERTY(id,N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}[ifty_GetTabRedirectsForTab]
+GO
+/****** Object:  StoredProcedure {databaseOwner}[ifty_GetTabsAndRedirects]    Script Date: 05/28/2010 16:01:40 ******/
+IF  EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}[ifty_GetTabsAndRedirects]') AND OBJECTPROPERTY(id,N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}[ifty_GetTabsAndRedirects]
+GO
+/****** Object:  StoredProcedure {databaseOwner}[ifty_DeleteUserProfileAction]    Script Date: 05/28/2010 16:01:40 ******/
+IF  EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}[ifty_DeleteUserProfileAction]') AND OBJECTPROPERTY(id,N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}[ifty_DeleteUserProfileAction]
+GO
+/****** Object:  StoredProcedure {databaseOwner}[ifty_GetUserProfileActions]    Script Date: 05/28/2010 16:01:40 ******/
+IF  EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}[ifty_GetUserProfileActions]') AND OBJECTPROPERTY(id,N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}[ifty_GetUserProfileActions]
+GO
+/****** Object:  StoredProcedure {databaseOwner}[ifty_UpdateUserProfileAction]    Script Date: 05/28/2010 16:01:40 ******/
+IF  EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}[ifty_UpdateUserProfileAction]') AND OBJECTPROPERTY(id,N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}[ifty_UpdateUserProfileAction]
+GO
+/****** Object:  StoredProcedure {databaseOwner}[ifty_AddUserProfileAction]    Script Date: 05/28/2010 16:01:40 ******/
+IF  EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}[ifty_AddUserProfileAction]') AND OBJECTPROPERTY(id,N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}[ifty_AddUserProfileAction]
+GO
+/****** Object:  StoredProcedure {databaseOwner}[ifty_GetDisplayNameForUser]    Script Date: 05/28/2010 16:01:40 ******/
+IF  EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}[ifty_GetDisplayNameForUser]') AND OBJECTPROPERTY(id,N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}[ifty_GetDisplayNameForUser]
+GO
+/****** Object:  StoredProcedure {databaseOwner}[ifty_GetUserByDisplayName]    Script Date: 05/28/2010 16:01:40 ******/
+IF  EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}[ifty_GetUserByDisplayName]') AND OBJECTPROPERTY(id,N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}[ifty_GetUserByDisplayName]
+GO
+/****** Object:  StoredProcedure {databaseOwner}[ifty_GetUserByUsername]    Script Date: 05/28/2010 16:01:40 ******/
+IF  EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}[ifty_GetUserByUsername]') AND OBJECTPROPERTY(id,N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}[ifty_GetUserByUsername]
+GO
+/****** Object:  StoredProcedure {databaseOwner}[ifty_GetUsernameForUser]    Script Date: 05/28/2010 16:01:40 ******/
+IF  EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}[ifty_GetUsernameForUser]') AND OBJECTPROPERTY(id,N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}[ifty_GetUsernameForUser]
+GO
+/****** Object:  StoredProcedure {databaseOwner}[ifty_AddSite404Log]    Script Date: 05/28/2010 16:01:40 ******/
+IF  EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}[ifty_AddSite404Log]') AND OBJECTPROPERTY(id,N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}[ifty_AddSite404Log]
+GO
+/****** Object:  StoredProcedure {databaseOwner}[ifty_GetSite404LogForPortal]    Script Date: 05/28/2010 16:01:40 ******/
+IF  EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}[ifty_GetSite404LogForPortal]') AND OBJECTPROPERTY(id,N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}[ifty_GetSite404LogForPortal]
+GO
+/****** Object:  StoredProcedure [dbo].[ifty_GetCustomAliasesForTabs]    Script Date: 02/17/2011 20:00:53 ******/
+IF  EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}[ifty_GetCustomAliasesForTabs]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[ifty_GetCustomAliasesForTabs]
+GO
+/****** Object:  StoredProcedure [dbo].[ifty_SearchTabs]    Script Date: 03/12/2011 16:00:53 ******/
+IF  EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}[ifty_SearchTabs]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[ifty_SearchTabs]
+GO
+
+--TABLES
+/****** Object:  Table {databaseOwner}[ifty_TabRedirect]    Script Date: 05/28/2010 16:01:41 ******/
+IF  EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}[ifty_TabRedirect]') AND OBJECTPROPERTY(id, N'IsUserTable') = 1)
+DROP TABLE {databaseOwner}[ifty_TabRedirect]
+GO
+/****** Object:  Table {databaseOwner}[ifty_UserProfileAction]    Script Date: 05/28/2010 16:01:40 ******/
+IF  EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}[ifty_UserProfileAction]') AND OBJECTPROPERTY(id, N'IsUserTable') = 1)
+DROP TABLE {databaseOwner}[ifty_UserProfileAction]
+GO
+/****** Object:  StoredProcedure {databaseOwner}[ifty_AddTabAndTabModule]    Script Date: 05/28/2010 16:01:40 ******/
+IF  EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}[ifty_AddTabAndTabModule]') AND OBJECTPROPERTY(id,N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}[ifty_AddTabAndTabModule]
+GO
+/****** Object:  Table {databaseOwner}[ifty_Site404Log]    Script Date: 05/28/2010 16:01:41 ******/
+IF  EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}[ifty_Site404Log]') AND OBJECTPROPERTY(id, N'IsUserTable') = 1)
+DROP TABLE {databaseOwner}[ifty_Site404Log]
+GO
+/****** Object:  Table {databaseOwner}[ifty_TabModuleCreation]    Script Date: 05/28/2010 16:01:41 ******/
+IF  EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}[ifty_TabModuleCreation]') AND OBJECTPROPERTY(id, N'IsUserTable') = 1)
+DROP TABLE {databaseOwner}[ifty_TabModuleCreation]
+GO

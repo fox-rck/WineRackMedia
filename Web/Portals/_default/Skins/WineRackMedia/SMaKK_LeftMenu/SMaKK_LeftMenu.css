@@ -1,0 +1,33 @@
+﻿    /*##### SET BACKBROUND OF CONETENT AREA TO GIVE INFINATE COLORED SIDE BAR*/
+    #smakk-content {background:url(images/SMakk_Left_Menu_Background.png) repeat-y scroll left top;} 
+    
+    
+   /*##### GENERAL MENU STYLES #####*/
+    .smakk-leftMenu{width:265px; float:left; }
+     #dnnMenuLeft ul {list-style:none; margin:0; width:259px;padding:0; font-family:museo, Sans-Serif;}
+     #dnnMenuLeft ul li  {list-style:none; list-style-type:none; }
+     #dnnMenuLeft ul li > div.wrapper{width:251px;padding:3px 4px;border-bottom:1px solid #e4e3e3;border-top:1px solid #fff; }
+     #dnnMenuLeft ul li > div a {display:block;padding:13px 8px;    font-weight:300;  color:#000; font-size:18px;}
+     #dnnMenuLeft ul li.selected > div > a{color:#155924;}
+     
+     
+   /*##### TOP LEVEL MENU #####*/
+    #dnnMenuLeft ul.topLevel > li { position:relative;width:251px;  }
+    #dnnMenuLeft ul.topLevel > li.first >div.wrapper{border-top:none;}
+    #dnnMenuLeft ul.topLevel > li.haschild{}
+    #dnnMenuLeft ul.topLevel li > div a:hover {color:#155924; text-decoration:none; background:url(images/SMakk_Left_Menu_Back_hover.png) repeat;}
+    #dnnMenuLeft ul.topLevel > li.last  {padding-right:11px; }
+     
+     
+   /*##### CHILD LEVEL MENU #####*/
+    #dnnMenuLeft .subLevelContent > li > div a{display:block; padding:13px 0 13px 12px;}
+    #dnnMenuLeft .subLevelContent > li > div a span{float:left;}
+    #dnnMenuLeft .subLevelContent > li > div a div{margin-left:15px;}
+    #dnnMenuLeft ul li.last li.last > div{border-bottom:none;}
+
+   /*##### SKP LOGO BELOW LINKS #####*/
+    #dnnMenuLeft #skp_Logo{background:url(images/SKP_logo.png) no-repeat 67px 50px; height:435px; width:262px;}
+    
+   /*##### LEFT MENU STYLES FOR CONTENT PANE RIGHT #####*/
+    .SMaKK-ContentPaneRight{float:left; width:575px;margin-left:60px;}
+

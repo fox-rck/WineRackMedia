@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnAddNew.Text" xml:space="preserve">
+    <value>Add New Url</value>
+    <comment>The caption for the Add New Url button</comment>
+  </data>
+  <data name="btnCheck.Text" xml:space="preserve">
+    <value>Check Url Encoding</value>
+    <comment>The caption for the Check Encoding button</comment>
+  </data>
+  <data name="btnDelete.Text" xml:space="preserve">
+    <value>Delete Selected Urls</value>
+    <comment>The caption for the Delete button</comment>
+  </data>
+  <data name="btnDiscard.Text" xml:space="preserve">
+    <value>Discard Changes</value>
+    <comment>The caption for the Discard button</comment>
+  </data>
+  <data name="btnSave.Text" xml:space="preserve">
+    <value>Apply Changes</value>
+    <comment>The caption for the Save button</comment>
+  </data>
+  <data name="chkShowDeleted.Text" xml:space="preserve">
+    <value>Show Deleted Pages?</value>
+  </data>
+  <data name="DisplayName.Text" xml:space="preserve">
+    <value>Display Name</value>
+    <comment>Text used for option to show display name as userprofile usage</comment>
+  </data>
+  <data name="False.Text" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="lblCurrentPortal.Help" xml:space="preserve">
+    <value>Selecting the portal shows the list of pages for that portal.</value>
+    <comment>The help text for the portal selection drop down.</comment>
+  </data>
+  <data name="lblCurrentPortal.Text" xml:space="preserve">
+    <value>Select Portal</value>
+    <comment>THe text for the portal selection drop down</comment>
+  </data>
+  <data name="IsDeleted.Help" xml:space="preserve">
+    <value>True if this selected page is deleted, false if the selected page is not deleted.</value>
+  </data>
+  <data name="IsDeleted.Text" xml:space="preserve">
+    <value>Page is Deleted?</value>
+  </data>
+  <data name="lblEncodedCaption.Help" xml:space="preserve">
+    <value>&lt;div class='encodedHelp'&gt;When used in a browser address bar, the Url you have entered will be encoded to remove characters which are not valid for the Url standard.  The resulting text below is how your Url will look in the browser address bar when a user follows a link for this Url.&lt;/div&gt;</value>
+    <comment>The help text for the encoded label</comment>
+  </data>
+  <data name="lblEncodedCaption.Text" xml:space="preserve">
+    <value>Encoded Url Result</value>
+    <comment>The caption for the encoded label</comment>
+  </data>
+  <data name="lblHeader.Help" xml:space="preserve">
+    <value>With these settings, you can change the redirection setup for any page in the website.  You can add 301 or 302 redirections, and you can add in a totally custom Url for the page.</value>
+    <comment>The help text for the page header</comment>
+  </data>
+  <data name="lblHeader.Text" xml:space="preserve">
+    <value>Page Redirection Settings</value>
+    <comment>THe label for the page header</comment>
+  </data>
+  <data name="IsHidden.Help" xml:space="preserve">
+    <value>When this value is checked, this page is not visible in the site menu.  This value is set at the Page Settings level, and cannot be changed here.</value>
+    <comment>The help text for the Hidden Label field</comment>
+  </data>
+  <data name="IsHidden.Text" xml:space="preserve">
+    <value>Page is Visible in Menu?</value>
+    <comment>The label for the Hidden checkbox</comment>
+  </data>
+  <data name="lblOverview.Text" xml:space="preserve">
+    <value>Select a page in the site from the list.  This will load up the valid set of Urls for that page, and allow the addition of a new Url.  Custom Url entries can be set to either show the page (200) or redirect the page (301 or 302).</value>
+    <comment>The caption for the overview </comment>
+  </data>
+  <data name="PageUrl.Help" xml:space="preserve">
+    <value>This is what the Page Url will look like when generated through links and menus.  The value depends on any custom urls, plus the friendly Url settings and Url Rewriting settings for the DotNetNuke installation.</value>
+    <comment>The help text for the Page Url.</comment>
+  </data>
+  <data name="PageUrl.Text" xml:space="preserve">
+    <value>Selected Page Url</value>
+    <comment>The caption for the Page Url</comment>
+  </data>
+  <data name="PermanentRedirect.Help" xml:space="preserve">
+    <value>When the 'Permanent Redirect' option is checked in the Page Settings, this area will show the Url that any request for this page will be redirected to.  You cannot change this value here, you must go to the page settings for that page.</value>
+  </data>
+  <data name="PermanentRedirect.Text" xml:space="preserve">
+    <value>Permanently Redirected to:</value>
+  </data>
+  <data name="PostProcessFriendlyUrl.Help" xml:space="preserve">
+    <value>When the page shows true, it will be post-processed (that is, generated as a friendly url after the entire page has been generated)</value>
+    <comment>The helptext for post process friendly urls</comment>
+  </data>
+  <data name="PostProcessFriendlyUrl.Text" xml:space="preserve">
+    <value>Post Process Friendly Url?</value>
+    <comment>The caption for post process friendly urls</comment>
+  </data>
+  <data name="ProfileType.Help" xml:space="preserve">
+    <value>You can choose to either display the Url for the user on the username of the user, or on the display name.  It is possible for users to create duplicate display names, if this happens the system will choose the first display name created and use that.  Any spaces in the display name will be replaced with either the 'space replacement value' (see Friendly Url Settings page) or with the selected space encoding value, if no space replacement is specified.</value>
+  </data>
+  <data name="ProfileType.Text" xml:space="preserve">
+    <value>Base User Url on:</value>
+  </data>
+  <data name="TabNameLabel.Help" xml:space="preserve">
+    <value>This is the page name of the selected page, as set in the Page settings.  This value cannot be changed here.  The Page Name is used by DotNetNuke to determine the standard Friendly Url for this page.</value>
+    <comment>THe help text for the Page Name field.</comment>
+  </data>
+  <data name="TabName.Text" xml:space="preserve">
+    <value>Page Name</value>
+    <comment>The label for the Tab Name</comment>
+  </data>
+  <data name="TabsHeader.Help" xml:space="preserve">
+    <value>Select a page from this list to define new Url's for that page.</value>
+    <comment>The help text for the list of pages in the portal header</comment>
+  </data>
+  <data name="TabsHeader.Text" xml:space="preserve">
+    <value>Selected Page</value>
+    <comment>The caption for the list of pages in the portal header</comment>
+  </data>
+  <data name="GenerateFriendlyUrl.Help" xml:space="preserve">
+    <value>When true, this page will have a human friendly url generated for it.  When false, the Url generated will be the standard DNN Friendly Url, which includes the tabid and /default.aspx in the style of /pagename/tabid/xx/default.aspx.</value>
+  </data>
+  <data name="GenerateFriendlyUrl.Text" xml:space="preserve">
+    <value>This page uses a Friendly Url</value>
+    <comment>The caption for the 'use base Friendly urls'</comment>
+  </data>
+  <data name="UserProfileOtherParameter.Help" xml:space="preserve">
+    <value>In this field, enter any other parameters that are present in the rewritten profile url.  For example, the core DNN user profile url includes /ctl/profile, so '/ctl/profile' would be entered into this field to rewrite the standard DNN user profile url.</value>
+  </data>
+  <data name="UserProfileOtherParameter.Text" xml:space="preserve">
+    <value>Other Parameters in Rewritten Profile</value>
+  </data>
+  <data name="UserProfilePage.Help" xml:space="preserve">
+    <value>When selected to 'this page' or 'all pages', this value designates the specifed page as the user profile page, so that request to domain.com/username.aspx will be rewritten to this page.  All Urls requested for the user profile page will be rewritten as such.</value>
+  </data>
+  <data name="UserProfilePage.Text" xml:space="preserve">
+    <value>User Profile Rewrite on:</value>
+  </data>
+  <data name="UserProfileParameter.Help" xml:space="preserve">
+    <value>Specify the parameter name to be used as the querystring key for the user id  when the username parameter is rewritten.  Examples are 'UserId', 'id', 'uid' etc.</value>
+  </data>
+  <data name="UserProfileParameter.Text" xml:space="preserve">
+    <value>User Id Parameter Name</value>
+  </data>
+  <data name="UserProfileRedirect.Help" xml:space="preserve">
+    <value>When checked, any Url requested using the 'old' profile Url will be redirected to the 'new' profile Url.</value>
+  </data>
+  <data name="UserProfileRedirect.Text" xml:space="preserve">
+    <value>Redirect old profile Urls?</value>
+  </data>
+  <data name="lblWarnings.Help" xml:space="preserve">
+    <value>All Urls have a restriction on the characters that make them up.  Although the Urls can consist of non-ascii characters, it should be the aim of the website administrator to make simple, easy to read Url's.  Also, if the target page contains modules that will add query strings to the end of the Url, be aware that the method for handling query parameters depends on the Friendly Url Provider settings. </value>
+    <comment>The help text for the Warning under the page list</comment>
+  </data>
+  <data name="lblWarnings.Text" xml:space="preserve">
+    <value>NOTE: Only add the page extension (.htm, .aspx, .php etc) to the Url if it is different from the standard extension in the Friendly Url Settings.  The default extension will be automatically added for all other urls.  Url's should be entered as a single line of text, excluding illegal characters and spaces.</value>
+    <comment>THe caption for the warning under the page list</comment>
+  </data>
+  <data name="True.Text" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="Username.Text" xml:space="preserve">
+    <value>Username</value>
+    <comment>Text used for option to show username as userprofile usage</comment>
+  </data>
+  <data name="UserProfileTabList.Text" xml:space="preserve">
+    <value>-1,No Page;0,This Page;1,Not This Page;2,All Pages;</value>
+    <comment>This list is used to populate the options for the User Profile action list.  The list can use any values for the text, but must include a -1,0,1 and 2 as the 'value'.  The list should be delimited like this: -1,no page;0,this page;1, not this page;2, all pages; - always using ,; to delimit the value and text as appropriate</comment>
+  </data>
+  <data name="PageExtension.Help" xml:space="preserve">
+    <value>This value specifies the extension to use on the end of the Urls.  The default value is .aspx.  You can specify any value as long as ASP.NET is configured to handle the extension.</value>
+  </data>
+  <data name="PageExtension.Text" xml:space="preserve">
+    <value>Extension to use on Urls (default is .aspx)</value>
+  </data>
+  <data name="PageExtensionUsage.Always" xml:space="preserve">
+    <value>All Urls will have the specified extension</value>
+  </data>
+  <data name="PageExtensionUsage.Help" xml:space="preserve">
+    <value>This option controls what page extensions to use for output Urls.  The options are: &lt;ul&gt;&lt;li&gt;Always: always use the default or specified page extension&lt;/li&gt;&lt;li&gt;Never : never show a page extension (.aspx or specified) in a Url&lt;/li&gt;&lt;li&gt;Page Only: Only show the specified Page Extension if the Url  does not have any Query string parameters.When parameters are present, remove the page extension.  Thus mySite/Home.aspx will become mySite/Home/Key/Value/ if a Query String is present.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; Changing the Page Extension requires changes to the IIS settings.  If you do not have access to the IIS settings to set up custom page extension handling at the ISAPI level, changing this value will cause your site to stop functioning.  Always test this setting on a non-critical test server before committing to running a site using 'None' or 'Page Only'&lt;/p&gt;</value>
+  </data>
+  <data name="PageExtensionUsage.Never" xml:space="preserve">
+    <value>None of the Urls will have a page extension</value>
+  </data>
+  <data name="PageExtensionUsage.PageOnly" xml:space="preserve">
+    <value>Only DotNetNuke pages with no querystring will have an extension</value>
+  </data>
+  <data name="PageExtensionUsage.Text" xml:space="preserve">
+    <value>Page Extension Handling</value>
+  </data>
+  <data name="PortalAliasUsage.Any" xml:space="preserve">
+    <value>Any of the following portal alias values can be used</value>
+  </data>
+  <data name="PortalAliasUsage.Culture" xml:space="preserve">
+    <value>The selected portal alias values will be used for the specified language / culture</value>
+  </data>
+  <data name="PortalAliasUsage.Help" xml:space="preserve">
+    <value>Choose the way that the portal alias(es) for this portal will be handled.  You can allow the site to work with any portal alias in the list, or you can redirect all other aliases to the primary portal alias, or you can specify a primary alias per specified language/culture.</value>
+  </data>
+  <data name="PortalAliasUsage.One" xml:space="preserve">
+    <value>The selected portal alias is the primary Portal Alias.  All others will be redirected to the primary alias.</value>
+  </data>
+  <data name="PortalAliasUsage.Text" xml:space="preserve">
+    <value>Portal Alias (domain name) usage</value>
+  </data>
+  <data name="RedirectUnfriendly.Help" xml:space="preserve">
+    <value>When this option is checked, any Urls in the 'old' style (either /default.aspx?tabid=xx or /pagename/tabid/xx/default.aspx) will be redirected to the new, friendly version as generated by this module.</value>
+  </data>
+  <data name="RedirectUnfriendly.Text" xml:space="preserve">
+    <value>301 Redirect any 'old' style Urls to the newer, Friendly Urls?</value>
+  </data>
+  <data name="ReplaceSpaces.Help" xml:space="preserve">
+    <value>&lt;p&gt;When checked, a value must be supplied in the entry field.  When checked, all Urls will be generated from the Page Name, and replacing any spaces or special characters (&amp;;:# and more) with the supplied value.&lt;/p&gt;
+                &lt;p&gt;Example: My Test Page (Page Name), with replace space value of '_' becomes My_Test_Page (standard DNN value would be MyTestPage).&lt;/p&gt;
+                &lt;p&gt;Common Usage: Administrators like to separate out individual words in Page Urls, so that search engines searching by keyword find the correct match, as many search engines regard characters like '-' and '_' as valid word separators.&lt;/p&gt;</value>
+  </data>
+  <data name="ReplaceSpaces.Text" xml:space="preserve">
+    <value>Replaces the Spaces in the Page Titles to create Page Urls?</value>
+  </data>
+  <data name="404Handling.Text" xml:space="preserve">
+    <value>Select type of Http 404 Handling for this portal</value>
+  </data>
+  <data name="404Regex.Text" xml:space="preserve">
+    <value>Specify Regex Expression to match 404 Urls handled by custom Url</value>
+  </data>
+  <data name="404Tab.Text" xml:space="preserve">
+    <value>Use specified DotNetNuke page for Http 404 Errors</value>
+  </data>
+  <data name="404TabLabel.Text" xml:space="preserve">
+    <value>Select DotNetNuke page for Http 404 errors</value>
+  </data>
+  <data name="404Url.Text" xml:space="preserve">
+    <value>Use custom Http 404 handling/page by supplying Url</value>
+  </data>
+  <data name="404UrlLabel.Text" xml:space="preserve">
+    <value>Specify Custom Url for Http 404 errors</value>
+  </data>
+  <data name="500Handling.Text" xml:space="preserve">
+    <value>Select type of Error Handling for this portal (Http status 500)</value>
+  </data>
+  <data name="500Tab.Text" xml:space="preserve">
+    <value>Show specified DotNetNuke page for Http 500 Errors</value>
+  </data>
+  <data name="500TabLabel.Text" xml:space="preserve">
+    <value>Select DotNetNuke page for Http 500 Errors</value>
+  </data>
+  <data name="500Url.Text" xml:space="preserve">
+    <value>Show specified Url for Http 500 Errors</value>
+  </data>
+  <data name="500UrlLabel.Text" xml:space="preserve">
+    <value>Specify custom Url for Http 500 Errors</value>
+  </data>
+  <data name="Alias.Text" xml:space="preserve">
+    <value>Portal Alias</value>
+  </data>
+  <data name="AliasCheck.Text" xml:space="preserve">
+    <value>Primary Portal Alias</value>
+  </data>
+  <data name="AliasCultureCode.Text" xml:space="preserve">
+    <value>Specified Language/Culture for Alias</value>
+  </data>
+  <data name="Log404.Text" xml:space="preserve">
+    <value>Log all 404 Errors</value>
+  </data>
+  <data name="ExamplePageName.Text" xml:space="preserve">
+    <value>[optional] Custom Page Name / Url End String  (if omitted /default.aspx used)</value>
+  </data>
+  <data name="ExampleQueryString.Text" xml:space="preserve">
+    <value>[optional] Add on this query string (in format of &amp;key=value&amp;key2=value2)</value>
+  </data>
+  <data name="ExampleResult.Text" xml:space="preserve">
+    <value>Example Test Result</value>
+  </data>
+  <data name="SelectTestPage.Text" xml:space="preserve">
+    <value>Select Test Page and click button to view how Url will look</value>
+  </data>
+  <data name="AllTabs.Text" xml:space="preserve">
+    <value>The User Profile can be displayed on All Tabs</value>
+  </data>
+  <data name="DoNotIncludeInPathRegex.Text" xml:space="preserve">
+    <value>This Regex expression matches parts of the Url, and makes sure they remain in the querystring section.  This prevents conversion of querystring data into part of the Friendly Url Path.  The Regex must match the entire part of the querystring to be maintained [doNotIncludeInPathRegex]</value>
+  </data>
+  <data name="DoNotRedirectRegex.Text" xml:space="preserve">
+    <value>Any request matching this Regex expression will not be redirected in any way.  Use this value to prevent unwanted redirection of a specific type of Url. [doNotRedirectRegex]</value>
+  </data>
+  <data name="DoNotRedirectSecureRegex.Text" xml:space="preserve">
+    <value>Any request matching this Regex will not redirect from http to https or from https to http. Use this value to prevent the switching of a request from http to https, or from http to https, when the request should not do so. [doNotRedirectSecureRegex]</value>
+  </data>
+  <data name="DoNotRewriteRegex.Text" xml:space="preserve">
+    <value>Any request matching this Regex expression will not be rewritten.  The web server will process the Url in its original format. Use this value when a Url is being interpreted as a DotNetNuke page, but should not be.  [doNotRewriteRegex]</value>
+  </data>
+  <data name="ForceLowerCaseRegex.Text" xml:space="preserve">
+    <value>Any request matching this Regex will not be forced to change to lower case.  Use this regex when a value in the Url is being changed to lower case because of the 'Force Urls to lower case' option, and the conversion of the Url to lower case is causing errors in the application.  [forceLowerCaseRegex]</value>
+  </data>
+  <data name="IgnoreRegex.Text" xml:space="preserve">
+    <value>Any request matching this regex expression will be ignored by the module, and will not be rewritten or redirected.  This field is used to stop certain types of requests from being processed unnecessarily by the module, and for preventing errors when a Url is incorrectly processed by the module. Note: host-level ignoreRegex is applied prior to this portal-level value. [ignoreRegex]</value>
+  </data>
+  <data name="NoFriendlyUrlRegex.Text" xml:space="preserve">
+    <value>Any request matching this Regex expression will not be generated as a Friendly Url.  Use this pattern to restrict certain Urls in your site into using the 'old style' of DotNetNuke Url, which includes the pagename and tabid, plus /default.aspx [noFriendlyUrlRegex]</value>
+  </data>
+  <data name="None.Text" xml:space="preserve">
+    <value>Do not use vanity User Profile page Urls</value>
+  </data>
+  <data name="RegexSettings.Text" xml:space="preserve">
+    <value>The following fields are all Regex expressions.  Regex is a type of text-matching notation, and all of the Regex patterns match against Urls made in requests to the site.</value>
+  </data>
+  <data name="ThisTab.Text" xml:space="preserve">
+    <value>The User Profile is on a specific page</value>
+  </data>
+  <data name="TriggerDictionaryRebuildRegex.Text" xml:space="preserve">
+    <value>Any POST request to your site where the Url matches this Regex expression will result in the Page Index of the module being rebuilt.  This value is used to match when new pages/portals/Urls are added to the site [triggerDictionaryRebuildRegex]</value>
+  </data>
+  <data name="UserProfileAction.Text" xml:space="preserve">
+    <value>User Profile page Url options [Vanity User Profile Urls]</value>
+  </data>
+  <data name="UserProfileParameterHdr.Text" xml:space="preserve">
+    <value>Specify Url / Querystring parameters used by the User Profile Url:</value>
+  </data>
+  <data name="UserProfileType.Text" xml:space="preserve">
+    <value>Base User Profile page Url on:</value>
+  </data>
+  <data name="AllowDebugCode.Text" xml:space="preserve">
+    <value>Allow Debug code for troubleshooting?</value>
+  </data>
+  <data name="AutoAsciiConversion.Text" xml:space="preserve">
+    <value>Convert Diacritic Characters in Page names to Ascii-equivalent characters [è -&gt;e, ä -&gt;a, etc]</value>
+  </data>
+  <data name="CheckForDupUrls.Text" xml:space="preserve">
+    <value>Show warnings in the site log for pages with the same Url path?</value>
+  </data>
+  <data name="ClientSslRedirect.Text" xml:space="preserve">
+    <value>When switching from https -&gt; http use client based redirect?</value>
+  </data>
+  <data name="DeletedTabHandling.Text" xml:space="preserve">
+    <value>Select how to handle deleted, disabled or expired pages (where deleted page is still in recycle bin)</value>
+  </data>
+  <data name="Do301RedirectToPortalHome.Text" xml:space="preserve">
+    <value>301 Redirect to portal home page</value>
+  </data>
+  <data name="Do404Error.Text" xml:space="preserve">
+    <value>Show 404 Error</value>
+  </data>
+  <data name="DoNotRedirect.Help" xml:space="preserve">
+    <value>When selected, this value prevents this page from being redirected.  Use this setting to prevent unwanted redirects on this page.</value>
+  </data>
+  <data name="DoNotRedirect.Text" xml:space="preserve">
+    <value>Allow redirects on this Page?</value>
+  </data>
+  <data name="ForceLowerCase.Text" xml:space="preserve">
+    <value>Change all Urls in the site to be lower case</value>
+  </data>
+  <data name="ForwardExternalUrls.Text" xml:space="preserve">
+    <value>Forward pages with external Urls defined in the Page Settings?</value>
+  </data>
+  <data name="NoForward.Text" xml:space="preserve">
+    <value>Standard DotNetNuke behaviour - show blank page</value>
+  </data>
+  <data name="RebaseClientUrl.Text" xml:space="preserve">
+    <value>Rebase Client Url when rewriting Virtual Urls?</value>
+  </data>
+  <data name="Redirect301.Text" xml:space="preserve">
+    <value>Do a 301 Redirect to the specified Url</value>
+  </data>
+  <data name="Redirect302.Text" xml:space="preserve">
+    <value>Do a 302 Redirect to the specified Url</value>
+  </data>
+  <data name="RedirectDefaultPage.Text" xml:space="preserve">
+    <value>301 Redirect /default.aspx to the site root?</value>
+  </data>
+  <data name="RedirectWrongCase.Text" xml:space="preserve">
+    <value>301 Redirect back to lower case if requested Url is not lower case</value>
+  </data>
+  <data name="SpaceEncodingValue.Text" xml:space="preserve">
+    <value>Url Path space encoding value</value>
+  </data>
+  <data name="UrlSpace%20.Text" xml:space="preserve">
+    <value>Hex Encoding (%20)</value>
+  </data>
+  <data name="UrlSpace+.Text" xml:space="preserve">
+    <value>Url Encoding (+)</value>
+  </data>
+  <data name="NotImplemented.Text" xml:space="preserve">
+    <value>The Url Master module is not the current Url Rewriting provider for this site.  You can save changes, but they will not be reflected until the module is activated via the Friendly Url Settings page.</value>
+  </data>
+  <data name="SettingsChanged.Text" xml:space="preserve">
+    <value>Note: Changes in settings mean that the site will be restarted when you click 'Apply Changes'. This is normal behaviour.</value>
+  </data>
+  <data name="LanguageCultureResults.Help" xml:space="preserve">
+    <value>This returns the identified language/culture setting for the request.  This value determines the localization of the requested page.</value>
+  </data>
+  <data name="LanguageCultureResults.Text" xml:space="preserve">
+    <value>Identified Language / Culture</value>
+  </data>
+  <data name="RedirectResults.Help" xml:space="preserve">
+    <value>If a redirect was identified, shows what the redirect is.</value>
+  </data>
+  <data name="RedirectResults.Text" xml:space="preserve">
+    <value>Redirection Result</value>
+  </data>
+  <data name="RewriteMessage.Help" xml:space="preserve">
+    <value>Shows any informational messages generated during the test.</value>
+  </data>
+  <data name="RewriteMessage.Text" xml:space="preserve">
+    <value>Operation Messages</value>
+  </data>
+  <data name="RewriteResults.Help" xml:space="preserve">
+    <value>Shows the resulting rewritten Url that would be used by the rest of DNN</value>
+  </data>
+  <data name="RewriteResults.Text" xml:space="preserve">
+    <value>Rewriting result</value>
+  </data>
+  <data name="SelectTestPage.Help" xml:space="preserve">
+    <value>This section tests the generation of Friendly Urls in your site.  To use, just select the page from your site you'd like to see the Url for, and click the 'Show Generated Url with current settings' button.  If you are using a module that uses querystring values, enter those values into the querystring box, and they will be incorporated into the result, showing how the Url will look for a particular module.</value>
+  </data>
+  <data name="TabNameResults.Help" xml:space="preserve">
+    <value>Shows the Tab in the portal that was identified by the request.</value>
+  </data>
+  <data name="TabNameResults.Text" xml:space="preserve">
+    <value>Identified Tab</value>
+  </data>
+  <data name="TestRewrite.Help" xml:space="preserve">
+    <value>Enter the url exactly as you would see the Url in the browser.</value>
+  </data>
+  <data name="TestRewrite.Text" xml:space="preserve">
+    <value>Enter Url to test (include http:// and full Url)</value>
+  </data>
+  <data name="TestRewriteButton.Text" xml:space="preserve">
+    <value>Show Rewriting result with current settings</value>
+  </data>
+  <data name="TestRewriteHeader.Help" xml:space="preserve">
+    <value>You can test out the changes resulting from selected options on this page before applying changes, by using this test section.  You can use the test rewriting box at any time, with any settings, and it will give the rewriting results.  Note that it's possible to get a divergence between the test where IIS settings may cause a different result, for example, if an extension-less Url is tested here, and the IIS settings don't match, the test will work here but may not work in the browser.</value>
+  </data>
+  <data name="TestRewriteHeader.Text" xml:space="preserve">
+    <value>Test Url Rewriting</value>
+  </data>
+  <data name="TestUrlsTabHdr.Text" xml:space="preserve">
+    <value>Test Url Changes</value>
+  </data>
+  <data name="UseSiteUrlsRegex.Help" xml:space="preserve">
+    <value>Use this regex expression when there is a Url requested, and it needs to just match against one of the list of expressions in the Siteurls.config file.  By matching that Url with this regex expression, you can skip the rewriting processing used by the Friendly Urls, and go straight to the rules in the siteurls.config file.  Note : any url that matches this expression can &lt;em&gt;not&lt;/em&gt;match the 'doNotRewriteRegex' expression.  If it matches the 'doNotRewriteRegex' expression, then the useSiteUrlsRegex will never be evaluated.</value>
+  </data>
+  <data name="UseSiteUrlsRegex.Text" xml:space="preserve">
+    <value>Any Url matching this Regex expression will bypass Friendly Url processing and compare against expressions in the siteurls.config file. (useSiteUrlsRegex)</value>
+  </data>
+  <data name="404Handling.Help" xml:space="preserve">
+    <value>Select the option that suits how you want 404 errors for this portal to be handled.  You can either leave it as default - which uses the ASP.NET 404 handling (and anything in the web.config file).  Specified DotNetNuke page allows the selection of a page within the portal to display when a 404 error is encountered.   Custom 404 handling page is a Url which will be loaded into the browser when the 404 occurs, and refers to any valid Url on the server.  Show DotNetNuke tab, and show custom Url by regex allows to select both a DotNetNuke page for some 404 errors, and allows the use of a custom Url for others by using a Regex expression to filter between the two scenarios.</value>
+  </data>
+  <data name="404Regex.Help" xml:space="preserve">
+    <value>Enter the Regex expression which will match with those Urls that are to display the Url specified for 404 Errors.</value>
+  </data>
+  <data name="404TabLabel.Help" xml:space="preserve">
+    <value>Choose the page in this portal which will be shown for 404 errors.  This page should contain content indicating that a 404 error has occured, and the page shouldn't be visible through the ordinary menu, but it should be visible to all users (via permissions)</value>
+  </data>
+  <data name="404UrlLabel.Help" xml:space="preserve">
+    <value>Specify a fully-qualified Url that shows the page to load when a 404 occurs.  This page should contain content explaining that 404 error occured, and what action should be taken.</value>
+  </data>
+  <data name="500Handling.Help" xml:space="preserve">
+    <value>Choose the option to handle application (500) errors that are unhandled by DotNetNuke.  By default, it will fall back to the standard ASP.NETerror handling.  You can specify a specific page to show for errors - normally this page would have content indicating that the problem has been handled and provide links to try other actions.  Alternatively, specify another Url either to another site, or to a simple html page on the server, which again indicates that an error occured, and that administrators have been notified.</value>
+  </data>
+  <data name="500TabLabel.Help" xml:space="preserve">
+    <value>Select the page in this portal which will be used to show content indicating that a 500 error has occured.  The actual page will not contain any detailed information about the error, but should instead indicate to the user that the site is not working correctly, and that they should try later or contact an administrator.</value>
+  </data>
+  <data name="500UrlLabel.Help" xml:space="preserve">
+    <value>This Url will be loaded when a 500 error occurs.  The Url should be a fully-qualified Url (including the http://domain and path) and generally is a simple html file constructed to inform the visitor that an error has occured and that it is being looked at, or contain instructions on who to contact.</value>
+  </data>
+  <data name="AutoAsciiConversion.Help" xml:space="preserve">
+    <value>When checked, this option automatically translates diacritic characters like ê to e in the Urls.  When automatic 301 redirects are enabled, it will also forward any requests for the 'ê' version to the 'e' Url.</value>
+  </data>
+  <data name="CheckForDupUrls.Help" xml:space="preserve">
+    <value> Checks for Duplicate Urls across the DNN installation.  This will depend on the order the pages were added.  If a Duplicate Url exception is found in the log, one or both of the clashing Url's should be changed.  Note that if duplicate pages are found, the first page in the list will be shown for the Url.</value>
+    <comment>Help text for duplicate Url check</comment>
+  </data>
+  <data name="ClientSslRedirect.Help" xml:space="preserve">
+    <value>If the SSL handling for a portal includes 'enforce https settings', then a non-https page requested as https will be redirected to the http version.  If this value is checked,  a client-based javascript redirect will be used to avoid a browser security warning.  If unchecked, the server will do the redirection, which may produce a browser security warning.</value>
+  </data>
+  <data name="DeletedTabHandling.Help" xml:space="preserve">
+    <value>Choose one of these options for how to deal with deleted or expired pages.  A 301 redirect means the page will always redirect back to the home page if requested.  A 404 error means that the webserver will be told to issue a 404 request, and the default handling for that should be used.  Expired pages are pages where the page expiry date is earlier than the current date, or the page start date has not yet been reached.</value>
+    <comment>Help text for the deleted tab handling option</comment>
+  </data>
+  <data name="DoNotIncludeInPathRegex.Help" xml:space="preserve">
+    <value>This regex pattern is used to stop certain key/value pairs being included in a friendly url path.  If the regex pattern matches the path section of a url (ie /key1/value1/key2/value2 - the part of a path after the DNN page name), then that part will be removed from the path and appended to the end of the url as a querystring key/value pair.  Note you must match the entire key/value/ pair or remnants will be left in the url.  The querystring items will be constructed by splitting up the / delimited items and reformatting as &amp;key=value.  If there is an uneven amount of path items, the result will be a partial querystring.</value>
+  </data>
+  <data name="DoNotRedirectRegex.Help" xml:space="preserve">
+    <value>By forming a Regex expression, any match on an incoming Url will mean the matched Url will not result in a 301 redirect, even if the matched Url is an 'unfriendly' Url.  This setting is often used to exclude Urls which for some reason, cause problems with the 301 redirections.</value>
+    <comment>Help text for Redirect Regex</comment>
+  </data>
+  <data name="DoNotRedirectSecureRegex.Help" xml:space="preserve">
+    <value>Any request matching this regex pattern will be excluded from the SSL redirect code.</value>
+  </data>
+  <data name="DoNotRewriteRegex.Help" xml:space="preserve">
+    <value>Any Url matching this regex express will not be rewritten.  This means that no attempt will be made to match the Url against a DotNetNuke page for the portal, and the Url will not be transformed to the /default.aspx?tabid=xx format.  Use this expression to allow Url Master processing of the request, but when the Url maps to either a physical or virtual Url which is not a DotNetNuke page name.</value>
+  </data>
+  <data name="ForceLowerCase.Help" xml:space="preserve">
+    <value>When this setting is checked, all the Urls in the site will be generated in lower case.</value>
+  </data>
+  <data name="ForceLowerCaseRegex.Help" xml:space="preserve">
+    <value>If using the 'force lower case' option, or the 'redirect to lower case' option, any Url matching this value will not be changed or redirected to lower case.</value>
+  </data>
+  <data name="ForwardExternalUrls.Help" xml:space="preserve">
+    <value>When either 'Redirect 301' or 'Redirect 302' is selected, any request to a DotNetNuke page url, where that page has an 'external url' defined in the advanced page settings will be redirected to the defined destination Url.</value>
+  </data>
+  <data name="IgnoreRegex.Help" xml:space="preserve">
+    <value>By forming a Regex expression, any Url which matches this expression will bypass the Url rewriting and processing process completely.  This means the request for the Url will be passed to the underlying web server and will not be processed by DotNetNuke.  This is a portal-level ignoreRegex value, which is applied after the host-level ignoreRegex value.  Any request blocked by the host-level 'ignoreRegex' value will not be evaluated against this statement.  </value>
+  </data>
+  <data name="Log404.Help" xml:space="preserve">
+    <value>Check the box if you would like to log the 404 errors that the site experiences (note, this is only 404 that are associated with asp.net as per the IIS configuration).  The logged 404 errors are visible through the 'View site 404 Log' link that appears in the Portal Urls page, once this option is switched on.</value>
+  </data>
+  <data name="LogCacheMessages.Help" xml:space="preserve">
+    <value>This is a diagnostic setting to track how many page index cache rebuilds occur while running the site.</value>
+  </data>
+  <data name="NoFriendlyUrlRegex.Help" xml:space="preserve">
+    <value>This regex expression is used to stop the friendly url generation of any path that matches the regex.  This can be used to stop friendly urls for a single page, set of pages, or any page with a certain querystring value.  Note this value does not affect the lower case generation (if that option applies).  This option is generally used to allow third party modules on a particular page to function properly, if for some reason they do not use the standard DNN format.</value>
+  </data>
+  <data name="RebaseClientUrl.Help" xml:space="preserve">
+    <value>Used in the call to the underlying asp.net context.RewritePath(url, rebaseClientPath) call.  Rebase client path determines whether to make all urls relative to the virtual path, or relative to the site root.  Default:true.  Do not change this value without an understanding of the effects.</value>
+  </data>
+  <data name="RedirectDefaultPage.Help" xml:space="preserve">
+    <value>When checked, this value will redirect any site.com/default.aspx request to site.com/.  This helps eliminate duplicate Urls for the home page.   Note, however, that some IIS installations will automatically always append the /default.aspx value to the end of the incoming Url request.  If this is the case for this server, then this option cannot be used, or it will result in a 301 redirect loop, where the any request to site.com/default.aspx will redirect to site.com/, which will be interpreted by IIS as site.com/default.aspx, and a terminal loop will ensure. Firefox and othre browsers will detect this loop and stop it, other browsers such as IE will just 'hang' trying to complete the request.</value>
+    <comment>Redirect Default Page Help</comment>
+  </data>
+  <data name="RedirectWrongCase.Help" xml:space="preserve">
+    <value>When checked, every Url requested will be checked against the output from the FriendlyUrlProvider.  If the case does not match, then the request will be redirected to the matching case of the FriendlyUrl.  This means that mysite/mypage.aspx would be redirect to MySite/MyPage.aspx.   This is most often used when the administrator wants to ensure that all indexed content of a website uses the same case.</value>
+    <comment>Help text for Wrong case redirection</comment>
+  </data>
+  <data name="SpaceEncodingValue.Help" xml:space="preserve">
+    <value>Choose the type of value to encode a space character with when it appears in the Url Path.  IIS7 by default disallows the '+' character.</value>
+  </data>
+  <data name="TriggerDictionaryRebuildRegex.Help" xml:space="preserve">
+    <value>This regex expression is used to trigger a Page index rebuild.  If a Url is requested which matches the Regex expression, then the Page Index will be rebuilt.  By default it matches the new/edit page Urls in DotNetNuke, but it can be modified to match any request which should rebuild the page Index. Note that there is a performance overhead to rebuilding the page index, and matches should be kept to a minimum.</value>
+    <comment>Help Text for Trigger Dictionary Rebuild</comment>
+  </data>
+  <data name="UserProfileAction.Help" xml:space="preserve">
+    <value>Select the option you would like to use User Profile Urls.  To switch off User Profile Urls, select 'Do Not use'.  To use User Profile Urls on all pages (DNN pre 5.4) then select 'display on all tabs'.  To show User Profiles Urls for a specified page, select 'The User Profile is on a specific page'.  See the Installation Instructions for more information.</value>
+  </data>
+  <data name="UserProfileParameterHdr.Help" xml:space="preserve">
+    <value>Identify what the specific path/querystring parameter is that identifies the UserId in the the Url used to show the User Profile, and enter that value here.  For example, if the profile parameter normally includes /UserId/xx , then 'UserId' is the correct value to enter.</value>
+  </data>
+  <data name="UserProfileType.Help" xml:space="preserve">
+    <value>Choose either Display name of the user, or the Username.  This will control what forms the Url for the User Profile Urls.</value>
+  </data>
+  <data name="CustomPortalAliasUsage.Help" xml:space="preserve">
+    <value>&lt;div class='portalAliasHelp'&gt;Choose one of the options if you would like to use a portal alias [domain] different from the primary portal alias for this site.&lt;/div&gt;</value>
+  </data>
+  <data name="CustomPortalAliasUsage.Text" xml:space="preserve">
+    <value>Portal Alias Usage</value>
+  </data>
+  <data name="AddUrlHelp.Help" xml:space="preserve">
+    <value>When adding Urls, please use these pointers:
+&lt;ul&gt;
+&lt;li&gt;Use the 'Add New Url' button, and enter the new Url in the yellow box that is created&lt;/li&gt;
+&lt;li&gt;All Urls have a restriction on the characters that make them up.  Although the Urls can consist of non-ascii characters, it should be the aim of the website administrator to make simple, easy to read Url's. &lt;/li&gt;
+&lt;li&gt;You do not need to specify the page extension of a Url when it matches the page extension value of this portal.  For example, if the portal uses .aspx as an extension, you do not need to put .aspx on the end of the Url.  If you do, it will be removed.  You can enter an extension when it differs from the portal default - for example, entering a url ending in .asp when the portal default extension is .aspx. &lt;/li&gt;
+&lt;li&gt;You can set a custom portal alias [domain name] for each newly created custom Url.  Use the small down arrow to expand the custom portal alias section.  This changes the alias for the particular page, so that all generated links will show the custom alias&lt;/li&gt;
+&lt;li&gt;The 'Check Url Encoding' button will test to see if your Url will result in Encoded characters.  If there are encoded characters, you'll see the encoded result.  If there are none, the display will not change&lt;/li&gt;
+&lt;/ul&gt;</value>
+  </data>
+  <data name="AddUrlHelp.Text" xml:space="preserve">
+    <value>Help for Adding Urls</value>
+  </data>
+  <data name="btnSaveRedirects.Text" xml:space="preserve">
+    <value>Save Redirects Only</value>
+  </data>
+  <data name="SaveRedirectsMessage.Text" xml:space="preserve">
+    <value>Url Redirects Saved [other settings not saved]</value>
+  </data>
+  <data name="SaveRedirectsOnlyHelp.Help" xml:space="preserve">
+    <value>This button save any changes to the list of custom Urls and Redirects that you may have created, but does not save any other Portal Url settings (such as redirect options, regex patterns and others).  You can use this button when you just want to save a new redirect without triggering an application restart.  Clicking 'Apply Changes' saves both the redirect values &lt;em&gt;and&lt;/em&gt; all of the other settings &lt;em&gt;and&lt;/em&gt; triggers an application restart due to saving any changes in the web.config file.</value>
+  </data>
+  <data name="SaveRedirectsOnlyHelp.Text" xml:space="preserve">
+    <value>About 'Save Redirects Only'</value>
+  </data>
+  <data name="NoExtension.Message" xml:space="preserve">
+    <value>If your site is IIS5, IIS6 or IIS7 in 'classic' mode, you must have set up 'wildcard' extensions before using this option, or your site will not work.  See &lt;a href="http://www.ifinity.com.au/Products/KB/Url_Master/topic/Switching+off+page+extensions+in+IIS"&gt;Switching off Page Extensions in IIS&lt;/a&gt; for more information.</value>
+  </data>
+  <data name="PageExtensionWarning.Text" xml:space="preserve">
+    <value>If you are using IIS6, or IIS7 in 'classic' mode, and you choose 'No page extensions' or 'Only DotNetNuke Pages', you cannot use this function until you have completed the process of setting up 'wildcard mapping' for your page extensions.  If you are not sure, please check with the person responsible for hosting your site.&lt;br&gt;&lt;br&gt;If you do not have the wildcard mapping set up in IIS, and you apply this change, your site will no longer work.  &lt;br&gt;&lt;br&gt;&lt;strong&gt;If you do not understand this message, seek advice before continuing&lt;/strong&gt;.  See &lt;a href="http://www.ifinity.com.au/Products/KB/Url_Master/topic/Switching+off+page+extensions+in+IIS"&gt;Switching off Page Extensions in IIS&lt;/a&gt; for more information.</value>
+  </data>
+  <data name="Max404LogSize.Help" xml:space="preserve">
+    <value>This value controls the maximum size of the 404 log table.  The default value is 1000 entries in the Log table.  You can decrease or increase this value - valid ranges are between 1 (no entries) and 999,999 entries.   The system automatically maintains a First-in First-out list of log entries.  Once the log reaches the maximum size, the oldest entry will be removed to add the latest entry.  This prevents the 404 log from growing uncontrollably.  If you wish to have a historic record of all 404 errors, it is suggested to take periodic copies of the 404 log table.</value>
+  </data>
+  <data name="Max404LogSize.Text" xml:space="preserve">
+    <value>Maximum log size</value>
+  </data>
+  <data name="ForcePortalDefaultLanguage.Help" xml:space="preserve">
+    <value>When true, this setting ensures that a rewritten Url always sets the current 'language' value.   If the language code is not found in the Url, or set via the page or current portal alias, then the default language of the identified portal will be specified.  Thus, every rewritten Url will have a &amp;language=xx-XX value in it.</value>
+  </data>
+  <data name="ForcePortalDefaultLanguage.Text" xml:space="preserve">
+    <value>Portal Default Language always set when not otherwise specified?</value>
+  </data>
+  <data name="FriendlyAdminHostUrls.Help" xml:space="preserve">
+    <value>When true, this setting will use Friendly Urls for the Admin and Host pages, except where otherwise specified via a regex setting or tab option.</value>
+  </data>
+  <data name="FriendlyAdminHostUrls.Text" xml:space="preserve">
+    <value>Use Friendly Urls for Admin/Host pages?</value>
+  </data>
+  <data name="TabSearch.AlternateText" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="TabSearch.Tooltip" xml:space="preserve">
+    <value>Search for matching pages</value>
+  </data>
+  <data name="First.Text" xml:space="preserve">
+    <value>first</value>
+  </data>
+  <data name="Last.Text" xml:space="preserve">
+    <value>last</value>
+  </data>
+  <data name="Next.Text" xml:space="preserve">
+    <value>next {0}</value>
+  </data>
+  <data name="PageListSize.Help" xml:space="preserve">
+    <value>This setting allows you to modify the number of DotNetNuke pages that appear in the page lists throughout this module.  The number relates to the maximum number shown on each 'page' within the list. NOTE: refresh page after changing (and saving) setting to affect page lists.</value>
+  </data>
+  <data name="PageListSize.Text" xml:space="preserve">
+    <value>Number of Pages to show for each 'page' in lists for this module</value>
+  </data>
+  <data name="Prev.Text" xml:space="preserve">
+    <value>prev {0}</value>
+  </data>
+</root>
